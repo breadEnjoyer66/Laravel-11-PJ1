@@ -2,7 +2,7 @@
     <x-slot:title>{{ $title }}</x-slot:title>
 
 
-    <div class="py-8 mx-auto text-center lg:py-16 bg-slate-200">
+    <div class="py-20 mx-auto text-center lg:py-24">
         <a href="/about"
             class="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
             role="alert">
