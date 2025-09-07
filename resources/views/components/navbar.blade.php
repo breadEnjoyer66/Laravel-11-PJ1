@@ -1,12 +1,11 @@
 <nav class="bg-white border-b sticky top-0 z-50" x-data="{ isOpen: false }">
 
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="flex h-16 items-center justify-between">
+        <div class="flex h-20 items-center justify-between">
             <!-- Logo left -->
             <div class="flex items-center h-full">
                 <div class="shrink-0">
-                    <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                        alt="Your Company" class="size-8" />
+                    <img src="{{ asset('img/pmt-logo-blue.png') }}" alt="Primajaya Multi Technology" class="size-24" />
                 </div>
             </div>
             <!-- Nav menu right -->
@@ -14,6 +13,9 @@
                 <div class="flex items-center space-x-4 h-full">
                     <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
                     <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
+                    <x-nav-link href="/our-business" :active="request()->is('our-business')">Our Business</x-nav-link>
+                    <x-nav-link href="/service-center" :active="request()->is('service-center')">Service Center</x-nav-link>
+                    <x-nav-link href="/warranty" :active="request()->is('warranty')">Warranty</x-nav-link>
                     <x-nav-link href="/news" :active="request()->is('news')">News</x-nav-link>
                     <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
                     <x-nav-link href="/career" :active="request()->is('career')">Career</x-nav-link>

@@ -15,6 +15,18 @@ Route::get('/about', function () {
     return view('about', ['title' => 'About']);
 });
 
+Route::get('/our-business', function () {
+    return view('our-business', ['title' => 'Our Business']);
+});
+
+Route::get('/service-center', function () {
+    return view('service-center', ['title' => 'Service Center']);
+});
+
+Route::get('/warranty', function () {
+    return view('warranty', ['title' => 'Warranty']);
+});
+
 // All articles
 Route::get('/news', function () {
 
@@ -24,20 +36,7 @@ Route::get('/news', function () {
 
 // Single article
 Route::get('news/{article:slug}', function (Article $article) {
-
     return view('article', ['title' => 'Article', 'article' => $article]);
-});
-
-// Articles by author
-Route::get('/authors/{user:username}', function (User $user) {
-
-    return view('news', ['title' => count($user->articles) . ' Articles written by ' . $user->name, 'articles' => $user->articles]);
-});
-
-// Articles by category
-Route::get('/categories/{category:slug}', function (Category $category) {
-
-    return view('news', ['title' => 'News about ' . $category->name, 'articles' => $category->articles]);
 });
 
 Route::get('/contact', function () {
