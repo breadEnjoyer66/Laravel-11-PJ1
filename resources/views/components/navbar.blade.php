@@ -5,7 +5,8 @@
             <!-- Logo left -->
             <div class="flex items-center h-full">
                 <div class="shrink-0">
-                    <img src="{{ asset('img/pmt-logo-blue.png') }}" alt="Primajaya Multi Technology" class="size-24" />
+                    <a href="/"><img src="{{ asset('img/pmt-logo-blue.png') }}" alt="Primajaya Multi Technology"
+                            class="size-24" /></a>
                 </div>
             </div>
             <!-- Nav menu right -->
