@@ -31,12 +31,12 @@ Route::get('/warranty', function () {
 Route::get('/news', function () {
 
 
-    return view('news', ['title' => 'News', 'articles' => Article::filter(request(['search', 'category', 'author']))->latest()->simplePaginate(9)->withQueryString()]);
+    return view('news.news', ['title' => 'News', 'articles' => Article::filter(request(['search', 'category', 'author']))->latest()->simplePaginate(9)->withQueryString()]);
 });
 
 // Single article
 Route::get('news/{article:slug}', function (Article $article) {
-    return view('article', ['title' => 'Article', 'article' => $article]);
+    return view('news.article', ['title' => 'Article', 'article' => $article]);
 });
 
 Route::get('/contact', function () {

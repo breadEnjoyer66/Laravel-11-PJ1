@@ -5,7 +5,8 @@
             {{-- left side footer --}}
             <div class="mb-6 md:mb-0">
                 <a href="/" class="flex items-center -mt-6">
-                    <img src="{{ asset('img/pmt-text-logo.png') }}" class="mr-3 lg:h-24 h-20"
+                    <img src="{{ asset('img/pmt-text-logo.png') }}"
+                        class="mr-3 lg:h-24 h-20 grayscale hover:grayscale-0 duration-300"
                         alt="Primajaya Multi Technology Logo" />
                 </a>
                 <p class="text-sm text-gray-500 -mt-3">Komplek Ruko Asia Mega Mas, Blok BB No 12A-15, Medan</p>

@@ -47,7 +47,7 @@
                 </button>
                 <!-- Mobile menu, show/hide based on menu state. -->
                 <div x-show="open" @click.away="open = false" x-transition
-                    class="absolute top-16 left-0 w-full z-20 bg-white md:hidden">
+                    class="absolute top-20 left-0 w-full z-20 bg-white md:hidden">
                     <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3 border-y">
                         <x-m-nav-link href="/" :active="request()->is('/')">Home</x-m-nav-link>
                         <x-m-nav-link href="/about" :active="request()->is('about')">About</x-m-nav-link>
