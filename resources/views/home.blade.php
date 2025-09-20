@@ -3,35 +3,23 @@
 
     <!-- Hero Section -->
     {{-- Full-width hero (spans entire viewport) --}}
-    <x-slot:full>
 
+    <div class="lg:py-20"
+        style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.644), rgba(54, 58, 63, 0.37)), url('{{ asset('img/notebook-background.jpeg') }}'); background-size: cover; background-position: center;">
         <div
-            class="grid max-w-screen-xl px-4 py-12 sm:px-6 lg:px-12 mx-auto lg:gap-8 xl:gap-0 lg:pb-24 lg:pt-20 lg:grid-cols-12">
+            class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid py-12 lg:gap-8 xl:gap-0 lg:pb-24 lg:pt-20 lg:grid-cols-12">
 
             <div class="mr-auto place-self-center lg:col-span-7 pt-10">
-                <a href="/about"
-                    class="inline-flex justify-normal items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
-                    role="alert">
-                    <span class="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">Learn
-                        more</span> <span class="text-sm font-medium">Primajaya Multi Technology</span>
-                    <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </a>
-                <h1
-                    class="text-gray-900 mb-4 font-extrabold tracking-tight leading-none text-4xl md:text-4xl lg:text-5xl dark:text-white">
+                <h1 class="text-white mb-4 font-bold leading-none text-4xl md:text-4xl lg:text-6xl">
                     Empowering Technology For Business</h1>
-                <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
+                <p class="mb-8 text-md font-normal text-gray-300 lg:text-lg dark:text-gray-400">
                     Providing
                     computers, laptops, servers, and network solutions for corporations, government, and
                     institutions.
                 </p>
-                <div
-                    class="flex flex-col mb-4 lg:mb-8 space-y-4 sm:flex-row sm:justify-start sm:space-y-0 sm:space-x-4">
+                <div class="flex flex-col mb-4 lg:mb-8 space-y-4 sm:flex-row sm:justify-start sm:space-y-0 sm:space-x-4">
                     <a href="/contact"
-                        class="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-full bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                        class="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-full bg-primary-500 hover:bg-primary-600 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
                         Chat with sales
                         <svg class="ml-1.5 w-6 h-6 text-white dark:text-white" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
@@ -41,43 +29,30 @@
                         </svg>
                     </a>
                 </div>
-                <div class="flex flex-row">
-                    <div class="bg-white text-gray-900 shadow-lg p-5 mr-2 rounded-xl">
-                        <h2 class="text-2xl font-extrabold text-gray-800">18+</h2>
-                        <p class="text-base text-gray-400">Years of experience</p>
-                    </div>
-                    <div class="bg-white text-gray-900 shadow-lg p-5 mr-2 rounded-xl">
-                        <h2 class="text-2xl font-extrabold text-gray-800">100+</h2>
-                        <p class="text-base text-gray-400">Satisfied clients</p>
-                    </div>
-                    <div class="bg-white text-gray-900 shadow-lg p-5 mr-2 rounded-xl">
-                        <h2 class="text-2xl font-extrabold text-gray-800">50+</h2>
-                        <p class="text-base text-gray-400">Brand partners</p>
-                    </div>
-                </div>
             </div>
 
-            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex ">
+            {{-- <div class="hidden lg:mt-0 lg:col-span-5 lg:flex ">
                 <img class="object-contain" src="{{ asset('img/hero-image-2.png') }}" alt="product-banner">
-            </div>
+            </div> --}}
 
         </div>
-        <hr class="">
-    </x-slot:full>
-
+    </div>
+    <hr class="">
 
     <!-- Why Choose Us Section -->
-    <div class="my-20 mx-auto max-w-screen-xl">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20">
         <x-why-us></x-why-us>
     </div>
     <!-- end why choose us section -->
 
     <!-- About Our Company Briefly -->
-    <div class="flex flex-col justify-center mx-auto max-w-screen-xl lg:py-16 lg:grid lg:grid-cols-2 my-20">
-        <div class="lg:mb-0 mb-20">
-            <img src="{{ asset('img/intan-felicia.png') }}" alt="About Us" class=" mx-auto w-4/6">
+    <div
+        class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col justify-center lg:py-16 lg:grid lg:grid-cols-2 my-20">
+        <div class="lg:mb-0 mb-20 flex items-center">
+            <img src="{{ asset('img/intan-felicia-about-blue.png') }}" alt="About Us"
+                class="h-[88%] align-middle px-5 ml-5">
         </div>
-        <div class="">
+        <div class="px-4">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">About us</h2>
             <p class="text-gray-600 dark:text-gray-300 text-base mb-2 leading-loose text-justify">
                 <span class="font-semibold text-primary-700 dark:text-primary-400">PT Primajaya Multi
@@ -101,7 +76,7 @@
     <!-- End About Our Company Briefly -->
 
 
-    @php
+    {{-- @php
         $tabs = [
             [
                 'id' => 'tab1',
@@ -159,7 +134,7 @@
             });
         }
     }" x-init="setHeight()" x-watch="tab" @tab-changed.window="setHeight()"
-        class="max-w-screen-xl mx-auto my-20 text-center">
+        class="w-screen my-20 text-center">
         <div class="">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
                 Our Business Network</h2>
@@ -194,6 +169,55 @@
                     </div>
                 </div>
             @endforeach
+        </div>
+    </div> --}}
+
+    <div x-data="{
+        active: 0,
+        slides: [{
+                img: '{{ asset('img/corporate-team-bw.jpg') }}',
+                title: 'Innovative Solutions',
+                desc: 'We deliver cutting-edge technology solutions tailored for your business needs.'
+            },
+            {
+                img: '{{ asset('img/carousel-2.jpg') }}',
+                title: 'Expert Team',
+                desc: 'Our experienced professionals ensure reliable service and support.'
+            },
+            {
+                img: '{{ asset('img/carousel-3.jpg') }}',
+                title: 'Trusted Partnerships',
+                desc: 'Building long-term relationships with our clients and partners.'
+            }
+        ],
+        next() { this.active = (this.active + 1) % this.slides.length },
+        prev() { this.active = (this.active - 1 + this.slides.length) % this.slides.length }
+    }" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 flex items-center justify-center">
+
+
+        <div class="relative w-full flex flex-row rounded-none overflow-hidden">
+
+            <!-- Left: Image -->
+            <div class="w-1/2 flex items-center justify-center">
+
+                <img :src="slides[active].img" alt="" class="object-cover w-full h-96">
+
+            </div>
+            <!-- Right: Content -->
+            <div class="w-1/2 flex flex-col justify-center items-start p-10 bg-slate-800">
+                <h2 class="text-3xl font-bold mb-4 text-white" x-text="slides[active].title"></h2>
+                <p class="text-lg text-gray-300" x-text="slides[active].desc"></p>
+                <div class="mt-8 flex gap-4">
+                    <button @click="prev"
+                        class="px-4 py-2 rounded-full bg-primary-500 text-white hover:bg-primary-600">
+                        &laquo; Prev
+                    </button>
+                    <button @click="next"
+                        class="px-4 py-2 rounded-full bg-primary-500 text-white hover:bg-primary-600">
+                        Next &raquo;
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 

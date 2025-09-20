@@ -1,5 +1,5 @@
-<footer class="p-4 bg-gradient-to-t from-slate-300 to-slate-100 border-t sm:p-6 dark:bg-gray-800">
-    <div class="mx-auto max-w-screen-xl py-8 lg:py-12">
+<footer class="p-4 bg-gradient-to-t from-slate-200 to-slate-100 border-t sm:p-6 dark:bg-gray-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20">
         <div class="md:flex md:justify-between">
 
             {{-- left side footer --}}
@@ -15,18 +15,31 @@
             {{-- right side footer --}}
             <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
-                    <ul class="text-gray-600 dark:text-gray-400">
-                        <li class="mb-4">
-                            <a href="https://flowbite.com" class="hover:underline">Flowbite</a>
+                    <h2 class="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white">Sales Team</h2>
+                    <ul class="text-gray-500 text-sm dark:text-gray-400">
+                        <li class="mb-1">
+                            (B2B)<a href="mailto:corporate@pj-tech.com" class="ml-2 hover:text-blue-500">
+                                corporate@pj-tech.com</a>
                         </li>
-                        <li>
-                            <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                        <li class="mb-1">
+                            (B2G)<a href="mailto:b2g@pj-tech.com" class="ml-2 hover:text-blue-500"> b2g@pj-tech.com</a>
+                        </li>
+                        <li class="mb-1">
+                            (B2G)<a href="mailto:bisnis@pj-tech.com" class="ml-2 hover:text-blue-500">
+                                bisnis@pj-tech.com</a>
+                        </li>
+                        <li class="mb-1">
+                            (Dist)<a href="mailto:sales@pj-tech.com" class="ml-2 hover:text-blue-500">
+                                sales@pj-tech.com</a>
+                        </li>
+                        <li class="mb-1">
+                            (Retail)<a href="mailto:retail@pj-tech.com" class="ml-1 hover:text-blue-500">
+                                retail@pj-tech.com</a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Connect With Us</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
                             <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
@@ -37,7 +50,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Scan Me</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
                             <a href="#" class="hover:underline">Privacy Policy</a>

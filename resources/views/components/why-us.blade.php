@@ -1,15 +1,15 @@
-    <div class="max-w-screen-lg mx-auto mb-8 lg:mb-16 text-center">
-        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-8 lg:mb-16 text-center">
+        <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
             Your trusted
             technology partner</h2>
-        <p class="text-gray-500 sm:text-xl dark:text-gray-400"><span class="text-blue-500 font-bold">Why choose
+        <p class="text-gray-500 sm:text-lg dark:text-gray-400"><span class="text-blue-500 font-bold">Why choose
                 us?</span> With over 18 years of experience, we
             deliver reliable IT and communication solutions. Our strong network, certified expertise, and
             partnerships with leading brands ensure that we provide only the highest quality products and
             services.
         </p>
     </div>
-    <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+    <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 md:space-y-0">
         <div class="flex items-start gap-4 py-5 px-3">
             <div
                 class="flex-shrink-0 flex justify-center items-center w-10 h-10 rounded-full bg-orange-100 lg:h-12 lg:w-12 dark:bg-orange-700 mt-1">
