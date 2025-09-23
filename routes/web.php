@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\User;
+use App\Models\Award;
+use App\Models\Brand;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Support\Arr;
@@ -8,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('home', ['name' => 'Qodri Khalik', 'title' => 'Home']);
+    return view('home', ['name' => 'Qodri Khalik', 'title' => 'Home', 'brands' => Brand::all(), 'awards' => Award::all()]);
 });
 
 Route::get('/about', function () {

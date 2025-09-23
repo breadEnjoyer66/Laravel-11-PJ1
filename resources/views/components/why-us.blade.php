@@ -1,19 +1,21 @@
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-8 lg:mb-16 text-center">
+    <div class="mx-auto max-w-7xl mb-8 lg:mb-16 lg:text-start sm:text-center">
         <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
             Your trusted
             technology partner</h2>
-        <p class="text-gray-500 sm:text-lg dark:text-gray-400"><span class="text-blue-500 font-bold">Why choose
+        <p class="text-gray-500 sm:text-lg dark:text-gray-400"><span
+                class="text-orange-500 dark:text-orange-300 font-bold">Why choose
                 us?</span> With over 18 years of experience, we
             deliver reliable IT and communication solutions. Our strong network, certified expertise, and
             partnerships with leading brands ensure that we provide only the highest quality products and
             services.
         </p>
     </div>
-    <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 md:space-y-0">
-        <div class="flex items-start gap-4 py-5 px-3">
+    <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:space-y-0">
+        <div
+            class="bg-gradient-to-r from-white to-slate-50 hover:bg-gradient-to-l rounded-xl px-5 flex gap-6 py-5 items-center">
             <div
-                class="flex-shrink-0 flex justify-center items-center w-10 h-10 rounded-full bg-orange-100 lg:h-12 lg:w-12 dark:bg-orange-700 mt-1">
-                <svg class="w-5 h-5 text-orange-600 lg:w-6 lg:h-6 dark:text-orange-300" fill="currentColor"
+                class="flex-shrink-0 flex justify-center items-center w-10 h-10 rounded-lg bg-orange-100 lg:h-12 lg:w-12 dark:bg-primary-700 mt-1">
+                <svg class="w-5 h-5 text-orange-500 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor"
                     viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
                         d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z"
@@ -26,10 +28,11 @@
             </div>
         </div>
 
-        <div class="flex items-start gap-4 py-5 px-3">
+        <div
+            class="bg-gradient-to-r from-white to-slate-50 hover:bg-gradient-to-l rounded-xl px-5 flex gap-6 py-5 items-center">
             <div
-                class="flex-shrink-0 flex justify-center items-center w-10 h-10 rounded-full bg-orange-100 lg:h-12 lg:w-12 dark:bg-orange-700 mt-1">
-                <svg class="w-5 h-5 text-orange-600 lg:w-6 lg:h-6 dark:text-orange-300" aria-hidden="true"
+                class="flex-shrink-0 flex justify-center items-center w-10 h-10 rounded-lg bg-orange-100 lg:h-12 lg:w-12 dark:bg-primary-700 mt-1">
+                <svg class="w-5 h-5 text-orange-500 lg:w-6 lg:h-6 dark:text-primary-300" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                     viewBox="0 0 24 24">
                     <path fill-rule="evenodd"
@@ -43,10 +46,11 @@
             </div>
         </div>
 
-        <div class="flex items-start gap-4 py-5 px-3">
+        <div
+            class="bg-gradient-to-r from-white to-slate-50 hover:bg-gradient-to-l rounded-xl px-5 flex gap-6 py-5 items-center">
             <div
-                class="flex-shrink-0 flex justify-center items-center w-10 h-10 rounded-full bg-orange-100 lg:h-12 lg:w-12 dark:bg-orange-700 mt-1">
-                <svg class="w-5 h-5 text-orange-600 lg:w-6 lg:h-6 dark:text-orange-300" aria-hidden="true"
+                class="flex-shrink-0 flex justify-center items-center w-10 h-10 rounded-lg bg-orange-100 lg:h-12 lg:w-12 dark:bg-primary-700 mt-1">
+                <svg class="w-5 h-5 text-orange-500 lg:w-6 lg:h-6 dark:text-primary-300" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                     viewBox="0 0 24 24">
                     <path fill-rule="evenodd"
@@ -60,10 +64,11 @@
             </div>
         </div>
 
-        <div class="flex items-start gap-4 py-5 px-3">
+        <div
+            class="bg-gradient-to-r from-white to-slate-50 hover:bg-gradient-to-l rounded-xl px-5 flex gap-6 py-5 items-center">
             <div
-                class="flex-shrink-0 flex justify-center items-center w-10 h-10 rounded-full bg-orange-100 lg:h-12 lg:w-12 dark:bg-orange-700 mt-1">
-                <svg class="w-5 h-5 text-orange-600 lg:w-6 lg:h-6 dark:text-orange-300" aria-hidden="true"
+                class="flex-shrink-0 flex justify-center items-center w-10 h-10 rounded-lg bg-orange-100 lg:h-12 lg:w-12 dark:bg-primary-700 mt-1">
+                <svg class="w-5 h-5 text-orange-500 lg:w-6 lg:h-6 dark:text-primary-300" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                     viewBox="0 0 24 24">
                     <path fill-rule="evenodd"
@@ -79,10 +84,11 @@
             </div>
         </div>
 
-        <div class="flex items-start gap-4 py-5 px-3">
+        <div
+            class="bg-gradient-to-r from-white to-slate-50 hover:bg-gradient-to-l rounded-xl px-5 flex gap-6 py-5 items-center">
             <div
-                class="flex-shrink-0 flex justify-center items-center w-10 h-10 rounded-full bg-orange-100 lg:h-12 lg:w-12 dark:bg-orange-700 mt-1">
-                <svg class="w-5 h-5 text-orange-600 lg:w-6 lg:h-6 dark:text-orange-300" fill="currentColor"
+                class="flex-shrink-0 flex justify-center items-center w-10 h-10 rounded-lg bg-orange-100 lg:h-12 lg:w-12 dark:bg-primary-700 mt-1">
+                <svg class="w-5 h-5 text-orange-500 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor"
                     viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z">
@@ -96,10 +102,11 @@
             </div>
         </div>
 
-        <div class="flex items-start gap-4 py-5 px-3">
+        <div
+            class="bg-gradient-to-r from-white to-slate-50 hover:bg-gradient-to-l rounded-xl px-5 flex gap-6 py-5 items-center">
             <div
-                class="flex-shrink-0 flex justify-center items-center w-10 h-10 rounded-full bg-orange-100 lg:h-12 lg:w-12 dark:bg-orange-700 mt-1">
-                <svg class="w-5 h-5 text-orange-600 lg:w-6 lg:h-6 dark:text-orange-300" aria-hidden="true"
+                class="flex-shrink-0 flex justify-center items-center w-10 h-10 rounded-lg bg-orange-100 lg:h-12 lg:w-12 dark:bg-primary-700 mt-1">
+                <svg class="w-5 h-5 text-orange-500 lg:w-6 lg:h-6 dark:text-primary-300" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path fill="currentColor"
                         d="M11 3c0-.55228-.4477-1-1-1-.55228 0-1 .44772-1 1 0 .35778-.09872.50986-.19828.61606-.14832.15821-.36754.28572-.7723.50159l-.04537.02415c-.34513.18363-.84839.45139-1.24483.87426C6.27628 5.50986 6 6.15778 6 7c0 .55228.44772 1 1 1 .55229 0 1-.44772 1-1 0-.35778.09873-.50986.19829-.61606.14832-.15821.36754-.28572.7723-.50159l.04536-.02415c.34514-.18363.8484-.45139 1.24485-.87426C10.7237 4.49014 11 3.84222 11 3Zm5 0c0-.55228-.4477-1-1-1s-1 .44772-1 1c0 .35778-.0987.50986-.1983.61606-.1483.15821-.3675.28572-.7723.50159l-.0453.02415c-.3452.18363-.8484.45139-1.2449.87426C11.2763 5.50986 11 6.15778 11 7c0 .55228.4477 1 1 1s1-.44772 1-1c0-.35778.0987-.50986.1983-.61606.1483-.15821.3675-.28572.7723-.50159l.0454-.02415c.3451-.18363.8484-.45139 1.2448-.87426C15.7237 4.49014 16 3.84222 16 3Z" />

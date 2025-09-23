@@ -1,4 +1,6 @@
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
-    <h3 class="text-xl">Welcome to contact page!</h3>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    </div>
 </x-layout>

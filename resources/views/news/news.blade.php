@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
 
-    <div class="py-4 px-4 mx-auto max-w-screen-xl lg:px-6">
+    <div class="py-4 px-4 mx-auto max-w-7xl mt-10 lg:px-6">
         <div class="mx-auto max-w-screen-md sm:text-center">
 
             {{-- form for search with preserving category and author filters --}}
@@ -39,8 +39,10 @@
         </div>
     </div>
 
-    {{ $articles->links() }} {{-- pagination links --}}
-    <div class="py-4 my-4 mx-auto max-w-screen-xl lg:py-4">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {{ $articles->links() }} {{-- pagination links --}}
+    </div>
+    <div class="py-4 my-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 lg:py-4">
         <div class="grid gap-8 lg:grid-cols-3 md:grid-cols-2">
 
             @forelse ($articles as $article)
@@ -102,5 +104,7 @@
 
         </div>
     </div>
-    {{ $articles->links() }} {{-- pagination links --}}
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-20">
+        {{ $articles->links() }} {{-- pagination links --}}
+    </div>
 </x-layout>

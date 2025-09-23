@@ -1,6 +1,6 @@
-<div class="border-b">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-end py-2">
-        <a href="" class="text-sm text-gray-400 hover:text-primary-400 flex">
+<div class="hidden lg:block bg-gradient-to-b from-blue-600 to-blue-700">
+    <div class="mx-auto max-w-7xl flex justify-between py-2 items-center px-4 sm:px-6 lg:px-8">
+        <a href="" class="text-sm text-white hover:text-black hover:underline duration-100 flex">
             <svg class="mr-1 w-[19px] h-[19px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
                 height="24" fill="none" viewBox="0 0 24 24">
                 <path fill="currentColor" fill-rule="evenodd"
@@ -10,6 +10,16 @@
                     d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z" />
             </svg>
             0821 2935 5555
+        </a>
+
+        <a href="" class="text-sm text-white hover:text-black hover:underline duration-100 flex">
+            <svg class="mr-1 w-[19px] h-[19px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                    d="m3.5 5.5 7.893 6.036a1 1 0 0 0 1.214 0L20.5 5.5M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z" />
+            </svg>
+
+            corporate@pj-tech.com
         </a>
     </div>
 </div>
@@ -33,11 +43,13 @@
                     <x-nav-link href="/service-center" :active="request()->is('service-center')">Service Center</x-nav-link>
                     <x-nav-link href="/warranty" :active="request()->is('warranty')">Warranty</x-nav-link>
                     <x-nav-link href="/news" :active="request()->is('news')">News</x-nav-link>
-                    <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
                     <x-nav-link href="/career" :active="request()->is('career')">Career</x-nav-link>
+                    {{-- <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link> --}}
+                    <a href="/contact"
+                        class="hover:mb-2 transition-all duration-250 bg-gradient-to-b from-yellow-500 to bg-orange-600 hover:bg-gradient-to-r rounded-xl py-4 px-5 font-semibold text-sm text-white">Contact</a>
                 </div>
             </div>
-            <!-- Profile dropdown (optional, right of menu) -->
+
 
             <div class="-mr-2 flex md:hidden" x-data="{ open: false }">
                 <!-- Mobile menu button -->
@@ -57,7 +69,7 @@
                 </button>
                 <!-- Mobile menu, show/hide based on menu state. -->
                 <div x-show="open" @click.away="open = false" x-transition
-                    class="absolute top-24 left-0 w-full z-20 bg-white md:hidden">
+                    class="absolute top-24 left-0 w-full z-20 bg-white border-t-2 border-primary-500 md:hidden">
                     <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3 border-y">
                         <x-m-nav-link href="/" :active="request()->is('/')">Home</x-m-nav-link>
                         <x-m-nav-link href="/about" :active="request()->is('about')">About</x-m-nav-link>

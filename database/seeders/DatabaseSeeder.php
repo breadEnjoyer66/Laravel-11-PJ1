@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use App\Models\Article;
+use App\Models\Brand;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Article;
+use App\Models\Award;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
@@ -24,14 +26,18 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        
+
         $this->call([
             CategorySeeder::class,
             UserSeeder::class,
+            BrandSeeder::class,
+            AwardSeeder::class,
         ]);
         Article::factory(50)->recycle([
             Category::all(),
-            User::all()
+            User::all(),
+            Brand::all(),
+            Award::all(),
         ])->create();
     }
 }
