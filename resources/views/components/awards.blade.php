@@ -1,5 +1,5 @@
-<div class="bg-white py-14">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-20">
+<div class="bg-white">
+    <div class="mx-auto max-w-7xl py-8 lg:py-16 px-4 sm:px-6 lg:px-8">
         <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">Achievements and certifications</h2>
         <p class="text-gray-500 sm:text-lg dark:text-gray-400">
             Backed by strong partnerships with leading global brands, we consistently meet exceptional standards of

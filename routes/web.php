@@ -3,6 +3,7 @@
 use App\Models\User;
 use App\Models\Award;
 use App\Models\Brand;
+use App\Models\Member;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Support\Arr;
@@ -14,7 +15,7 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('about', ['title' => 'About']);
+    return view('about', ['title' => 'About Us', 'brands' => Brand::all(), 'members' => Member::all()]);
 });
 
 Route::get('/our-business', function () {

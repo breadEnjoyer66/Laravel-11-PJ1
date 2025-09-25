@@ -1,64 +1,79 @@
 <footer class="p-4 bg-gradient-to-t from-slate-200 to-slate-100 border-t sm:p-6 dark:bg-gray-800">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20">
-        <div class="md:flex md:justify-between">
-
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10">
+        <div class="md:flex md:justify-between pb-3">
             {{-- left side footer --}}
-            <div class="mb-6 md:mb-0">
+            <div class="mb-6 md:mb-0 max-w-sm">
                 <a href="/" class="flex items-center -mt-6">
                     <img src="{{ asset('img/pmt-text-logo.png') }}"
                         class="mr-3 lg:h-24 h-20 grayscale hover:grayscale-0 duration-300"
                         alt="Primajaya Multi Technology Logo" />
                 </a>
                 <p class="text-sm text-gray-500 -mt-3">Komplek Ruko Asia Mega Mas, Blok BB No 12A-15, Medan</p>
+                <p class="text-sm text-gray-500 mt-3">Primajaya Multi Technology is an information technology that
+                    provides solutions and advancement
+                    through technologies.
+                </p>
             </div>
 
             {{-- right side footer --}}
-            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+            <div class="grid grid-cols-2 gap-8 lg:gap-12 sm:gap-6 sm:grid-cols-3">
                 <div>
                     <h2 class="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white">Sales Team</h2>
                     <ul class="text-gray-500 text-sm dark:text-gray-400">
-                        <li class="mb-1">
-                            (B2B)<a href="mailto:corporate@pj-tech.com" class="ml-2 hover:text-blue-500">
+                        <li class="mb-2">
+                            <span class="font-bold">(B2B)</span><a href="mailto:corporate@pj-tech.com"
+                                class="ml-2 hover:underline text-blue-500">
                                 corporate@pj-tech.com</a>
                         </li>
-                        <li class="mb-1">
-                            (B2G)<a href="mailto:b2g@pj-tech.com" class="ml-2 hover:text-blue-500"> b2g@pj-tech.com</a>
+                        <li class="mb-2">
+                            <span class="font-bold">(B2G)</span><a href="mailto:b2g@pj-tech.com"
+                                class="ml-2 hover:underline text-blue-500">
+                                b2g@pj-tech.com</a>
                         </li>
-                        <li class="mb-1">
-                            (B2G)<a href="mailto:bisnis@pj-tech.com" class="ml-2 hover:text-blue-500">
+                        <li class="mb-2">
+                            <span class="font-bold">(B2G)</span><a href="mailto:bisnis@pj-tech.com"
+                                class="ml-2 hover:underline text-blue-500">
                                 bisnis@pj-tech.com</a>
                         </li>
-                        <li class="mb-1">
-                            (Dist)<a href="mailto:sales@pj-tech.com" class="ml-2 hover:text-blue-500">
+                        <li class="mb-2">
+                            <span class="font-bold">(Dist)</span><a href="mailto:sales@pj-tech.com"
+                                class="ml-2 hover:underline text-blue-500">
                                 sales@pj-tech.com</a>
                         </li>
-                        <li class="mb-1">
-                            (Retail)<a href="mailto:retail@pj-tech.com" class="ml-1 hover:text-blue-500">
+                        <li class="mb-2">
+                            <span class="font-bold">(Retail)</span><a href="mailto:retail@pj-tech.com"
+                                class="ml-1 hover:underline text-blue-500">
                                 retail@pj-tech.com</a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Connect With Us</h2>
+                    <h2 class="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white">Connect With Us</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
-                        <li class="mb-4">
-                            <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
+                        <span class="font-bold text-sm">Email</span>
+                        <li class="mb-4 text-sm">
+                            <a href="mailto:contactus@pj-tech.com"
+                                class="hover:underline text-primary-500">contactus@pj-tech.com</a>
                         </li>
-                        <li>
-                            <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
+
+                        <span class="font-bold text-sm">Whatsapp</span>
+                        <li class=" text-sm">
+                            <a href="#" class="hover:underline text-primary-500">0813 8000 9898
+                            </a>
+
+                        </li>
+                        <li class="mb-4 text-sm">
+                            <a href="#" class="hover:underline text-primary-500">0823 6450 6105
+                            </a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Scan Me</h2>
-                    <ul class="text-gray-600 dark:text-gray-400">
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="#" class="hover:underline">Terms &amp; Conditions</a>
-                        </li>
-                    </ul>
+                    <h2 class="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white">Scan me</h2>
+                    <div>
+                        <img src="{{ asset('img/qr-wa-plazait.png') }}" alt="QR Code Whatsapp"
+                            class="h-32 w-32 object-cover" />
+                    </div>
                 </div>
             </div>
 

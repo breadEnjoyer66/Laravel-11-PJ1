@@ -8,6 +8,7 @@ use App\Models\Brand;
 use App\Models\Article;
 use App\Models\Award;
 use App\Models\Category;
+use App\Models\Member;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -32,12 +33,14 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             BrandSeeder::class,
             AwardSeeder::class,
+            MemberSeeder::class,
         ]);
         Article::factory(50)->recycle([
             Category::all(),
             User::all(),
             Brand::all(),
             Award::all(),
+            Member::all(),
         ])->create();
     }
 }

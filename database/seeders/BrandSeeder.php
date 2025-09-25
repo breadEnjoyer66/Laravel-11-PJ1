@@ -29,6 +29,12 @@ class BrandSeeder extends Seeder
             'alt' => 'asus Brand',
             'file_name' => 'asus-brand.png',
         ]);
+
+        Brand::create([
+            'alt' => 'acer Brand',
+            'file_name' => 'acer-brand.png',
+        ]);
+
         Brand::create([
             'alt' => 'Brother Brand',
             'file_name' => 'brother-brand.png',
