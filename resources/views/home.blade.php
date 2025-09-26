@@ -47,7 +47,9 @@
                 class="h-[88%] align-middle px-5 ml-5">
         </div>
         <div class="px-4 items-center">
-            <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">About us</h2>
+            <h2
+                class="bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-5xl font-extrabold">
+                About us</h2>
             <p class="text-gray-600 dark:text-gray-300 text-base mb-2 leading-loose text-justify">
                 <span class="font-semibold text-orange-500 dark:text-orange-300">PT Primajaya Multi
                     Technology</span>
@@ -77,7 +79,9 @@
 
     <div class="bg-gradient-to-t from-gray-50 to-white">
         <div class="mx-auto max-w-7xl py-8 lg:py-16 px-4 sm:px-6 lg:px-8">
-            <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">Our Brand Partner</h2>
+            <h2
+                class="bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-5xl font-extrabold">
+                Our Brand Partner</h2>
             <p class="text-gray-500 sm:text-lg dark:text-gray-400">With over 18 years of experience, PT. Primajaya
                 Multi Technology has proven its expertise in delivering IT business solutions by partnering with top and
                 leading companies.
