@@ -72,7 +72,7 @@
     </div>
 
     {{-- team --}}
-    <div class=" bg-gradient-to-t from-gray-50 to-white pb-5">
+    <div class=" bg-gradient-to-t from-gray-50 to-white pb-16">
         <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl mb-10">
             <h2
                 class="text-center bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-5xl font-extrabold dark:text-white">
@@ -115,12 +115,12 @@
 
 
         <div
-            class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl grid gap-4 sm:gap-6 md:gap-5 mb-6 lg:mb-16 lg:grid-cols-3 md:grid-cols-2 md:text-left lg:text-left text-center justify-center md:justify-start lg:justify-start overflow-x-hidden">
+            class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl grid gap-4 sm:gap-6 md:gap-5 lg:grid-cols-3 md:grid-cols-2 md:text-left lg:text-left text-center justify-center md:justify-start lg:justify-start overflow-x-hidden">
 
             {{-- card foreach --}}
             @foreach ($members as $member)
                 <div
-                    class="hover:border-slate-300 transition-all duration-100 border border-slate-200 mt-10 items-center p-4 sm:p-5 gap-4 bg-white rounded-xl sm:flex dark:bg-gray-800 dark:border-gray-700 w-full overflow-x-hidden">
+                    class="transition-all duration-100 border border-slate-200 mt-10 items-center p-4 sm:p-5 gap-4 bg-white hover:bg-slate-50 rounded-xl sm:flex dark:bg-gray-800 dark:border-gray-700 w-full overflow-x-hidden">
 
                     {{-- foto --}}
                     <div class="w-full md:w-1/3 flex justify-center items-center mb-2 md:mb-0">
@@ -148,6 +148,94 @@
         </div>
     </div>
 
+    <div class="bg-slate-50 border">
+        <div class="mx-auto max-w-7xl py-8 lg:pt-16 px-4 sm:px-6 lg:px-8">
+            <h2 class="text-center text-primary-700 mb-4 text-4xl lg:text-5xl font-extrabold dark:text-white">
+                History Overview</h2>
+            <p class="text-center text-gray-500 sm:text-lg dark:text-gray-400">Our history is a testament to our
+                commitment to
+                excellence and innovation in the IT industry. Since our inception in 2006, we have consistently evolved
+                to
+                meet the changing needs of our clients and the market.</p>
+
+            <div class="grid px-5 gap-8 py-10 lg:grid-cols-4 md:grid-cols-2 relative">
+                <div class="items-center flex relative text-white p-4 pl-16 rounded-2xl bg-primary-600">
+                    <div
+                        class="border-4 border-white absolute -top-4 -left-4 flex-shrink-0 flex justify-center items-center w-12 h-12 rounded-full bg-primary-600">
+                        <svg class="w-7 h-7 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3M3.22302 14C4.13247 18.008 7.71683 21 12 21c4.9706 0 9-4.0294 9-9 0-4.97056-4.0294-9-9-9-3.72916 0-6.92858 2.26806-8.29409 5.5M7 9H3V5" />
+                        </svg>
+                    </div>
+                    <div class="-ml-5">
+                        <h3 class="text-3xl font-extrabold mb-2 ">2007</h3>
+                        <p class="italic dark:text-gray-300">Started business with HP Indonesia,
+                            Expanded sales area especially to Medan & Banda Aceh
+                        </p>
+                    </div>
+                </div>
+
+                <div class="items-center flex relative text-white p-4 pl-16 rounded-2xl bg-primary-600">
+                    <div
+                        class="border-4 border-white absolute -top-4 -left-4 flex-shrink-0 flex justify-center items-center w-12 h-12 rounded-full bg-primary-600">
+                        <svg class="w-7 h-7 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 8v4l3 3M3.22302 14C4.13247 18.008 7.71683 21 12 21c4.9706 0 9-4.0294 9-9 0-4.97056-4.0294-9-9-9-3.72916 0-6.92858 2.26806-8.29409 5.5M7 9H3V5" />
+                        </svg>
+                    </div>
+                    <div class="-ml-5">
+                        <h3 class="text-3xl font-extrabold mb-2 ">2009</h3>
+                        <p class="italic dark:text-gray-300">Opened HP Authorized Store at Sun Plaza Medan
+                        </p>
+                    </div>
+                </div>
+
+                <div class="items-center flex relative text-white p-4 pl-16 rounded-2xl bg-primary-600">
+                    <div
+                        class="border-4 border-white absolute -top-4 -left-4 flex-shrink-0 flex justify-center items-center w-12 h-12 rounded-full bg-primary-600">
+                        <svg class="w-7 h-7 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 8v4l3 3M3.22302 14C4.13247 18.008 7.71683 21 12 21c4.9706 0 9-4.0294 9-9 0-4.97056-4.0294-9-9-9-3.72916 0-6.92858 2.26806-8.29409 5.5M7 9H3V5" />
+                        </svg>
+                    </div>
+                    <div class="-ml-5">
+                        <h3 class="text-3xl font-extrabold mb-2 ">2012</h3>
+                        <p class="italic dark:text-gray-300">Became Sony Authorized Partner in Medan,
+                            Expanded sales area & support service in Medan & Aceh
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="items-center flex relative text-white p-4 pl-16 rounded-2xl bg-primary-600">
+                    <div
+                        class="border-4 border-white absolute -top-4 -left-4 flex-shrink-0 flex justify-center items-center w-12 h-12 rounded-full bg-primary-600">
+                        <svg class="w-7 h-7 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 8v4l3 3M3.22302 14C4.13247 18.008 7.71683 21 12 21c4.9706 0 9-4.0294 9-9 0-4.97056-4.0294-9-9-9-3.72916 0-6.92858 2.26806-8.29409 5.5M7 9H3V5" />
+                        </svg>
+                    </div>
+                    <div class="-ml-5">
+                        <h3 class="text-3xl font-extrabold mb-2 ">2015</h3>
+                        <p class="italic dark:text-gray-300">Became Lenovo and Brother Authorized Partner,
+                            Appointed as HP and Brother Authorized Service Centre in Medan & Aceh
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
 
     <div class="bg-gradient-to-b from-gray-50 to-white pb-20">
         <div class="text-center mx-auto max-w-7xl py-8 lg:pt-16 px-4 sm:px-6 lg:px-8">
@@ -155,7 +243,8 @@
                 class="bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-5xl font-extrabold dark:text-white">
                 Authorized Dealer For Top Brands</h2>
             <p class="text-gray-500 sm:text-lg dark:text-gray-400">With over 18 years of experience, PT. Primajaya
-                Multi Technology has proven its expertise in delivering IT business solutions by partnering with top and
+                Multi Technology has proven its expertise in delivering IT business solutions by partnering with top
+                and
                 leading companies.
             </p>
             <x-brands :brands="$brands"></x-brands>
