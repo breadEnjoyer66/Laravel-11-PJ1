@@ -19,7 +19,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/our-business', function () {
-    return view('our-business', ['title' => 'Our Business']);
+    return view('our-business', ['title' => 'Our Business Network']);
 });
 
 Route::get('/service-center', function () {
