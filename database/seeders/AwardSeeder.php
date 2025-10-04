@@ -14,6 +14,56 @@ class AwardSeeder extends Seeder
     public function run(): void
     {
         Award::create([
+            'alt' => 'piagam gold partner',
+            'file_name' => 'piagam-gold-partner.jpg',
+        ]);
+
+        Award::create([
+            'alt' => 'blibli 2022',
+            'file_name' => 'blibli-2022.jpg',
+        ]);
+
+        Award::create([
+            'alt' => 'hp partner 2021',
+            'file_name' => 'hp-partner-2021.jpg',
+        ]);
+
+        Award::create([
+            'alt' => 'brother authorized 2022',
+            'file_name' => 'brother-authorized-2022.jpg',
+        ]);
+
+        Award::create([
+            'alt' => 'adakom best growth',
+            'file_name' => 'adakom-best-growth.jpg',
+        ]);
+
+        Award::create([
+            'alt' => 'asus golden 2021',
+            'file_name' => 'asus-golden-2021.jpg',
+        ]);
+
+        Award::create([
+            'alt' => 'samsung great',
+            'file_name' => 'samsung-great.jpg',
+        ]);
+
+        Award::create([
+            'alt' => 'brother authorized',
+            'file_name' => 'brother-authorized.jpg',
+        ]);
+
+        Award::create([
+            'alt' => 'expanding tech data',
+            'file_name' => 'expanding-tech-data.jpg',
+        ]);
+
+        Award::create([
+            'alt' => 'space ranger techdata',
+            'file_name' => 'space-ranger-techdata.jpg',
+        ]);
+
+        Award::create([
             'alt' => 'asus 2023 apac',
             'file_name' => 'asus-2023-apac.jpg',
         ]);

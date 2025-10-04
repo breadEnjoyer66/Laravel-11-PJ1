@@ -10,7 +10,7 @@
         </p>
 
         <div class="py-4 my-4 mx-auto max-w-7xl lg:py-4">
-            <div class="grid gap-5 md:gap-10 lg:grid-cols-5 md:grid-cols-4 grid-cols-2">
+            <div class="grid gap-4 lg:grid-cols-6 md:grid-cols-4 grid-cols-2">
                 @foreach ($awards as $award)
                     <button type="button" class="group rounded-xl overflow-hidden text-left"
                         data-full="{{ asset('img/awards/' . $award->file_name) }}">

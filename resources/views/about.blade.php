@@ -19,25 +19,40 @@
             </p>
         </div>
 
-        <div class="mt-10 justify-center items-center lg:flex">
-            <div class="text-center px-4 sm:px-6 lg:px-8 items-center justify-center lg:pr-5 lg:w-1/2 py-10 sm:py-16 lg:py-20 w-full max-w-full overflow-x-hidden"
-                style="background-image: url({{ asset('img/corporate-team.jpg') }}); background-size:cover; background-position:center; background-repeat:no-repeat;">
-                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3">Vision</h3>
-                <p class="text-white text-base italic">
-                    To be a technology-driven company that simplifies and empowers business and life through innovative,
-                    end-to-end solutions.
-                </p>
+
+
+        <div class="mt-10 lg:flex">
+            <!-- Vision -->
+            <div class="text-center px-4 sm:px-6 lg:px-8 flex items-center justify-center 
+                lg:w-1/2 w-full py-20 
+                bg-cover bg-center bg-no-repeat"
+                style="background-image: url('{{ asset('img/corporate-team.jpg') }}');">
+
+                <div class="p-6 bg-black bg-opacity-40 rounded-2xl">
+                    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3">Vision</h3>
+                    <p class="text-white opacity-90 text-lg italic max-w-lg mx-auto">
+                        "To be a technology-driven company that simplifies and empowers business and life through
+                        innovative, end-to-end solutions."
+                    </p>
+                </div>
             </div>
 
-            <div class="text-center px-4 sm:px-6 lg:px-8 items-center justify-center lg:pr-5 lg:w-1/2 py-10 sm:py-16 lg:py-20 w-full max-w-full overflow-x-hidden"
-                style="background-image: url({{ asset('img/b2g-team.jpg') }}); background-size:cover; background-position:center; background-repeat:no-repeat;">
-                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3">Mission</h3>
-                <p class="text-white text-base italic">
-                    To deliver efficient, integrated and smart solutions that enhance productivity and growth for our
-                    partners and customers.
-                </p>
+            <!-- Mission -->
+            <div class="text-center px-4 sm:px-6 lg:px-8 flex items-center justify-center 
+                lg:w-1/2 w-full py-20 
+                bg-cover bg-center bg-no-repeat"
+                style="background-image: url('{{ asset('img/b2g-team.jpg') }}');">
+
+                <div class="p-6 bg-black bg-opacity-40 rounded-2xl">
+                    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3">Mission</h3>
+                    <p class="text-white opacity-90 text-lg italic max-w-lg mx-auto">
+                        "To deliver efficient, integrated and smart solutions that enhance productivity and growth for
+                        our partners and customers."
+                    </p>
+                </div>
             </div>
         </div>
+
 
     </div>
 
@@ -172,7 +187,8 @@
                     <div class="-ml-5">
                         <h3 class="text-3xl font-extrabold mb-2 text-gray-700">2007</h3>
                         <p class="italic text-gray-500 text-sm mb-2">Started business with HP Indonesia,
-                        <p class="italic text-sm text-gray-500">Expanded sales area especially to Medan & Banda Aceh</p>
+                        <p class="italic text-sm text-gray-500">Expanded sales area especially to Medan & Banda Aceh
+                        </p>
                         </p>
                     </div>
                 </div>
@@ -400,6 +416,8 @@
         </div>
 
 
+
+
         <div class="bg-gradient-to-b from-gray-50 to-white pb-32">
             <div class="text-center mx-auto max-w-7xl py-8 lg:pt-16 px-4 sm:px-6 lg:px-8">
                 <h2
@@ -446,8 +464,8 @@
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/IT-Tolan-Tiga.jpeg') }}" alt="">
                             <div class="text-left ml-4">
-                                <p class="font-semibold">Wakil Ketua II</p>
-                                <p class="text-sm text-gray-500">STMIK & STIE Mikroskil</p>
+                                <p class="font-semibold">Network Administrator</p>
+                                <p class="text-sm text-gray-500">PT. Tolan Tiga Indonesia</p>
                             </div>
                         </div>
 
@@ -463,8 +481,8 @@
                                 src="{{ asset('img/testimonial/PP-Dinas-Perpustakaan-e1608194414314.jpeg') }}"
                                 alt="">
                             <div class="text-left ml-4">
-                                <p class="font-semibold">Network Administrator</p>
-                                <p class="text-sm text-gray-500">PT. Tolan Tiga Indonesia</p>
+                                <p class="font-semibold">Pejabat Pengadaan</p>
+                                <p class="text-sm text-gray-500">Dinas Perpustakaan dan Arsip Provsu</p>
                             </div>
                         </div>
                         <p class="mt-4 text-gray-700 italic text-left">"Barang sesuai spesifikasi, service memuaskan,
@@ -514,9 +532,12 @@
                                 <p class="text-sm text-gray-500">Hotel Four Points by Sheraton</p>
                             </div>
                         </div>
+
                         <p class="mt-4 text-gray-700 italic text-left">"Sudah lama berlangganan dengan PJ Tech,
                             pelayanan dan
                             harga terbaik. Top👍"</p>
+
+
                     </div>
 
                     <div class="shadow-md rounded-2xl p-6 bg-white">
@@ -656,8 +677,8 @@
                                 src="{{ asset('img/testimonial/WhatsApp-Image-2022-03-28-at-15.10.33.jpg') }}"
                                 alt="">
                             <div class="text-left ml-4">
-                                <p class="font-semibold">Wakil Ketua II</p>
-                                <p class="text-sm text-gray-500">STMIK & STIE Mikroskil</p>
+                                <p class="font-semibold">Customer</p>
+                                <p class="text-sm text-gray-500">Showroom PJ</p>
                             </div>
                         </div>
                         <p class="mt-4 text-gray-700 italic text-left">"PJ-Tech has consistently provided excellent IT

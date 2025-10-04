@@ -20,8 +20,7 @@
             <div class="grid gap-8 md:grid-cols-2 items-center">
                 <!-- Image -->
                 <div>
-                    <img id="panelImg" src="" alt=""
-                        class="w-10/12 aspect-[4/3] object-cover rounded-2xl shadow" />
+                    <img id="panelImg" src="" alt="" class="w-4/5 object-contain rounded-2xl shadow" />
                 </div>
                 <!-- Copy -->
                 <div class="lg:-ml-16 lg:pr-10">
@@ -40,36 +39,36 @@
                 key: 'b2b',
                 label: 'B2B',
                 title: 'Business to Business (B2B)',
-                body: 'We specialize in B2B solutions, providing products and services exclusively to corporate and government clients. Our commitment is to support your organization’s technology and information needs with reliable, high-quality offerings. We prioritize building strong, long-term partnerships grounded in business ethics and trust. Unlike consumer-focused providers, our expertise lies in meeting the complex demands of enterprises and institutions.',
-                img: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' // placeholder
+                body: 'We provide a wide range of technology products and services to support the needs of private enterprises. By upholding business ethics, we maintain long-term, mutually beneficial relationships. We also help companies improve efficiency, reduce operational costs, and accelerate digital transformation.',
+                img: 'img/corporate-team.jpg' // placeholder
             },
             {
                 key: 'b2g',
                 label: 'B2G',
                 title: 'Business to Government (B2G)',
-                body: 'We participate in B2G (business-to-government), a specialized variation of B2B. This concept enables businesses and government institutions to use centralized online platforms to exchange information and conduct transactions more efficiently than traditional manual processes. We are registered on the LKPP-managed platform, which serves as a marketplace for government agencies and state-owned enterprises to carry out their procurement and transactions.',
-                img: 'https://images.unsplash.com/photo-1541726260-e6b6a6a08b27?q=80&w=1159&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                body: 'As a Government partner, we are registered in the INAPROC Electronic Catalog system. We are ready to serve the needs of Government Institutions and State-Owned Enterprises (SOEs) through efficient and transparent digital solutions. Our focus is to support government programs in developing technology infrastructure and strengthening digital governance.',
+                img: 'img/b2g-team.jpg'
             },
             {
                 key: 'distribution',
                 label: 'Distribution',
                 title: 'Distribution',
-                body: 'We also engage in distribution activities, delivering products from manufacturers to consumers to ensure wide product availability. Our distribution focuses on technology and information-related goods, and we guarantee secure delivery to distributors or end customers. In other words, we act as the vital link between production and consumption.',
-                img: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                body: 'We operate an integrated distribution system that reaches various regions. Our products are delivered to dealers and end customers with fast shipping and reliable service. Through a modern logistics system, we ensure the supply chain remains efficient and dependable.',
+                img: 'img/gudang.jpg'
             },
             {
                 key: 'retail',
                 label: 'Retail',
                 title: 'Retail',
-                body: 'Curated consumer tech, ranging from laptops and smartphones to printers, accessories, and more. Backed by warranty and dedicated after-sales support. With three retail stores strategically located in Medan and Banda Aceh, we are closer to our customers and ready to serve with convenience and trust. We provide a wide range of IT products, ensuring that every end-user need is met, from everyday devices to complete technology solutions. Our goal is to deliver not only quality products but also peace of mind, making technology simple, reliable, and accessible for everyone.',
-                img: 'https://images.unsplash.com/photo-1649030616983-845d870570d7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                body: 'We operate several IT Plaza Stores in Medan and Banda Aceh to provide easy access for customers. Our retail stores are designed as one-stop solutions where customers can find the latest products along with trusted after-sales services.',
+                img: 'img/retail.jpg'
             },
             {
                 key: 'online',
                 label: 'Online Store',
                 title: 'Online Store',
-                body: 'We also offer purchasing through online platforms and have been active for over 5 years on several leading marketplaces in Indonesia. All our products sold on these marketplaces come with official warranties. We ensure timely delivery and use quality packaging to prevent damage during shipping.',
-                img: 'https://images.unsplash.com/photo-1674027392851-7b34f21b07ee?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                body: 'We have been active for more than six years across leading marketplace platforms in Indonesia, such as Tokopedia, Shopee, Bli-bli and many more! Offering officially licensed products with on-time delivery. Supported by a robust e-commerce system, customers can shop easily, safely, and conveniently from anywhere.',
+                img: 'img/online-store.jpg'
             },
         ];
 

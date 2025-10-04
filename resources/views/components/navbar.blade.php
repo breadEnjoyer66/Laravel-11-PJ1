@@ -40,7 +40,7 @@
                     <x-nav-link href="/service-center" :active="request()->is('service-center')">Service Center</x-nav-link>
                     <x-nav-link href="/warranty" :active="request()->is('warranty')">Warranty</x-nav-link>
                     <x-nav-link href="/news" :active="request()->is('news')">News</x-nav-link>
-                    <x-nav-link href="/career" :active="request()->is('career')">Career</x-nav-link>
+                    {{-- <x-nav-link href="/career" :active="request()->is('career')">Career</x-nav-link> --}}
                     {{-- <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link> --}}
                     <a href="/contact"
                         class="flex gap-2 hover:mb-2 transition-all duration-250 bg-gradient-to-b from-yellow-500 to bg-orange-600 hover:bg-gradient-to-r rounded-xl py-4 px-5 font-semibold text-sm text-white">
@@ -81,7 +81,7 @@
                         <x-m-nav-link href="/warranty" :active="request()->is('warranty')">Warranty</x-m-nav-link>
                         <x-m-nav-link href="/news" :active="request()->is('news')">News</x-m-nav-link>
                         <x-m-nav-link href="/contact" :active="request()->is('contact')">Contact</x-m-nav-link>
-                        <x-m-nav-link href="/career" :active="request()->is('career')">Career</x-m-nav-link>
+                        {{-- <x-m-nav-link href="/career" :active="request()->is('career')">Career</x-m-nav-link> --}}
                     </div>
                     {{-- <div class="border-t border-white/10 pt-4 pb-3">
                         <div class="flex items-center px-5">
