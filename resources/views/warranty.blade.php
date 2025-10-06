@@ -12,28 +12,17 @@
                     including HP, ASUS, and Lenovo laptops. We ensure peace of mind for every customer,
                     protecting you from factory defects and assisting you through every warranty claim process.
                 </p>
+                <p class="text-gray-600 leading-relaxed text-justify mt-4">
+                    For
+                    products listed with a specific warranty period (e.g., 1 year) but officially covered longer
+                    by the manufacturer (e.g., 3 years), PT Primajaya Multi Technology assists in processing claims
+                    according to the brand’s stated coverage. This ensures full benefit from the extended warranty.
+                </p>
             </div>
             <div class="relative">
                 <img src="{{ asset('img/warranty-1.jpg') }}" alt="Warranty Illustration"
                     class="rounded-2xl shadow-lg w-full h-80 object-cover">
                 <div class="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
-        </div>
-
-        <!-- WARRANTY DURATION -->
-        <div class="grid md:grid-cols-2 gap-10 items-center">
-            <div class="order-2 md:order-1 relative">
-                <img src="{{ asset('img/duration-warranty.png') }}" alt="Warranty Duration"
-                    class=" w-full h-64 object-contain">
-                {{-- <div class="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/20 to-transparent"></div> --}}
-            </div>
-            <div class="order-1 md:order-2">
-                <h2 class="{{ $title_1 }}">Warranty Duration</h2>
-                <p class="text-gray-600 leading-relaxed text-justify">
-                    For products listed with a specific warranty period (e.g., 1 year) but officially covered longer
-                    by the manufacturer (e.g., 3 years), PT Primajaya Multi Technology assists in processing claims
-                    according to the brand’s stated coverage. This ensures full benefit from the extended warranty.
-                </p>
             </div>
         </div>
 
