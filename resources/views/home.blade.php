@@ -41,29 +41,28 @@
 
     <!-- About Our Company Briefly -->
     <div
-        class="mx-auto py-12 px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-col justify-center gap-10 items-center lg:grid lg:grid-cols-2">
+        class="mx-auto max-w-7xl px-6 lg:px-8 py-12 sm:px-6 flex flex-col justify-center gap-10 items-center lg:grid lg:grid-cols-2">
         <div class="flex items-center lg:pr-5">
             <img src="{{ asset('img/intan-felicia-about-blue.png') }}" alt="About Us"
                 class="h-[88%] align-middle px-5 ml-5">
         </div>
         <div class="px-4 items-center">
             <h2
-                class="bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-5xl font-extrabold">
+                class="pb-2 bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-[2.7rem] font-extrabold">
                 About us</h2>
-            <p class="text-gray-600 dark:text-gray-300 text-base mb-2 leading-loose text-justify">
+            <p class="text-gray-600 dark:text-gray-300 text-base mb-6 leading-loose text-justify">
                 <span class="font-semibold text-orange-500 dark:text-orange-300">PT Primajaya Multi
                     Technology</span>
                 was established in 2006 in Medan, with a strong focus on delivering information and communication
-                technology solutions.
-            </p>
-            <p class="mb-7 text-gray-600 dark:text-gray-300 text-base leading-loose text-justify">
-                With more than 19 years of experience, we provide a wide range of technology products and services
+                technology solutions. With more than 19 years of experience, we provide a wide range of technology
+                products and services
                 across multiple sectors—Business-to-Business (B2B), Government (B2G), and distribution to various
                 regions.
 
                 Backed by a dedicated and professional team, we are committed to being a trusted partner in supporting
                 digital transformation in the modern era.
             </p>
+
             <a href="/about"
                 class="py-2.5 px-5 text-base font-medium text-center text-white rounded-full bg-gradient-to-r from-orange-400 to-orange-600 hover:bg-gradient-to-b">Learn
                 more &raquo;</a>
@@ -78,7 +77,7 @@
 
 
     <div class="bg-gradient-to-t from-gray-50 to-white">
-        <div class="mx-auto max-w-7xl py-8 lg:py-16 px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 py-8 lg:py-16 sm:px-6 ">
             <h2
                 class="bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-5xl font-extrabold">
                 Our Brand Partner</h2>

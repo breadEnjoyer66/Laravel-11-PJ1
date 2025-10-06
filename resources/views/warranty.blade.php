@@ -1,12 +1,13 @@
+<?php $title_1 = 'pb-2 bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-[2.7rem] font-extrabold'; ?>
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
 
-    <section class="max-w-6xl mx-auto px-6 py-16 space-y-20">
+    <section class="max-w-7xl mx-auto px-6 py-16 space-y-20">
         <!-- INTRO -->
         <div class="grid md:grid-cols-2 gap-10 items-center">
             <div>
-                <h1 class="text-4xl font-bold text-gray-800 mb-4">Warranty Information</h1>
-                <p class="text-gray-600 leading-relaxed">
+                <h1 class="{{ $title_1 }}">Warranty Information</h1>
+                <p class="text-gray-600 leading-relaxed text-justify">
                     PT. Primajaya Multi Technology provides official manufacturer warranties for all products,
                     including HP, ASUS, and Lenovo laptops. We ensure peace of mind for every customer,
                     protecting you from factory defects and assisting you through every warranty claim process.
@@ -27,8 +28,8 @@
                 {{-- <div class="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/20 to-transparent"></div> --}}
             </div>
             <div class="order-1 md:order-2">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-3">Warranty Duration</h2>
-                <p class="text-gray-600 leading-relaxed">
+                <h2 class="{{ $title_1 }}">Warranty Duration</h2>
+                <p class="text-gray-600 leading-relaxed text-justify">
                     For products listed with a specific warranty period (e.g., 1 year) but officially covered longer
                     by the manufacturer (e.g., 3 years), PT Primajaya Multi Technology assists in processing claims
                     according to the brand’s stated coverage. This ensures full benefit from the extended warranty.
@@ -112,16 +113,16 @@
 
         <!-- WARRANTY POLICY -->
         <div class="bg-gray-50 rounded-3xl p-10 shadow-inner">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Warranty Policy</h2>
-            <div class="max-w-3xl mx-auto text-gray-600 leading-relaxed space-y-4">
-                <ul class="list-disc ml-6 space-y-2">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Warranty Policy</h2>
+            <div class="mx-auto text-gray-600 leading-relaxed space-y-4">
+                <ul class="list-disc list-inside space-y-2">
                     <li>Original invoice, warranty card, and Primajaya Total Care form required for claims.</li>
                     <li>14-day replacement available if all items are in perfect physical condition.</li>
                     <li>1–5 dead pixels considered normal per international standards.</li>
                     <li>Warranty void if seals are broken, items misused, or physically damaged.</li>
                     <li>Software and accessories not covered by warranty.</li>
                 </ul>
-                <p class="text-center mt-6">
+                <p class="mt-6">
                     For more information, please
                     <a href="/contact" class="text-blue-600 hover:underline font-medium">contact us directly</a>.
                 </p>

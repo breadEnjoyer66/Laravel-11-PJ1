@@ -1,15 +1,16 @@
+<?php $title_1 = 'pb-2 bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-[2.7rem] font-extrabold'; ?>
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
 
     <section class="bg-gradient-to-b from-gray-50 to-white" x-data="{ open: null }">
 
         {{-- Page header --}}
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14">
-            <div class="text-center max-w-3xl mx-auto">
-                <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight" style="color:#0F2748">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 sm:px-6 pt-14">
+            <div class="">
+                <h1 class="{{ $title_1 }}">
                     Our Business Network
                 </h1>
-                <p class="mt-4 text-gray-600">
+                <p class="mt-4 text-gray-600 text-justify">
                     PT Primajaya Multi Technology has built a comprehensive business network, ranging from private
                     enterprises, government institutions, and distribution channels, to retail and online marketplaces.
                 </p>
@@ -17,7 +18,7 @@
         </div>
 
         {{-- Content Accordions --}}
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-16 space-y-6">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 sm:px-6 mt-8 space-y-6">
 
             {{-- Template item --}}
             @php
@@ -114,24 +115,28 @@
 
         {{-- CTA --}}
         <div class="mt-16" style="background-color:#0F2748">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 text-white text-center">
-                <h3 class="text-2xl font-semibold">Partner with Us</h3>
-                <p class="mt-2 text-white/80">Discover how our network can empower your business, government, or
-                    distribution needs.</p>
-                <a href="{{ url('/contact') }}"
-                    class="inline-flex items-center rounded-lg bg-orange-500 hover:bg-orange-600 mt-6 px-6 py-3 font-semibold shadow">
-                    Get in Touch
-                </a>
+            <div
+                class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 text-white text-center md:text-start lg:flex justify-between items-center">
+                <div class="">
+                    <h3 class="text-2xl font-semibold">Partner with Us</h3>
+                    <p class="mt-2 text-white/80">Discover how our network can empower your business, government, or
+                        distribution needs.</p>
+                </div>
+                <div class="mt-6 lg:mt-0">
+                    <a href="{{ url('/contact') }}"
+                        class="items-center rounded-lg bg-orange-500 hover:bg-orange-600 px-6 py-3 font-semibold shadow">
+                        Get in Touch
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="relative bg-gradient-to-b from-white to-gray-50 py-16 overflow-hidden">
-        <div class="text-center mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" x-show="visible"
-            x-transition.opacity.duration.1000ms>
+        <div class="mx-auto max-w-7xl px-6 lg:px-8" x-show="visible" x-transition.opacity.duration.1000ms>
             <!-- Header -->
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">Plaza Visual</h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
+            <h2 class="{{ $title_1 }}">Plaza Visual</h2>
+            <p class="text-lg text-gray-600 mx-auto mb-12">
                 <span class="font-semibold text-gray-800">Plaza Visual</span> is our dedicated division focusing on
                 <span class="font-semibold">Digital Signage Solutions</span>,
                 including Hospitality TV, Videowall, Videotron, Interactive Displays, and more.
@@ -145,12 +150,12 @@
                 <!-- Videowall -->
                 <div
                     class="group relative bg-white shadow-sm rounded-2xl border border-gray-100 hover:shadow-md transition">
-                    <div class="flex items-center justify-center mb-4 p-2">
+                    <div class="flex items-center justify-center p-2">
                         <img src="{{ asset('img/videowall.jpg') }}" alt="Video Wall" class="rounded-xl">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Video Wall</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-2">Video Wall</h3>
+                        <p class="text-gray-600 leading-relaxed text-justify">
                             A combination of multiple large display panels with high brightness and durability,
                             ideal for meeting rooms, public areas, or information displays that require crisp and
                             impactful
@@ -162,12 +167,12 @@
                 <!-- Videotron -->
                 <div
                     class="group relative bg-white shadow-sm rounded-2xl border border-gray-100 hover:shadow-md transition">
-                    <div class="flex items-center justify-center mb-4 p-2">
+                    <div class="flex items-center justify-center p-2">
                         <img src="{{ asset('img/videotron.jpg') }}" alt="Videotron" class="rounded-xl">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-gray-900 mb-2">Videotron</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">
+                        <p class="text-gray-600 leading-relaxed text-justify">
                             Customizable large LED displays with modern LED technology — perfect for advertising,
                             events, or
                             indoor/outdoor installations.
@@ -180,12 +185,12 @@
                 <!-- TV Signage -->
                 <div
                     class="group relative bg-white shadow-sm rounded-2xl border border-gray-100 hover:shadow-md transition">
-                    <div class="flex items-center justify-center mb-4 p-2">
+                    <div class="flex items-center justify-center p-2">
                         <img src="{{ asset('img/tv-signage.jpg') }}" alt="TV Signage" class="rounded-xl">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-gray-900 mb-2">TV Signage & Hospitality TV</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">
+                        <p class="text-gray-600 leading-relaxed text-justify">
                             High-durability TVs with centralized content management systems — ideal for hotels,
                             hospitals,
                             cafés,
@@ -201,13 +206,14 @@
 
 
     <section class="bg-white">
-        <div class="text-center mx-auto max-w-7xl py-12 lg:pt-20 px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-7xl py-12 lg:pt-20 px-6 lg:px-8">
 
             {{-- Section Title --}}
 
+            <h2 class="{{ $title_1 }}">
+                Sales & Distribution
+            </h2>
             <p class="text-lg text-gray-600 text-left">
-                <span class="font-semibold"> What We Can Do</span> – Sales & Distribution<br>
-
                 We provide a wide range of IT products to support Distribution, Retail, Private Enterprises, and
                 Government Institutions. As an official Sub Distributor / Master Dealer, we work with leading global
                 brands, including:

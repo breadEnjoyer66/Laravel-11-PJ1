@@ -16,7 +16,7 @@ class MemberSeeder extends Seeder
         Member::create([
             'name' => 'Mei Mei',
             'position' => 'Director',
-            'image' => 'mei_director.jpg',
+            'image' => 'mei-mei-director.jpg',
             'motto' => 'The struggle you feel today wiill be the strength you need tomorrow.',
             'motto_by' => 'Mei Mei',
         ]);

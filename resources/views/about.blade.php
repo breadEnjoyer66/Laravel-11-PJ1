@@ -1,12 +1,12 @@
+<?php $title_1 = 'pb-2 bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-[2.7rem] font-extrabold'; ?>
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
 
-    <div class="mx-auto py-12 px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div class="px-4 items-center">
-            <h2
-                class="bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-5xl font-extrabold dark:text-white">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 py-12 sm:px-6 ">
+        <div class="items-center">
+            <h2 class="{{ $title_1 }}">
                 Overview</h2>
-            <p class="text-gray-600 dark:text-gray-300 text-base mb-2 leading-loose text-justify">
+            <p class="text-gray-600 dark:text-gray-300 text-base mb-2 leading-relaxed text-justify">
                 Established in 2006 in Medan, with a strong focus on delivering information and communication
                 technology solutions. we provide a wide range of technology
                 products and services
@@ -20,39 +20,46 @@
         </div>
 
 
+        <div class="lg:flex mt-8 gap-2">
+            <div class="lg:w-1/2 relative">
+                <div class="absolute z-10 px-5 py-2 bg-slate-900 text-white rounded-2xl shadow-lg top-5 left-5">
+                    <p>Corporate Team</p>
+                </div>
+                <img src="{{ asset('img/corporate-team.jpg') }}" alt="" class="rounded-2xl">
 
-        <div class="mt-10 lg:flex">
-            <!-- Vision -->
-            <div class="text-center px-4 sm:px-6 lg:px-8 flex items-center justify-center 
-                lg:w-1/2 w-full py-20 
-                bg-cover bg-center bg-no-repeat"
-                style="background-image: url('{{ asset('img/corporate-team.jpg') }}');">
-
-                <div class="p-6 bg-black bg-opacity-40 rounded-2xl">
-                    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3">Vision</h3>
-                    <p class="text-white opacity-90 text-lg italic max-w-lg mx-auto">
+            </div>
+            <div class="lg:w-1/2 flex items-center">
+                <div class="text-end mt-10 lg:mt-0">
+                    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3">Vision</h3>
+                    <p class="text-slate-900 opacity-90 text-lg italic ">
                         "To be a technology-driven company that simplifies and empowers business and life through
                         innovative, end-to-end solutions."
                     </p>
                 </div>
             </div>
+        </div>
 
-            <!-- Mission -->
-            <div class="text-center px-4 sm:px-6 lg:px-8 flex items-center justify-center 
-                lg:w-1/2 w-full py-20 
-                bg-cover bg-center bg-no-repeat"
-                style="background-image: url('{{ asset('img/b2g-team.jpg') }}');">
+        <div class="lg:flex mt-8 gap-2 lg:flex-row-reverse">
 
-                <div class="p-6 bg-black bg-opacity-40 rounded-2xl">
-                    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3">Mission</h3>
-                    <p class="text-white opacity-90 text-lg italic max-w-lg mx-auto">
-                        "To deliver efficient, integrated and smart solutions that enhance productivity and growth for
+            <div class="lg:w-1/2 relative">
+                <div class="absolute z-10 px-5 py-2 bg-slate-900 text-white rounded-2xl shadow-lg top-5 right-5">
+                    <p>B2G Team</p>
+                </div>
+                <img src="{{ asset('img/b2g-team.jpg') }}" alt="" class="rounded-2xl">
+
+            </div>
+            <div class="lg:w-1/2 flex items-center">
+                <div class="mt-10 lg:mt-0">
+                    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-3">Mission</h3>
+                    <p class="text-slate-900 opacity-90 text-lg italic ">
+                        "To deliver efficient, integrated and smart solutions that enhance productivity and growth
+                        for
                         our partners and customers."
                     </p>
                 </div>
             </div>
-        </div>
 
+        </div>
 
     </div>
 
@@ -88,17 +95,18 @@
 
     {{-- team --}}
     <div class=" bg-gradient-to-t from-gray-50 to-white pb-16">
-        <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl mb-10">
-            <h2
-                class="text-center bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-5xl font-extrabold dark:text-white">
+        <div class="mx-auto px-6 lg:px-8 max-w-7xl mb-10">
+            <h2 class="{{ $title_1 }}">
                 Meet Our Team</h2>
-            <p class="text-center text-gray-500 sm:text-lg dark:text-gray-400">Our team is a diverse group of
-                professionals who are passionate about technology and dedicated to delivering exceptional solutions to
+            <p class=" text-gray-500 sm:text-lg dark:text-gray-400">Our team is a diverse group
+                of
+                professionals who are passionate about technology and dedicated to delivering exceptional solutions
+                to
                 our
                 clients.</p>
         </div>
 
-        <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div class="mx-auto px-6 lg:px-8 max-w-7xl">
             <div
                 class="pb-5 lg:pb-0 bg-gradient-to-t from-slate-100 to-white md:rounded-xl items-center md:grid md:grid-cols-2">
                 <div class=" rounded-xl overflow-visible flex justify-center items-center w-full">
@@ -113,15 +121,19 @@
                         class="mb-4 text-3xl sm:text-4xl lg:text-5xl tracking-tight font-extrabold bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text">
                         Company Founder
                     </h2>
+                    <p class=" text-gray-500 md:text-lg dark:text-gray-400">Friendly and humble person.
+                        Always ready to assist in serving every input from all parties, aiming for mutual success.
+                    </p>
+
+                    <hr class="w-4/6 my-4">
+
                     <div class="my-4">
                         <p class=" text-gray-500 italic">
                             "Every Problem is a Gift – Without Problem We Would Not Grow"
                         </p>
                         <p class=" font-bold mt-1 text-gray-500 text-sm ">Anthony Robbins</p>
                     </div>
-                    <hr class="w-4/6 my-4">
-                    <p class=" text-gray-500 md:text-lg dark:text-gray-400">Friendly and humble person.
-                        Always ready to assist in serving every input from all parties, aiming for mutual success.</p>
+
 
                 </div>
 
@@ -130,7 +142,7 @@
 
 
         <div
-            class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl grid gap-4 sm:gap-6 md:gap-5 lg:grid-cols-3 md:grid-cols-2 md:text-left lg:text-left text-center justify-center md:justify-start lg:justify-start overflow-x-hidden">
+            class="mx-auto px-6 lg:px-8 max-w-7xl grid gap-4 sm:gap-6 md:gap-5 lg:grid-cols-3 md:grid-cols-2 md:text-left lg:text-left text-center justify-center md:justify-start lg:justify-start overflow-x-hidden">
 
             {{-- card foreach --}}
             @foreach ($members as $member)
@@ -151,7 +163,7 @@
                             <a href="">{{ $member->name }}</a>
                         </h3>
                         <span
-                            class="bg-slate-200 px-2 py-[2px] rounded-lg text-slate-800 text-xs">{{ $member->position }}</span>
+                            class="bg-orange-500 px-2 py-[2px] rounded-lg text-white text-xs">{{ $member->position }}</span>
                         <p class="mt-2 font-light text-sm text-gray-500 dark:text-gray-400 italic">
                             "{{ $member->motto }}"</p>
                         <span class="text-sm font-semibold text-gray-500">- {{ $member->motto_by }}</span>
@@ -164,13 +176,13 @@
     </div>
 
     <div class="bg-slate-50 border">
-        <div class="mx-auto max-w-7xl py-8 lg:pt-16 px-4 sm:px-6 lg:px-8">
-            <h2
-                class="pb-1 bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-5xl font-extrabold text-center">
+        <div class="mx-auto max-w-7xl py-8 lg:pt-16 px-6 lg:px-8">
+            <h2 class="{{ $title_1 }}">
                 History Overview</h2>
-            <p class="text-center text-gray-500 sm:text-lg dark:text-gray-400">Our history is a testament to our
+            <p class="text-gray-500 sm:text-lg dark:text-gray-400">Our history is a testament to our
                 commitment to
-                excellence and innovation in the IT industry. Since our inception in 2006, we have consistently evolved
+                excellence and innovation in the IT industry. Since our inception in 2006, we have consistently
+                evolved
                 to
                 meet the changing needs of our clients and the market.</p>
             {{-- anchor --}}
@@ -180,14 +192,16 @@
                         class="border-4 border-white absolute -top-4 -left-4 flex-shrink-0 flex justify-center items-center w-12 h-12 rounded-full bg-primary-100">
                         <svg class="w-7 h-7 text-slate-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                             width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
                                 d="M12 8v4l3 3M3.22302 14C4.13247 18.008 7.71683 21 12 21c4.9706 0 9-4.0294 9-9 0-4.97056-4.0294-9-9-9-3.72916 0-6.92858 2.26806-8.29409 5.5M7 9H3V5" />
                         </svg>
                     </div>
                     <div class="-ml-5">
                         <h3 class="text-3xl font-extrabold mb-2 text-gray-700">2007</h3>
                         <p class="italic text-gray-500 text-sm mb-2">Started business with HP Indonesia,
-                        <p class="italic text-sm text-gray-500">Expanded sales area especially to Medan & Banda Aceh
+                        <p class="italic text-sm text-gray-500">Expanded sales area especially to Medan & Banda
+                            Aceh
                         </p>
                         </p>
                     </div>
@@ -400,11 +414,10 @@
 
 
         <div class="bg-gradient-to-b from-gray-50 to-white pb-20">
-            <div class="text-center mx-auto max-w-7xl py-8 lg:pt-16 px-4 sm:px-6 lg:px-8">
-                <h2
-                    class="bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-5xl font-extrabold dark:text-white">
-                    Our Clients</h2>
-                <p class="text-gray-500 sm:text-lg dark:text-gray-400">Primajaya
+            <div class="md:text-start mx-auto max-w-7xl py-8 lg:pt-16 px-8 sm:px-6 lg:px-8">
+                <h2 class="{{ $title_1 }}">Authorized Dealer For Top Brands
+                </h2>
+                <p class="text-gray-500 sm:text-lg">Primajaya
                     Multi Technology has proven its expertise in delivering IT business solutions by partnering
                     with
                     top
@@ -418,12 +431,11 @@
 
 
 
-        <div class="bg-gradient-to-b from-gray-50 to-white pb-32">
-            <div class="text-center mx-auto max-w-7xl py-8 lg:pt-16 px-4 sm:px-6 lg:px-8">
-                <h2
-                    class="bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-5xl font-extrabold dark:text-white">
-                    Authorized Dealer For Top Brands</h2>
-                <p class="text-gray-500 sm:text-lg dark:text-gray-400">We have had the privilege of working with a
+        <div class="bg-white pb-32">
+            <div class="md:text-start mx-auto max-w-7xl py-8 lg:pt-16 px-6 lg:px-8">
+                <h2 class="{{ $title_1 }}">Our Clients
+                </h2>
+                <p class="text-gray-500 sm:text-lg">We have had the privilege of working with a
                     diverse range of clients, from enterprises to government agencies. Our
                     client-centric approach ensures that we
                     understand their unique needs and deliver tailored solutions that drive success.
@@ -433,18 +445,17 @@
         </div>
 
         <div class="bg-gradient-to-b from-white to-slate-50 pb-20 rounded-t-3xl -mt-14">
-            <div class="text-center mx-auto max-w-7xl py-8 lg:pt-16 px-4 sm:px-6 lg:px-8">
-                <h2
-                    class="bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-5xl font-extrabold dark:text-white">
-                    Feedback From Our Clients</h2>
-                <p class="text-gray-500 sm:text-lg dark:text-gray-400">Thank you to all our partners and clients for
+            <div class="mx-auto max-w-7xl py-8 lg:pt-16 px-6 lg:px-8">
+                <h2 class="{{ $title_1 }}">
+                    Feedback From Our Clients & Customers</h2>
+                <p class="text-gray-500 sm:text-lg md:text-start">Thank you to all our partners and clients for
                     trusting PJ-Tech as your IT solution provider.
                 </p>
 
                 <div class="grid lg:grid-cols-3 gap-8 mt-14">
 
                     {{-- anchor testimonial card --}}
-                    <div class="shadow-md rounded-2xl p-6 bg-white">
+                    <div class="shadow-md rounded-2xl px-8 py-5 bg-white">
                         <div class="flex items-center">
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/testimoni_paulus_.jpg') }}" alt="">
@@ -453,13 +464,16 @@
                                 <p class="text-sm text-gray-500">STMIK & STIE Mikroskil</p>
                             </div>
                         </div>
-                        <p class="mt-5 text-gray-700 italic text-left">"Primajaya Multi Technology adalah IT vendor
+                        <p class="mt-4 text-gray-500 italic text-left text-[.9rem]">"Primajaya Multi Technology
+                            adalah
+                            IT
+                            vendor
                             yang penuh
                             tanggung jawab, dari awal sampai selesai. Kita butuh vendor yang bisa dipercaya seperti
                             ini."</p>
                     </div>
 
-                    <div class="shadow-md rounded-2xl p-6 bg-white">
+                    <div class="shadow-md rounded-2xl px-8 py-5 bg-white">
                         <div class="flex items-center">
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/IT-Tolan-Tiga.jpeg') }}" alt="">
@@ -469,13 +483,14 @@
                             </div>
                         </div>
 
-                        <p class="mt-4 text-gray-700 italic text-left">"PT. Primajaya Multi Technology dapat
+                        <p class="mt-4 text-gray-500 italic text-left text-[.9rem]">"PT. Primajaya Multi Technology
+                            dapat
                             menyediakan beragam
                             layanan & material IT yang kami butuhkan dengan harga yang sangat kompetitif & pelayanan
                             yang memuaskan. Recommended Vendor!"</p>
                     </div>
 
-                    <div class="shadow-md rounded-2xl p-6 bg-white">
+                    <div class="shadow-md rounded-2xl px-8 py-5 bg-white">
                         <div class="flex items-center">
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/PP-Dinas-Perpustakaan-e1608194414314.jpeg') }}"
@@ -485,13 +500,15 @@
                                 <p class="text-sm text-gray-500">Dinas Perpustakaan dan Arsip Provsu</p>
                             </div>
                         </div>
-                        <p class="mt-4 text-gray-700 italic text-left">"Barang sesuai spesifikasi, service memuaskan,
+                        <p class="mt-4 text-gray-500 italic text-left text-[.9rem]">"Barang sesuai spesifikasi,
+                            service
+                            memuaskan,
                             harga
                             mantap, ketika ada komplain cepat respon… enak dan nyaman belanja di toko online PT.
                             Primajaya Multi Technology. Thanks."</p>
                     </div>
 
-                    <div class="shadow-md rounded-2xl p-6 bg-white">
+                    <div class="shadow-md rounded-2xl px-8 py-5 bg-white">
                         <div class="flex items-center">
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/UIN-Yusuf-Staff-Pengadaan.jpeg') }}" alt="">
@@ -500,12 +517,14 @@
                                 <p class="text-sm text-gray-500">UIN Medan</p>
                             </div>
                         </div>
-                        <p class="mt-4 text-gray-700 italic text-left">"Semua pengadaan via PT. Primajaya Multi
+                        <p class="mt-4 text-gray-500 italic text-left text-[.9rem]">"Semua pengadaan via PT.
+                            Primajaya
+                            Multi
                             Technology selalu
                             memuaskan dan lancar tepat waktu."</p>
                     </div>
 
-                    <div class="shadow-md rounded-2xl p-6 bg-white">
+                    <div class="shadow-md rounded-2xl px-8 py-5 bg-white">
                         <div class="flex items-center">
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/Purchasing-Wilmar.jpg') }}" alt="">
@@ -515,13 +534,15 @@
                                 <p class="text-sm text-gray-500">Wilmar Group</p>
                             </div>
                         </div>
-                        <p class="mt-4 text-gray-700 italic text-left">"Primajaya Multi Technology menawarkan cakupan
+                        <p class="mt-4 text-gray-500 italic text-left text-[.9rem]">"Primajaya Multi Technology
+                            menawarkan
+                            cakupan
                             produk yang
                             luas dengan harga yang kompetitif. Dengan pelayanan yang memuaskan, Primajaya Multi
                             Technology merupakan vendor IT yang dapat kami andalkan"</p>
                     </div>
 
-                    <div class="shadow-md rounded-2xl p-6 bg-white">
+                    <div class="shadow-md rounded-2xl px-8 py-5 bg-white">
                         <div class="flex items-center">
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/IT-Manager-Hotel-Four-Points-by-Sheraton.jpeg') }}"
@@ -533,14 +554,16 @@
                             </div>
                         </div>
 
-                        <p class="mt-4 text-gray-700 italic text-left">"Sudah lama berlangganan dengan PJ Tech,
+                        <p class="mt-4 text-gray-500 italic text-left text-[.9rem]">"Sudah lama berlangganan dengan
+                            PJ
+                            Tech,
                             pelayanan dan
                             harga terbaik. Top👍"</p>
 
 
                     </div>
 
-                    <div class="shadow-md rounded-2xl p-6 bg-white">
+                    <div class="shadow-md rounded-2xl px-8 py-5 bg-white">
                         <div class="flex items-center">
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/PP-Pengadilan-Negeri-Simalungun.jpg') }}"
@@ -550,13 +573,15 @@
                                 <p class="text-sm text-gray-500">Pengadilan Negeri Simalungun</p>
                             </div>
                         </div>
-                        <p class="mt-4 text-gray-700 italic text-left">"Barang lengkap, harga oke, respon cepat,
+                        <p class="mt-4 text-gray-500 italic text-left text-[.9rem]">"Barang lengkap, harga oke,
+                            respon
+                            cepat,
                             service
                             terpercaya, belanja nyaman. Kriteria seperti ini yang kami cari di antara penyedia dan
                             semuanya ada di PT. Primajaya Multi Technology."</p>
                     </div>
 
-                    <div class="shadow-md rounded-2xl p-6 bg-white">
+                    <div class="shadow-md rounded-2xl px-8 py-5 bg-white">
                         <div class="flex items-center">
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/testimoni_teguh.jpg') }}" alt="">
@@ -565,12 +590,14 @@
                                 <p class="text-sm text-gray-500">Sekda Kab Tapsel</p>
                             </div>
                         </div>
-                        <p class="mt-4 text-gray-700 italic text-left">"Pelayanan baik, ramah dan pengiriman cepat.
+                        <p class="mt-4 text-gray-500 italic text-left text-[.9rem]">"Pelayanan baik, ramah dan
+                            pengiriman
+                            cepat.
                             Barang sesuai
                             pesanan, sangat puas bekerja sama dengan Primajaya Multi Technology."</p>
                     </div>
 
-                    <div class="shadow-md rounded-2xl p-6 bg-white">
+                    <div class="shadow-md rounded-2xl px-8 py-5 bg-white">
                         <div class="flex items-center">
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/WhatsApp-Image-2022-03-26-at-14.08.23.jpg') }}"
@@ -580,12 +607,16 @@
                                 <p class="text-sm text-gray-500">HP Corner @Medan Fair</p>
                             </div>
                         </div>
-                        <p class="mt-4 text-gray-700 italic text-left">"Senang banget beli laptop dapat hadiah mouse
+                        <p class="mt-4 text-gray-500 italic text-left text-[.9rem]">"Senang banget beli laptop
+                            dapat
+                            hadiah
+                            mouse
                             plus lucky
-                            spin headset gaming. Mana harga nga main-main lebih murah dibanding toko sebelah. Pantengin
+                            spin headset gaming. Mana harga nga main-main lebih murah dibanding toko sebelah.
+                            Pantengin
                             terus promonya guys…"</p>
                     </div>
-                    <div class="shadow-md rounded-2xl p-6 bg-white">
+                    <div class="shadow-md rounded-2xl px-8 py-5 bg-white">
                         <div class="flex items-center">
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/WhatsApp-Image-2022-03-26-at-14.15.26.jpg') }}"
@@ -595,12 +626,15 @@
                                 <p class="text-sm text-gray-500">Asus Store @Sun Plaza</p>
                             </div>
                         </div>
-                        <p class="mt-4 text-gray-700 italic text-left">"Original dan masih baru barangnya, bukan bekas
+                        <p class="mt-4 text-gray-500 italic text-left text-[.9rem]">"Original dan masih baru
+                            barangnya,
+                            bukan bekas
                             pajangan.
-                            Dapat free mouse wireless logitech! Asus Store Sun Plaza memang lengkap dan mantapp. Masuk
+                            Dapat free mouse wireless logitech! Asus Store Sun Plaza memang lengkap dan mantapp.
+                            Masuk
                             ke list toko rekomendasi buat pembelian selanjutnya."</p>
                     </div>
-                    <div class="shadow-md rounded-2xl p-6 bg-white">
+                    <div class="shadow-md rounded-2xl px-8 py-5 bg-white">
                         <div class="flex items-center">
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/WhatsApp-Image-2022-03-28-at-15.09.18.jpg') }}"
@@ -610,11 +644,13 @@
                                 <p class="text-sm text-gray-500">Asus Store @Sun Plaza</p>
                             </div>
                         </div>
-                        <p class="mt-4 text-gray-700 italic text-left">"Kalau belanja barang elektronik harusnya di
+                        <p class="mt-4 text-gray-500 italic text-left text-[.9rem]">"Kalau belanja barang
+                            elektronik
+                            harusnya di
                             toko
                             resminya, aman dan bisa servis juga kalau rusak."</p>
                     </div>
-                    <div class="shadow-md rounded-2xl p-6 bg-white">
+                    <div class="shadow-md rounded-2xl px-8 py-5 bg-white">
                         <div class="flex items-center">
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/WhatsApp-Image-2022-03-26-at-14.28.57-2.jpg') }}"
@@ -624,12 +660,15 @@
                                 <p class="text-sm text-gray-500">Plaza IT @Banda Aceh</p>
                             </div>
                         </div>
-                        <p class="mt-4 text-gray-700 italic text-left">"Beli Lenovo Legion free item bawaan plus dapat
+                        <p class="mt-4 text-gray-500 italic text-left text-[.9rem]">"Beli Lenovo Legion free item
+                            bawaan
+                            plus dapat
                             lucky dip
-                            free tas lagi. Keren nih promonya double hadiah. Adain promo terus yah min! Kemarin service
+                            free tas lagi. Keren nih promonya double hadiah. Adain promo terus yah min! Kemarin
+                            service
                             laptop kesini juga ramah & cepat."</p>
                     </div>
-                    <div class="shadow-md rounded-2xl p-6 bg-white">
+                    <div class="shadow-md rounded-2xl px-8 py-5 bg-white">
                         <div class="flex items-center">
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/WhatsApp-Image-2022-03-26-at-14.28.57-1.jpg') }}"
@@ -639,11 +678,13 @@
                                 <p class="text-sm text-gray-500">Showroom PJ</p>
                             </div>
                         </div>
-                        <p class="mt-4 text-gray-700 italic text-left">"Adem belanja disini, AC nya sejuk, akhirnya
+                        <p class="mt-4 text-gray-500 italic text-left text-[.9rem]">"Adem belanja disini, AC nya
+                            sejuk,
+                            akhirnya
                             bisa beli
                             laptop setelah berdiskusi dengan salesnya."</p>
                     </div>
-                    <div class="shadow-md rounded-2xl p-6 bg-white">
+                    <div class="shadow-md rounded-2xl px-8 py-5 bg-white">
                         <div class="flex items-center">
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/WhatsApp-Image-2022-03-26-at-14.03.49.jpg') }}"
@@ -653,11 +694,13 @@
                                 <p class="text-sm text-gray-500">HP Corner @Medan Fair</p>
                             </div>
                         </div>
-                        <p class="mt-4 text-gray-700 italic text-left">"Lumayan beli laptop dapat tambahan gratis
+                        <p class="mt-4 text-gray-500 italic text-left text-[.9rem]">"Lumayan beli laptop dapat
+                            tambahan
+                            gratis
                             pouch,
                             itung-itung lebih oke dari segi harga sama barang free nya."</p>
                     </div>
-                    <div class="shadow-md rounded-2xl p-6 bg-white">
+                    <div class="shadow-md rounded-2xl px-8 py-5 bg-white">
                         <div class="flex items-center">
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/WhatsApp-Image-2022-03-26-at-14.28.57.jpg') }}"
@@ -667,11 +710,13 @@
                                 <p class="text-sm text-gray-500">Plaza IT @Banda Aceh</p>
                             </div>
                         </div>
-                        <p class="mt-4 text-gray-700 italic text-left">"Yang buat senang pas belanja itu pelayanan
+                        <p class="mt-4 text-gray-500 italic text-left text-[.9rem]">"Yang buat senang pas belanja
+                            itu
+                            pelayanan
                             karyawan toko
                             dan harganya. Beruntung juga ternyata lagi promo dapat headset gaming."</p>
                     </div>
-                    <div class="shadow-md rounded-2xl p-6 bg-white">
+                    <div class="shadow-md rounded-2xl px-8 py-5 bg-white">
                         <div class="flex items-center">
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/WhatsApp-Image-2022-03-28-at-15.10.33.jpg') }}"
@@ -681,10 +726,13 @@
                                 <p class="text-sm text-gray-500">Showroom PJ</p>
                             </div>
                         </div>
-                        <p class="mt-4 text-gray-700 italic text-left">"PJ-Tech has consistently provided excellent IT
-                            solutions and support, helping us achieve our digital transformation goals efficiently."</p>
+                        <p class="mt-4 text-gray-500 italic text-left text-[.9rem]">"PJ-Tech has consistently
+                            provided
+                            excellent IT
+                            solutions and support, helping us achieve our digital transformation goals efficiently."
+                        </p>
                     </div>
-                    <div class="shadow-md rounded-2xl p-6 bg-white">
+                    <div class="shadow-md rounded-2xl px-8 py-5 bg-white">
                         <div class="flex items-center">
                             <img class="w-16 h-16 rounded-full object-cover"
                                 src="{{ asset('img/testimonial/WhatsApp-Image-2022-03-26-at-14.02.10-3.jpg') }}"
@@ -694,9 +742,11 @@
                                 <p class="text-sm text-gray-500">Showroom PJ</p>
                             </div>
                         </div>
-                        <p class="mt-4 text-gray-700 italic text-left">"Rencana hunting 3 laptop buat anak-anak. Pas
+                        <p class="mt-4 text-gray-500 italic text-left text-[.9rem]">"Rencana hunting 3 laptop buat
+                            anak-anak. Pas
                             sekali ada
-                            promo lucky spin di toko, bawaan laptop udah ada free, dapat lagi tambahan gratis. Mantap
+                            promo lucky spin di toko, bawaan laptop udah ada free, dapat lagi tambahan gratis.
+                            Mantap
                             nih ya!"</p>
                     </div>
 

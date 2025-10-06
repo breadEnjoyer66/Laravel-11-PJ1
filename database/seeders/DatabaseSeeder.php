@@ -35,12 +35,12 @@ class DatabaseSeeder extends Seeder
             AwardSeeder::class,
             MemberSeeder::class,
         ]);
-        Article::factory(50)->recycle([
-            Category::all(),
-            User::all(),
-            Brand::all(),
-            Award::all(),
-            Member::all(),
-        ])->create();
+        // Article::factory(50)->recycle([
+        //     Category::all(),
+        //     User::all(),
+        //     Brand::all(),
+        //     Award::all(),
+        //     Member::all(),
+        // ])->create();
     }
 }

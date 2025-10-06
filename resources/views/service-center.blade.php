@@ -1,3 +1,4 @@
+<?php $title_1 = 'pb-2 bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-[2.7rem] font-extrabold'; ?>
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
 
@@ -11,11 +12,11 @@
     }" class="bg-gradient-to-b from-gray-50 to-white">
 
         {{-- Page header / hero --}}
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 pt-14">
             <div class="grid gap-8 md:grid-cols-2 items-center">
                 <div>
-                    <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight" style="color:#0F2748">Authorized
-                        Service Center
+                    <h1 class="{{ $title_1 }}">
+                        Authorized Service Center
                     </h1>
                     <p class="mt-4 text-gray-600">
                         Authorized repair & deployment partner for leading IT brands. Professional, trackable,
@@ -203,8 +204,8 @@
 
         {{-- CTA band --}}
         <div class="mt-14" style="background-color:#0F2748">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 text-white">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8 py-10 text-white">
+                <div class="flex flex-col md:flex-row items-center md:justify-between gap-6">
                     <div>
                         <h3 class="text-2xl font-semibold">Need service or installation support?</h3>
                         <p class="text-white/80">Talk to our certified team—on-site, pick-up, or remote assistance.</p>
@@ -218,7 +219,7 @@
         </div>
 
         {{-- FAQ --}}
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 py-16">
             <h3 class="text-2xl font-semibold mb-6" style="color:#0F2748">Frequently Asked Questions</h3>
 
             <div class="divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white shadow-sm">

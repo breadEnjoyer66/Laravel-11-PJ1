@@ -1,7 +1,7 @@
 <div class="bg-white">
-    <div class="mx-auto max-w-7xl py-8 lg:py-16 px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 py-8 lg:py-16 sm:px-6 ">
         <h2
-            class="bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-5xl font-extrabold">
+            class="pb-2 bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-[2.8rem] font-extrabold">
             Achievements and certifications</h2>
         <p class="text-gray-500 sm:text-lg dark:text-gray-400">
             Backed by strong partnerships with leading global brands, we consistently meet exceptional standards of

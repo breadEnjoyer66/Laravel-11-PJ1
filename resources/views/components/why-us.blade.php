@@ -1,7 +1,7 @@
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-8 lg:mb-16 lg:text-start sm:text-center">
+    <?php $title_1 = 'pb-2 bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-[2.7rem] font-extrabold'; ?>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-8 lg:mb-16 lg:text-start sm:text-center">
         <div class="mb-8 lg:mb-16">
-            <h2
-                class="pb-1 bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-5xl font-extrabold">
+            <h2 class="{{ $title_1 }}">
                 Your trusted
                 technology partner</h2>
             <p class="text-gray-500 sm:text-lg dark:text-gray-400"><span
