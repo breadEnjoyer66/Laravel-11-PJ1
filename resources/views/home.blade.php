@@ -77,7 +77,7 @@
 
 
     <div class="bg-gradient-to-t from-gray-50 to-white">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8 py-8 lg:py-16 sm:px-6 ">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 py-8 lg:py-16 sm:px-6">
             <h2
                 class="bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text mb-4 text-4xl lg:text-5xl font-extrabold">
                 Our Brand Partner</h2>

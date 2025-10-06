@@ -1,6 +1,6 @@
-<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+<div class="mx-auto max-w-7xl px-6 lg:px-8 py-16">
 
-    <div class="border bg-slate-100 p-2 lg:p-10 rounded-xl lg:flex w-full flex-col lg:flex-row gap-10 lg:gap-20">
+    <div class="border bg-slate-100 py-6 lg:py-12 px-8 rounded-xl lg:flex w-full flex-col lg:flex-row gap-10 lg:gap-20">
         <div class="py-5 lg:py-0 flex flex-col lg:items-start items-center justify-center lg:w-1/3">
             <h2 class="mb-6 text-4xl lg:text-5xl font-extrabold text-gray-700 dark:text-white">VISIT US</h2>
             <p class="text-gray-600 text-center lg:text-start">Komplek Ruko Asia Mega Mas, Blok BB No 12A-15,
@@ -26,8 +26,50 @@
             <!-- Replace the src below with your Google Maps embed link -->
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0020883337747!2d98.70227601129302!3d3.5869945502885305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131b3db01ca4b%3A0x3a57c21c70dfccb0!2sPT.%20Primajaya%20Multi%20Technology%20(Plaza%20IT)!5e0!3m2!1sen!2sid!4v1758623908082!5m2!1sen!2sid"
-                class="w-full h-96 rounded-xl" style="border:0;" allowfullscreen="" loading="lazy"
+                class="w-full h-64 rounded-xl" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <div class="my-10">
+        {{-- <h3 class="text-3xl text-slate-900 font-bold">Our Stores</h3> --}}
+        <div class="grid grid-cols-3 gap-6 mt-6">
+
+            <div class="bg-slate-100 rounded-xl px-8 py-5">
+                <h4 class="text-xl text-slate-700"><span
+                        class="bg-gradient from-orange-400 to bg-orange-600 text-transparent bg-clip-text font-bold">Plaza
+                        IT Mega
+                        Store</span> - Plaza Medan Fair
+                </h4>
+                <p class="text-base text-gray-600 mt-2">
+                    Plaza Medan Fair, LT 4 No.2-4 <br>
+                    <span>Telp.0853-8899-2009</span><br>
+                    <span>email: plazait@pj-tech.com</span>
+                </p>
+            </div>
+
+            <div class="bg-slate-100 rounded-xl px-8 py-5">
+                <h4 class="text-xl text-slate-700"><span
+                        class="bg-gradient from-orange-400 to bg-orange-600 text-transparent bg-clip-text font-bold">Plaza
+                        IT</span> - Plaza Medan Fair</h4>
+                <p class="text-base text-gray-600 mt-2">
+                    Plaza Medan Fair, LT 4 #6, <br>
+                    <span>Telp.0853-8899-2009</span> <br>
+                    <span>email: plazait@pj-tech.com</span>
+                </p>
+            </div>
+
+            <div class="bg-slate-100 rounded-xl px-8 py-5">
+                <h4 class="text-xl text-slate-700"><span
+                        class="bg-gradient from-orange-400 to bg-orange-600 text-transparent bg-clip-text font-bold">Plaza
+                        IT</span> - Banda Aceh</h4>
+                <p class="text-base text-gray-600 mt-2">
+                    Jln. Pocut Bareng No.31, Keuramat, Banda Aceh <br>
+                    <span>Telp.0651-33411</span> <br>
+                    <span>email: sales@plazait.co.id</span>
+                </p>
+            </div>
+
         </div>
     </div>
 </div>
