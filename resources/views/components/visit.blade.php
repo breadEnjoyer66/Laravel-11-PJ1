@@ -33,7 +33,7 @@
 
     <div class="my-10">
         {{-- <h3 class="text-3xl text-slate-900 font-bold">Our Stores</h3> --}}
-        <div class="grid grid-cols-3 gap-6 mt-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
 
             <div class="bg-slate-100 rounded-xl px-8 py-5">
                 <h4 class="text-xl text-slate-700"><span
