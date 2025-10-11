@@ -1,5 +1,20 @@
 <x-layout>
+    {{-- SEO Addition: meta tags --}}
     <x-slot:title>{{ $title }}</x-slot:title>
+
+    @push('meta')
+        <meta name="description" content="{{ $metaDescription ?? 'Read the latest articles and updates from our team.' }}">
+        <link rel="canonical" href="{{ url()->current() }}" />
+        <meta property="og:title" content="{{ $title }}" />
+        <meta property="og:description" content="{{ $metaDescription ?? 'Read our latest articles and insights.' }}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{ url()->current() }}" />
+        <meta property="og:image" content="{{ $ogImage ?? asset('img/default-og.jpg') }}" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="{{ $title }}" />
+        <meta name="twitter:description" content="{{ $metaDescription ?? 'Read the latest articles from us.' }}" />
+        <meta name="twitter:image" content="{{ $ogImage ?? asset('img/default-og.jpg') }}" />
+    @endpush
 
     <div class="py-4 px-4 mx-auto max-w-7xl mt-10 lg:px-6">
         <div class="mx-auto max-w-screen-md sm:text-center">
@@ -23,16 +38,17 @@
                                 <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
                                     d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
                             </svg>
-
                         </div>
                         <input
-                            class="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Search article" type="search" id="search" name="search"
-                            autocomplete="off">
+                            class="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500"
+                            placeholder="Search article" type="search" id="search" name="search" autocomplete="off"
+                            value="{{ request('search') }}">
                     </div>
                     <div>
                         <button type="submit"
-                            class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-700 border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Search</button>
+                            class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-700 border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300">
+                            Search
+                        </button>
                     </div>
                 </div>
             </form>
@@ -42,49 +58,64 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {{ $articles->links() }} {{-- pagination links --}}
     </div>
+
     <div class="py-4 my-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 lg:py-4">
         <div class="grid gap-8 lg:grid-cols-3 md:grid-cols-2">
 
             @forelse ($articles as $article)
-                <article
+                {{-- SEO Addition: schema.org markup --}}
+                <article itemscope itemtype="https://schema.org/Article"
                     class="flex flex-col p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+
+                    {{-- Thumbnail (SEO addition) --}}
+                    @if ($article->thumbnail)
+                        <a href="/news/{{ $article->slug }}" itemprop="url">
+                            <img src="{{ asset('storage/' . $article->thumbnail) }}"
+                                alt="{{ $article->title }} thumbnail" loading="lazy" itemprop="image"
+                                class="w-full h-48 object-cover rounded-md mb-4">
+                        </a>
+                    @endif
+
                     <div class="flex justify-between items-center mb-5 text-gray-500">
-                        <a href="/news?category={{ $article->category->slug }}">
+                        <a href="/news?category={{ $article->category->slug }}" itemprop="articleSection">
                             <span
-                                class="hover:ml-1 duration-300 bg-{{ $article->category->color }}-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
+                                class="hover:ml-1 duration-300 bg-{{ $article->category->color }}-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded">
                                 {{ $article->category->name }}
                             </span>
                         </a>
-
-                        <span class="text-sm">{{ $article->created_at->diffForHumans() }}</span>
+                        <time datetime="{{ $article->created_at->toIso8601String() }}" itemprop="datePublished"
+                            class="text-sm">{{ $article->created_at->diffForHumans() }}</time>
                     </div>
 
                     {{-- article title --}}
-                    <a href="/news/{{ $article->slug }}">
-                        <h2
-                            class="mb-2 text-2xl font-bold tracking-tight text-gray-950 hover:text-blue-900 dark:text-white hover:ml-0.5 duration-300">
-                            {{ $article->title }}</h2>
+                    <a href="/news/{{ $article->slug }}" itemprop="url">
+                        <h2 itemprop="headline"
+                            class="mb-2 text-2xl font-bold tracking-tight text-gray-950 hover:text-blue-900 duration-300">
+                            {{ $article->title }}
+                        </h2>
                     </a>
 
                     {{-- article body excerpt --}}
-                    <p class="mb-5 font-light text-gray-500 dark:text-gray-400">{{ Str::limit($article->body, 150) }}
+                    <p class="mb-5 font-light text-gray-500 dark:text-gray-400" itemprop="description">
+                        {{ Str::limit(strip_tags($article->body), 150) }}
                     </p>
 
                     {{-- author info and read more link --}}
                     <div class="flex justify-between items-center mt-auto">
-                        <a href="/news?author={{ $article->author->username }}"
+                        <a href="/news?author={{ $article->author->username }}" itemprop="author" itemscope
+                            itemtype="https://schema.org/Person"
                             class="py-1 pr-3 rounded-lg hover:bg-gradient-to-r from-transparent to-slate-200 hover:ml-0.5 duration-300">
                             <div class="flex items-center space-x-4">
                                 <img class="w-7 h-7 rounded-full"
-                                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                                    src="{{ $article->author->avatar ?? 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png' }}"
                                     alt="{{ $article->author->name }} avatar" />
-                                <span class="font-medium dark:text-white text-sm">
+                                <span itemprop="name" class="font-medium text-sm">
                                     {{ Str::words($article->author->name, 2, '') }}
                                 </span>
                             </div>
                         </a>
                         <a href="/news/{{ $article->slug }}"
-                            class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline text-sm">
+                            class="inline-flex items-center font-medium text-primary-600 hover:underline text-sm">
                             Read more
                             <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -104,7 +135,8 @@
 
         </div>
     </div>
+
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-20">
-        {{ $articles->links() }} {{-- pagination links --}}
+        {{ $articles->links() }}
     </div>
 </x-layout>

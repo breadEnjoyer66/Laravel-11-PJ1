@@ -82,40 +82,38 @@
             </div>
         </div>
 
+
         <!-- TERMS & CONDITIONS -->
-        <div class="grid md:grid-cols-2 gap-10 items-center">
-            <div>
+        <div class="grid md:grid-cols-2 gap-x-10 items-stretch">
+            <div class="py-6 px-10 bg-slate-50 shadow-sm text-sm rounded-2xl">
                 <h2 class="text-2xl font-semibold text-gray-800 mb-3">Terms & Conditions</h2>
                 <ul class="list-disc ml-6 text-gray-600 space-y-2">
                     <li>7-day replacement applies only to complete items (box, packaging, invoice).</li>
                     <li>Box must be clean and free of damage or writing.</li>
                     <li>Visit-on-site applies to printers, AIO PCs, and desktops within 8 km radius.</li>
                     <li>Visit-on-site scheduled within 2 × 24 hours.</li>
-                </ul>
-            </div>
-            <div class="relative">
-                <img src="{{ asset('img/service-center-int.jpg') }}" alt="Warranty Terms"
-                    class="rounded-2xl shadow-md w-full h-80 object-cover">
-                <div class="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
-        </div>
 
-        <!-- WARRANTY POLICY -->
-        <div class="bg-gray-50 rounded-3xl p-10 shadow-inner">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Warranty Policy</h2>
-            <div class="mx-auto text-gray-600 leading-relaxed space-y-4">
-                <ul class="list-disc list-inside space-y-2">
-                    <li>Original invoice, warranty card, and Primajaya Total Care form required for claims.</li>
-                    <li>14-day replacement available if all items are in perfect physical condition.</li>
-                    <li>1–5 dead pixels considered normal per international standards.</li>
-                    <li>Warranty void if seals are broken, items misused, or physically damaged.</li>
-                    <li>Software and accessories not covered by warranty.</li>
                 </ul>
                 <p class="mt-6">
                     For more information, please
                     <a href="/contact" class="text-blue-600 hover:underline font-medium">contact us directly</a>.
                 </p>
             </div>
+            <div class="py-6 px-10 bg-slate-50 shadow-sm text-sm rounded-2xl">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Warranty Policy</h2>
+                <div class="mx-auto text-gray-600 leading-relaxed space-y-4">
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Original invoice, warranty card, and Primajaya Total Care form required for claims.</li>
+                        <li>14-day replacement available if all items are in perfect physical condition.</li>
+                        <li>1–5 dead pixels considered normal per international standards.</li>
+                        <li>Warranty void if seals are broken, items misused, or physically damaged.</li>
+                        <li>Software and accessories not covered by warranty.</li>
+                    </ul>
+
+                </div>
+            </div>
+
+
         </div>
     </section>
 

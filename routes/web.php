@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Dashboard\ArticleController as DashboardArticleController;
+
+
 use App\Models\User;
 use App\Models\Award;
 use App\Models\Brand;
@@ -30,17 +36,8 @@ Route::get('/warranty', function () {
     return view('warranty', ['title' => 'Warranty']);
 });
 
-// All articles
-Route::get('/news', function () {
-
-
-    return view('news.news', ['title' => 'News', 'articles' => Article::filter(request(['search', 'category', 'author']))->latest()->simplePaginate(9)->withQueryString()]);
-});
-
-// Single article
-Route::get('news/{article:slug}', function (Article $article) {
-    return view('news.article', ['title' => 'Article', 'article' => $article]);
-});
+// Public News Index
+Route::get('/news', [ArticleController::class, 'index'])->name('articles.index');
 
 Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact']);
@@ -49,3 +46,51 @@ Route::get('/contact', function () {
 Route::get('/career', function () {
     return view('career', ['title' => 'Career']);
 });
+
+Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('login', [AuthController::class, 'login'])->name('login.post');
+
+Route::get('forgot-password', [AuthController::class, 'showForgotForm'])->name('password.request');
+Route::post('forgot-password', [AuthController::class, 'handleForgot'])->name('password.forgot');
+
+Route::get('password/reset/{user}', [AuthController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/reset/{user}', [AuthController::class, 'resetPassword'])->name('password.reset.post');
+
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+
+
+// Registration (admin only)
+Route::middleware('auth')->group(function () {
+    Route::get('register', [AuthController::class, 'showRegisterForm'])->name('register');
+    Route::post('register', [AuthController::class, 'register'])->name('register.post');
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| Dashboard (protected)
+|--------------------------------------------------------------------------
+*/
+Route::middleware(['auth'])->prefix('dashboard')->name('dashboard.')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('home');
+
+    // 🔹 Add this route here for real-time slug generation
+    Route::get('/articles/checkSlug', [DashboardArticleController::class, 'checkSlug'])->name('articles.checkSlug');
+
+    // Article management for admin
+    Route::resource('news', ArticleController::class)->names('news');
+});
+
+
+// Dashboard CRUD (only for admin)
+Route::middleware('auth')->prefix('dashboard/news')->group(function () {
+    Route::get('/', [DashboardArticleController::class, 'index'])->name('dashboard.news.index');
+    Route::get('/create', [DashboardArticleController::class, 'create'])->name('dashboard.news.create');
+    Route::post('/news/store', [DashboardArticleController::class, 'store'])->name('dashboard.news.store');
+    Route::get('/{article}/edit', [DashboardArticleController::class, 'edit'])->name('dashboard.news.edit');
+    Route::put('/{article}', [DashboardArticleController::class, 'update'])->name('dashboard.news.update');
+    Route::delete('/{article}', [DashboardArticleController::class, 'destroy'])->name('dashboard.news.destroy');
+});
+
+// Public SEO-friendly single article
+Route::get('/news/{slug}', [ArticleController::class, 'show'])->name('news.show');

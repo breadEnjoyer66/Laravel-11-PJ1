@@ -6,20 +6,41 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
+
 
 class Article extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'author', 'slug', 'body'];
+    protected $fillable = [
+        'title',
+        'slug',
+        'body',
+        'excerpt',
+        'thumbnail',
+        'meta_title',
+        'meta_description',
+        'category_id',
+        'user_id',
+    ];
 
     protected $with = ['author', 'category'];
 
-    public function author(): BelongsTo
+    // Auto-generate slug
+    protected static function booted()
     {
-        return $this->belongsTo(User::class);
+        static::creating(function ($article) {
+            $article->slug = Str::slug($article->title) . '-' . time();
+        });
     }
 
-    public function category(): BelongsTo
+    // Relations
+    public function author()
+    {
+        return $this->belongsTo(User::class, 'author_id');
+    }
+
+    public function category()
     {
         return $this->belongsTo(Category::class);
     }
