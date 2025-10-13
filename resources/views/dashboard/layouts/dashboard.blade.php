@@ -3,14 +3,31 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>@yield('title', 'Dashboard') - Primajaya Multi Technology</title>
     <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <style>
+        .ck-editor__editable_inline {
+            min-height: 300px;
+
+            /* you can increase this value */
+        }
+    </style>
 </head>
 
 <body class="min-h-screen bg-gray-50 text-gray-800">
     <div class="antialiased bg-gray-50 dark:bg-gray-900">
+        <!-- Global toast container -->
+        <div id="globalToast" class="fixed top-16 right-6 z-50 hidden">
+            <div id="globalToastMessage" class="max-w-sm px-4 py-3 rounded shadow flex items-start space-x-3">
+                <div class="flex-1" id="globalToastText"></div>
+                <button id="globalToastClose" class="font-bold">&times;</button>
+            </div>
+        </div>
         <nav
             class="bg-white border-b border-gray-200 px-4 py-2.5 dark:bg-gray-800 dark:border-gray-700 fixed left-0 right-0 top-0 z-50">
             <div class="flex flex-wrap justify-between items-center">
@@ -174,6 +191,54 @@
 
     <!-- Alpine -->
     <script src="//unpkg.com/alpinejs" defer></script>
+
+    <script>
+        // Toast helper
+        function showGlobalToast(message, timeout = 4000, type = 'success') {
+            const container = document.getElementById('globalToast');
+            const messageBox = document.getElementById('globalToastMessage');
+            const text = document.getElementById('globalToastText');
+            const close = document.getElementById('globalToastClose');
+
+            // reset classes
+            messageBox.className = 'max-w-sm px-4 py-3 rounded shadow flex items-start space-x-3';
+
+            // apply type classes
+            if (type === 'success') {
+                messageBox.classList.add('bg-green-50', 'border', 'border-green-100', 'text-green-800');
+            } else if (type === 'error') {
+                messageBox.classList.add('bg-red-50', 'border', 'border-red-100', 'text-red-800');
+            } else if (type === 'info') {
+                messageBox.classList.add('bg-blue-50', 'border', 'border-blue-100', 'text-blue-800');
+            }
+
+            text.innerText = message;
+            container.classList.remove('hidden');
+
+            const hide = () => container.classList.add('hidden');
+            const timer = setTimeout(hide, timeout);
+
+            close.addEventListener('click', () => {
+                clearTimeout(timer);
+                hide();
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // If there's a flash message, show it as a toast (supports success/error/info)
+            @if (session('success'))
+                showGlobalToast(@json(session('success')), 4000, 'success');
+            @endif
+            @if (session('error'))
+                showGlobalToast(@json(session('error')), 6000, 'error');
+            @endif
+            @if (session('info'))
+                showGlobalToast(@json(session('info')), 4000, 'info');
+            @endif
+        });
+    </script>
+
+
 </body>
 
 </html>

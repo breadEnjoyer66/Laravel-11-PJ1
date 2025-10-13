@@ -19,13 +19,13 @@
     <div class="py-4 px-4 mx-auto max-w-7xl mt-10 lg:px-6">
         <div class="mx-auto max-w-screen-md sm:text-center">
 
-            {{-- form for search with preserving category and author filters --}}
+            {{-- form for search with preserving category and user filters --}}
             <form action="/news" method="GET">
                 @if (request('category'))
                     <input type="hidden" name="category" value="{{ request('category') }}">
                 @endif
-                @if (request('author'))
-                    <input type="hidden" name="author" value="{{ request('author') }}">
+                @if (request('user'))
+                    <input type="hidden" name="user" value="{{ request('user') }}">
                 @endif
                 <div class="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
                     <div class="relative w-full">
@@ -69,7 +69,7 @@
 
                     {{-- Thumbnail (SEO addition) --}}
                     @if ($article->thumbnail)
-                        <a href="/news/{{ $article->slug }}" itemprop="url">
+                        <a href="{{ route('news.show', $article->slug) }}" itemprop="url">
                             <img src="{{ asset('storage/' . $article->thumbnail) }}"
                                 alt="{{ $article->title }} thumbnail" loading="lazy" itemprop="image"
                                 class="w-full h-48 object-cover rounded-md mb-4">
@@ -84,11 +84,11 @@
                             </span>
                         </a>
                         <time datetime="{{ $article->created_at->toIso8601String() }}" itemprop="datePublished"
-                            class="text-sm">{{ $article->created_at->diffForHumans() }}</time>
+                            class="text-sm">{{ $article->created_at->format('d M Y') }}</time>
                     </div>
 
                     {{-- article title --}}
-                    <a href="/news/{{ $article->slug }}" itemprop="url">
+                    <a href="{{ route('news.show', $article->slug) }}" itemprop="url">
                         <h2 itemprop="headline"
                             class="mb-2 text-2xl font-bold tracking-tight text-gray-950 hover:text-blue-900 duration-300">
                             {{ $article->title }}
@@ -100,21 +100,28 @@
                         {{ Str::limit(strip_tags($article->body), 150) }}
                     </p>
 
-                    {{-- author info and read more link --}}
+                    {{-- user info and read more link --}}
                     <div class="flex justify-between items-center mt-auto">
-                        <a href="/news?author={{ $article->author->username }}" itemprop="author" itemscope
-                            itemtype="https://schema.org/Person"
-                            class="py-1 pr-3 rounded-lg hover:bg-gradient-to-r from-transparent to-slate-200 hover:ml-0.5 duration-300">
-                            <div class="flex items-center space-x-4">
-                                <img class="w-7 h-7 rounded-full"
-                                    src="{{ $article->author->avatar ?? 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png' }}"
-                                    alt="{{ $article->author->name }} avatar" />
-                                <span itemprop="name" class="font-medium text-sm">
-                                    {{ Str::words($article->author->name, 2, '') }}
-                                </span>
+                        @if ($article->user)
+                            <a href="/news?user={{ $article->user->username }}" itemprop="user" itemscope
+                                itemtype="https://schema.org/Person"
+                                class="py-1 pr-3 rounded-lg hover:bg-gradient-to-r from-transparent to-slate-200 hover:ml-0.5 duration-300">
+                                <div class="flex items-center space-x-4">
+                                    <img class="w-7 h-7 rounded-full"
+                                        src="{{ $article->user->avatar ?? 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png' }}"
+                                        alt="{{ $article->user->name ?? 'User' }} avatar" />
+                                    <span itemprop="name" class="font-medium text-sm">
+                                        {{ Str::words($article->user->name, 2, '') }}
+                                    </span>
+                                </div>
+                            </a>
+                        @else
+                            <div class="py-1 pr-3 rounded-lg text-gray-500 text-sm italic">
+                                Unknown Author
                             </div>
-                        </a>
-                        <a href="/news/{{ $article->slug }}"
+                        @endif
+
+                        <a href="{{ route('news.show', $article->slug) }}"
                             class="inline-flex items-center font-medium text-primary-600 hover:underline text-sm">
                             Read more
                             <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"

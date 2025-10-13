@@ -15,7 +15,7 @@ use App\Models\Category;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 
-
+// public routes
 Route::get('/', function () {
     return view('home', ['name' => 'Qodri Khalik', 'title' => 'Home', 'brands' => Brand::all(), 'awards' => Award::all()]);
 });
@@ -66,31 +66,27 @@ Route::middleware('auth')->group(function () {
 });
 
 
-/*
-|--------------------------------------------------------------------------
-| Dashboard (protected)
-|--------------------------------------------------------------------------
-*/
+
+// Dashboard routes
 Route::middleware(['auth'])->prefix('dashboard')->name('dashboard.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('home');
 
-    // 🔹 Add this route here for real-time slug generation
-    Route::get('/articles/checkSlug', [DashboardArticleController::class, 'checkSlug'])->name('articles.checkSlug');
+    // Real-time slug generator
+    Route::get('/news/checkSlug', [DashboardArticleController::class, 'checkSlug'])->name('news.checkSlug');
 
-    // Article management for admin
-    Route::resource('news', ArticleController::class)->names('news');
+
+    Route::post('/news/upload-image', [DashboardArticleController::class, 'uploadImage'])->name('news.upload-image');
+
+
+
+
+
+    // Proper resource route for admin news
+    Route::resource('news', DashboardArticleController::class)->names('news');
 });
 
-
-// Dashboard CRUD (only for admin)
-Route::middleware('auth')->prefix('dashboard/news')->group(function () {
-    Route::get('/', [DashboardArticleController::class, 'index'])->name('dashboard.news.index');
-    Route::get('/create', [DashboardArticleController::class, 'create'])->name('dashboard.news.create');
-    Route::post('/news/store', [DashboardArticleController::class, 'store'])->name('dashboard.news.store');
-    Route::get('/{article}/edit', [DashboardArticleController::class, 'edit'])->name('dashboard.news.edit');
-    Route::put('/{article}', [DashboardArticleController::class, 'update'])->name('dashboard.news.update');
-    Route::delete('/{article}', [DashboardArticleController::class, 'destroy'])->name('dashboard.news.destroy');
-});
 
 // Public SEO-friendly single article
-Route::get('/news/{slug}', [ArticleController::class, 'show'])->name('news.show');
+// Serve articles at the root-level slug (e.g. /my-article-slug)
+// Keep this at the bottom to avoid catching other routes unintentionally.
+Route::get('/{slug}', [ArticleController::class, 'show'])->name('news.show');

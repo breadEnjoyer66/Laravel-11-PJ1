@@ -30,7 +30,7 @@
             <div class="flex items-center h-full">
                 <div class="shrink-0">
                     <a href="/"><img src="{{ asset('img/pmt-logo-blue.png') }}" alt="Primajaya Multi Technology"
-                            class="size-24 md:size-32" /></a>
+                            class="size-24 md:size-28" /></a>
                 </div>
             </div>
             <!-- Nav menu right -->

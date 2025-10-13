@@ -24,25 +24,26 @@ class Article extends Model
         'user_id',
     ];
 
-    protected $with = ['author', 'category'];
+    protected $with = ['user', 'category'];
 
-    // Auto-generate slug
-    protected static function booted()
+
+    public function user()
     {
-        static::creating(function ($article) {
-            $article->slug = Str::slug($article->title) . '-' . time();
-        });
+        return $this->belongsTo(User::class, 'user_id');
     }
 
-    // Relations
-    public function author()
-    {
-        return $this->belongsTo(User::class, 'author_id');
-    }
 
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    /**
+     * Use the slug for route model binding so resource routes can accept slugs.
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 
     public function scopeFilter(Builder $query, array $filters): void

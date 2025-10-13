@@ -28,4 +28,14 @@ class ArticleController extends Controller
             'articles' => $articles
         ]);
     }
+
+    public function show($slug)
+    {
+        $article = \App\Models\Article::where('slug', $slug)->firstOrFail();
+
+        return view('news.article', [
+            'title' => $article->title,
+            'article' => $article
+        ]);
+    }
 }

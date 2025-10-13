@@ -9,7 +9,8 @@
 
         <div class="bg-white border p-4 rounded-lg">
             {{-- The form posts to DashboardArticleController@store --}}
-            <form action="{{ route('dashboard.news.store') }}" method="POST" enctype="multipart/form-data">
+
+            <form action="{{ url('/dashboard/news') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
@@ -31,6 +32,9 @@
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-400 focus:border-primary-400 block w-full p-2.5 placeholder:text-sm placeholder:text-gray-400"
                             placeholder="auto-generated if empty">
                         <p class="text-xs text-gray-500 mt-1">SEO friendly URL (leave as is if auto-generated)</p>
+                        @error('slug')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     {{-- Category --}}
@@ -52,11 +56,36 @@
                         @enderror
                     </div>
 
+                    {{-- Content --}}
+                    <div class="sm:col-span-2">
+                        <label for="body" class="block mb-2 text-sm font-medium text-gray-900">Article
+                            Content</label>
+                        <textarea id="body" name="body" rows="24"
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border-gray-300 focus:ring-primary-400 focus:border-primary-400 placeholder:text-sm placeholder:text-gray-400"
+                            placeholder="Write your article here...">{{ old('body') }}</textarea>
+
+
+                        @error('body')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
+
                     {{-- Thumbnail --}}
                     <div>
-                        <label for="thumbnail" class="block mb-2 text-sm font-medium text-gray-900">Thumbnail Image</label>
+                        <label for="thumbnail" class="block mb-2 text-sm font-medium text-gray-900">Thumbnail
+                            Image</label>
+                        <div class="mb-3">
+                            <img id="thumbnailPreview" src="" alt="Thumbnail preview"
+                                class="w-48 h-32 object-cover rounded-md hidden">
+                        </div>
                         <input type="file" name="thumbnail" id="thumbnail"
                             class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none">
+                        <div class="mt-2">
+                            <label class="inline-flex items-center text-sm text-gray-700">
+                                <input type="checkbox" id="clear_thumbnail_selection" class="mr-2">
+                                Clear selected thumbnail
+                            </label>
+                        </div>
                         <p class="text-xs text-gray-500 mt-1">Recommended: 1200×630px (for SEO/social)</p>
                         @error('thumbnail')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -80,34 +109,26 @@
                             placeholder="Short summary for SEO (under 160 chars)">{{ old('meta_description') }}</textarea>
                     </div>
 
-                    {{-- Content --}}
-                    <div class="sm:col-span-2">
-                        <label for="content" class="block mb-2 text-sm font-medium text-gray-900">Article Content</label>
-                        <textarea id="content" name="content" rows="8"
-                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-400 focus:border-primary-400 placeholder:text-sm placeholder:text-gray-400"
-                            placeholder="Write your article here..." required>{{ old('content') }}</textarea>
-                        @error('content')
-                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                        @enderror
-                    </div>
+
                 </div>
 
                 <button type="submit"
                     class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary-600 rounded-lg focus:ring-4 focus:ring-primary-200 hover:bg-primary-700">
                     Publish Article
                 </button>
+
             </form>
         </div>
     </div>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const title = document.querySelector('#title');
             const slug = document.querySelector('#slug');
             let typingTimer;
-            const delay = 400; // optional: delay a bit after typing before fetching slug
+            const delay = 400;
 
-            // when the title input loses focus or after short pause
             title.addEventListener('blur', generateSlug);
             title.addEventListener('keyup', function() {
                 clearTimeout(typingTimer);
@@ -116,7 +137,7 @@
 
             function generateSlug() {
                 if (!slug.dataset.manual && title.value.trim() !== '') {
-                    fetch(`/dashboard/articles/checkSlug?title=${encodeURIComponent(title.value)}`)
+                    fetch(`/dashboard/news/checkSlug?title=${encodeURIComponent(title.value)}`)
                         .then(response => response.json())
                         .then(data => {
                             slug.value = data.slug;
@@ -125,10 +146,50 @@
                 }
             }
 
-            // if user edits slug manually, stop auto-generating
             slug.addEventListener('input', function() {
                 slug.dataset.manual = true;
             });
+
+            // Thumbnail preview for create form
+            const thumbnailInput = document.querySelector('#thumbnail');
+            const thumbnailPreview = document.querySelector('#thumbnailPreview');
+            if (thumbnailInput) {
+                const clearCheckbox = document.querySelector('#clear_thumbnail_selection');
+                thumbnailInput.addEventListener('change', function(event) {
+                    const file = event.target.files[0];
+                    if (!file) {
+                        thumbnailPreview.src = '';
+                        thumbnailPreview.classList.add('hidden');
+                        return;
+                    }
+                    // client-side size validation (2 MB)
+                    const MAX_SIZE = 2 * 1024 * 1024; // 2MB
+                    if (file.size > MAX_SIZE) {
+                        showGlobalToast('Selected file is too large. Maximum size is 2 MB.', 4000, 'error');
+                        thumbnailInput.value = '';
+                        thumbnailPreview.src = '';
+                        thumbnailPreview.classList.add('hidden');
+                        return;
+                    }
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        thumbnailPreview.src = e.target.result;
+                        thumbnailPreview.classList.remove('hidden');
+                        if (clearCheckbox) clearCheckbox.checked = false;
+                    };
+                    reader.readAsDataURL(file);
+                });
+
+                if (clearCheckbox) {
+                    clearCheckbox.addEventListener('change', function(e) {
+                        if (e.target.checked) {
+                            thumbnailInput.value = '';
+                            thumbnailPreview.src = '';
+                            thumbnailPreview.classList.add('hidden');
+                        }
+                    });
+                }
+            }
         });
     </script>
 @endsection
