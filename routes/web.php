@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\Dashboard\ArticleController as DashboardArticleController;
 
 
@@ -14,6 +15,10 @@ use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
+
+
+
+
 
 // public routes
 Route::get('/', function () {
@@ -46,6 +51,8 @@ Route::get('/contact', function () {
 Route::get('/career', function () {
     return view('career', ['title' => 'Career']);
 });
+
+
 
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('login', [AuthController::class, 'login'])->name('login.post');
@@ -90,3 +97,6 @@ Route::middleware(['auth'])->prefix('dashboard')->name('dashboard.')->group(func
 // Serve articles at the root-level slug (e.g. /my-article-slug)
 // Keep this at the bottom to avoid catching other routes unintentionally.
 Route::get('/{slug}', [ArticleController::class, 'show'])->name('news.show');
+
+
+Route::post('/career', [JobApplicationController::class, 'store'])->name('career.store');

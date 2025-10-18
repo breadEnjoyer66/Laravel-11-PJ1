@@ -14,7 +14,7 @@ class AuthController extends Controller
     // Show login form
     public function showLoginForm()
     {
-        return view('auth.login');
+        return view('auth.login', ['title' => 'Sign In']);
     }
 
     // Handle login (email or username)

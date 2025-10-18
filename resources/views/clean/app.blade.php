@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title ?? 'Primajaya Dashboard' }}</title>
+    <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
+    <title>{{ $title ?? 'Dashboard PJ-Tech' }}</title>
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
 </head>

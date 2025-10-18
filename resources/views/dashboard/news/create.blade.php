@@ -31,7 +31,7 @@
                         <input type="text" name="slug" id="slug" value="{{ old('slug') }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-400 focus:border-primary-400 block w-full p-2.5 placeholder:text-sm placeholder:text-gray-400"
                             placeholder="auto-generated if empty">
-                        <p class="text-xs text-gray-500 mt-1">SEO friendly URL (leave as is if auto-generated)</p>
+                        <p class="text-xs text-gray-500 mt-1">SEO friendly URL - leave as is (Recommended)</p>
                         @error('slug')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                         @enderror
@@ -58,13 +58,7 @@
 
                     {{-- Content --}}
                     <div class="sm:col-span-2">
-                        <label for="body" class="block mb-2 text-sm font-medium text-gray-900">Article
-                            Content</label>
-                        <textarea id="body" name="body" rows="24"
-                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border-gray-300 focus:ring-primary-400 focus:border-primary-400 placeholder:text-sm placeholder:text-gray-400"
-                            placeholder="Write your article here...">{{ old('body') }}</textarea>
-
-
+                        <x-tinymce-editor name="body" value="{{ old('body') }}" />
                         @error('body')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                         @enderror

@@ -41,23 +41,38 @@
 
             {{-- Articles Table --}}
             <div class="overflow-x-auto">
-                <table class="w-full text-sm text-left text-gray-500">
+                <table class="w-full text-sm text-left text-gray-500 table-auto">
                     <thead class="text-sm text-gray-700 bg-gray-50">
                         <tr>
-                            <th scope="col" class="px-4 py-3 font-medium">Title</th>
-                            <th scope="col" class="px-4 py-3 font-medium">Author</th>
-                            <th scope="col" class="px-4 py-3 font-medium">Category</th>
-                            <th scope="col" class="px-4 py-3 font-medium">Publish Date</th>
-                            <th scope="col" class="px-4 py-3 font-medium text-right">Action</th>
+                            <th scope="col" class="px-4 py-3 font-normal">Title</th>
+
+                            <th scope="col" class="px-4 py-3 font-normal">Author</th>
+                            <th scope="col" class="px-4 py-3 font-normal">Category</th>
+                            <th scope="col" class="px-4 py-3 font-normal">Publish Date</th>
                         </tr>
                     </thead>
                     <tbody>
                         @forelse ($articles as $article)
                             <tr class="border-b dark:border-gray-700">
                                 <th scope="row"
-                                    class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $article->title }}
+                                    class="px-4 py-3 font-medium text-slate-800 whitespace-nowrap dark:text-white">
+                                    {{ $article->title }}<br>
+                                    <div class="inline-flex space-x-2 items-center text-xs font-normal ">
+                                        <a href="{{ route('news.show', $article->slug) }}"
+                                            class="text-primary-400 hover:text-primary-600">View</a>
+                                        <a href="{{ route('dashboard.news.edit', $article->slug) }}"
+                                            class="text-primary-400 hover:text-primary-600">Edit</a>
+                                        <form action="{{ route('dashboard.news.destroy', $article->slug) }}" method="POST"
+                                            onsubmit="return confirm('Delete this article?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="text-primary-400 hover:text-red-600">Delete</button>
+                                        </form>
+                                    </div>
+
                                 </th>
+
                                 <td class="px-4 py-3">
                                     {{ $article->user->name ?? '—' }}
                                 </td>
@@ -65,23 +80,9 @@
                                     {{ $article->category->name ?? 'Uncategorized' }}
                                 </td>
                                 <td class="px-4 py-3">
-                                    {{ $article->created_at->diffForHumans() }}
+                                    {{ $article->created_at->format('d M Y') }}
                                 </td>
-                                <td class="px-4 py-3 text-right">
-                                    <div class="inline-flex space-x-2">
-                                        <a href="{{ route('news.show', $article->slug) }}"
-                                            class="text-blue-600 hover:text-blue-800 text-sm">View</a>
-                                        <a href="{{ route('dashboard.news.edit', $article->slug) }}"
-                                            class="text-yellow-500 hover:text-yellow-700 text-sm">Edit</a>
-                                        <form action="{{ route('dashboard.news.destroy', $article->slug) }}" method="POST"
-                                            onsubmit="return confirm('Delete this article?')">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit"
-                                                class="text-red-500 hover:text-red-700 text-sm">Delete</button>
-                                        </form>
-                                    </div>
-                                </td>
+
                             </tr>
                         @empty
                             <tr>

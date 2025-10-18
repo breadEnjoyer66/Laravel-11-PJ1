@@ -9,6 +9,7 @@ import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
+import { GeneralHtmlSupport } from '@ckeditor/ckeditor5-html-support/src/index';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import List from '@ckeditor/ckeditor5-list/src/list';
 import Table from '@ckeditor/ckeditor5-table/src/table';
@@ -37,6 +38,8 @@ ClassicEditor.builtinPlugins = [
     Alignment,
     FileRepository,
     SimpleUploadAdapter
+    ,
+    GeneralHtmlSupport
 ];
 
 ClassicEditor.defaultConfig = {
@@ -100,6 +103,31 @@ ClassicEditor.defaultConfig = {
         headers: {
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
         }
+    },
+    // General HTML Support (GHS) configuration - keep allow list minimal for safety
+    htmlSupport: {
+        allow: [
+            // allow basic attributes on links
+            {
+                name: 'a',
+                attributes: {
+                    href: true,
+                    target: true,
+                    rel: true
+                }
+            },
+            // allow iframes but only common attributes (use sparingly)
+            {
+                name: 'iframe',
+                attributes: {
+                    src: true,
+                    width: true,
+                    height: true,
+                    frameborder: true,
+                    allowfullscreen: true
+                }
+            }
+        ]
     },
     language: 'en'
 };

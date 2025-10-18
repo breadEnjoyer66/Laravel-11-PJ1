@@ -15,14 +15,15 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::with(['user', 'category'])->latest()->paginate(10);
-        return view('dashboard.news.index', compact('articles'));
+        $title = 'Manage Articles';
+        return view('dashboard.news.index', compact('articles', 'title'));
     }
 
 
     public function create()
     {
         return view('dashboard.news.create', [
-            'title' => 'Create Article',
+            'title' => 'Write Article',
             'categories' => Category::all()
         ]);
     }

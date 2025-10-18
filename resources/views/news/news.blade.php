@@ -60,79 +60,82 @@
     </div>
 
     <div class="py-4 my-4 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 lg:py-4">
-        <div class="grid gap-8 lg:grid-cols-3 md:grid-cols-2">
+        <div class="grid gap-12 lg:grid-cols-3 md:grid-cols-2">
 
             @forelse ($articles as $article)
                 {{-- SEO Addition: schema.org markup --}}
-                <article itemscope itemtype="https://schema.org/Article"
-                    class="flex flex-col p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+
+                <article itemscope itemtype="https://schema.org/Article" class="flex flex-col bg-white rounded-lg">
 
                     {{-- Thumbnail (SEO addition) --}}
                     @if ($article->thumbnail)
                         <a href="{{ route('news.show', $article->slug) }}" itemprop="url">
                             <img src="{{ asset('storage/' . $article->thumbnail) }}"
                                 alt="{{ $article->title }} thumbnail" loading="lazy" itemprop="image"
-                                class="w-full h-48 object-cover rounded-md mb-4">
+                                class="w-full h-56 object-cover rounded-md mb-2">
                         </a>
                     @endif
 
-                    <div class="flex justify-between items-center mb-5 text-gray-500">
+
+                    {{-- category and published date --}}
+                    <div class="flex justify-between items-center mb-1 text-gray-500">
                         <a href="/news?category={{ $article->category->slug }}" itemprop="articleSection">
-                            <span
-                                class="hover:ml-1 duration-300 bg-{{ $article->category->color }}-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded">
+                            <span class="text-orange-500 font-semibold text-xs">
                                 {{ $article->category->name }}
                             </span>
                         </a>
                         <time datetime="{{ $article->created_at->toIso8601String() }}" itemprop="datePublished"
-                            class="text-sm">{{ $article->created_at->format('d M Y') }}</time>
+                            class="text-xs">{{ $article->created_at->format('d M Y') }}</time>
                     </div>
 
                     {{-- article title --}}
                     <a href="{{ route('news.show', $article->slug) }}" itemprop="url">
                         <h2 itemprop="headline"
-                            class="mb-2 text-2xl font-bold tracking-tight text-gray-950 hover:text-blue-900 duration-300">
-                            {{ $article->title }}
+                            class="mb-2 text-xl font-bold tracking-tight text-gray-950 hover:text-blue-900 duration-300">
+                            {{ Str::limit($article->title, 55) }}
                         </h2>
                     </a>
 
                     {{-- article body excerpt --}}
-                    <p class="mb-5 font-light text-gray-500 dark:text-gray-400" itemprop="description">
-                        {{ Str::limit(strip_tags($article->body), 150) }}
+                    <p class="mb-5 font-light text-gray-500 text-sm" itemprop="description">
+                        {{ Str::limit(strip_tags($article->body), 100) }}
                     </p>
 
                     {{-- user info and read more link --}}
-                    <div class="flex justify-between items-center mt-auto">
-                        @if ($article->user)
-                            <a href="/news?user={{ $article->user->username }}" itemprop="user" itemscope
-                                itemtype="https://schema.org/Person"
-                                class="py-1 pr-3 rounded-lg hover:bg-gradient-to-r from-transparent to-slate-200 hover:ml-0.5 duration-300">
-                                <div class="flex items-center space-x-4">
-                                    <img class="w-7 h-7 rounded-full"
-                                        src="{{ $article->user->avatar ?? 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png' }}"
-                                        alt="{{ $article->user->name ?? 'User' }} avatar" />
-                                    <span itemprop="name" class="font-medium text-sm">
-                                        {{ Str::words($article->user->name, 2, '') }}
-                                    </span>
+                    {{-- <div class="flex justify-between items-center mt-auto">
+                            @if ($article->user)
+                                <a href="/news?user={{ $article->user->username }}" itemprop="user" itemscope
+                                    itemtype="https://schema.org/Person"
+                                    class="py-1 pr-3 rounded-lg hover:bg-gradient-to-r from-transparent to-slate-200 hover:ml-0.5 duration-300">
+                                    <div class="flex items-center space-x-4">
+                                        <img class="w-7 h-7 rounded-full"
+                                            src="{{ $article->user->avatar ?? 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png' }}"
+                                            alt="{{ $article->user->name ?? 'User' }} avatar" />
+                                        <span itemprop="name" class="font-medium text-sm">
+                                            {{ Str::words($article->user->name, 2, '') }}
+                                        </span>
+                                    </div>
+                                </a>
+                            @else
+                                <div class="py-1 pr-3 rounded-lg text-gray-500 text-sm italic">
+                                    Unknown Author
                                 </div>
-                            </a>
-                        @else
-                            <div class="py-1 pr-3 rounded-lg text-gray-500 text-sm italic">
-                                Unknown Author
-                            </div>
-                        @endif
+                            @endif
 
-                        <a href="{{ route('news.show', $article->slug) }}"
-                            class="inline-flex items-center font-medium text-primary-600 hover:underline text-sm">
-                            Read more
-                            <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </a>
-                    </div>
+                            <a href="{{ route('news.show', $article->slug) }}"
+                                class="inline-flex items-center font-medium text-primary-600 hover:underline text-sm">
+                                Read more
+                                <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                        </div> --}}
+
                 </article>
+
             @empty
                 <div class="flex flex-col justify-center items-center col-span-3">
                     <p class="text-gray-500 dark:text-gray-400 mb-2">No articles found.</p>

@@ -59,13 +59,7 @@
 
                     {{-- Content --}}
                     <div class="sm:col-span-2">
-                        <label for="body" class="block mb-2 text-sm font-medium text-gray-900">Article
-                            Content</label>
-                        <textarea id="body" name="body" rows="24"
-                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border-gray-300 focus:ring-primary-400 focus:border-primary-400 placeholder:text-sm placeholder:text-gray-400"
-                            placeholder="Write your article here...">{{ old('body', $article->body) }}</textarea>
-
-
+                        <x-tinymce-editor name="body" value="{{ old('body', $article->body) }}" />
                         @error('body')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                         @enderror
