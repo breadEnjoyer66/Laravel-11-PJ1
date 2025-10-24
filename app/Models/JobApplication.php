@@ -6,12 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class JobApplication extends Model
 {
-    protected $fillable = [
-        'name',
-        'email',
-        'phone',
-        'position',
-        'cover_letter',
-        'resume_path',
+    protected $guarded = [
+        'id',
+    ];
+
+    protected $casts = [
+        'info_dari' => 'array',
     ];
 }

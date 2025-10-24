@@ -1,5 +1,31 @@
 import './bootstrap';
 import 'flowbite';
+import html2pdf from 'html2pdf.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('savePdfBtn');
+    if (btn) {
+        btn.addEventListener('click', () => {
+            const element = document.getElementById('printable-content');
+            if (!element) {
+                alert('Error: printable-content not found!');
+                return;
+            }
+
+            const opt = {
+                margin: 0,
+                filename: 'job-application.pdf',
+                image: { type: 'jpeg', quality: 1.0 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save();
+        });
+    }
+});
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const textarea = document.querySelector('#body');

@@ -54,9 +54,31 @@
                     </div>
                 @endif
 
-                <form x-data="formStepper()" @submit.prevent="validateCurrentStep($event)" method="POST"
+                <form x-data="formStepper()" @submit="validateCurrentStep($event)" method="POST"
                     action="{{ route('career.store') }}" enctype="multipart/form-data" class="space-y-6">
                     @csrf
+
+
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-gray-200 h-3 rounded-full overflow-hidden mb-6">
+                        <div class="h-3 bg-gradient-to-r from-primary-600 to-primary-500 rounded-full transition-all duration-500"
+                            :style="`width: ${(step / totalSteps) * 100}%`"></div>
+                    </div>
+
+                    <!-- Step container -->
+                    <div class="">
+                        <x-job-application.page-1 />
+                        <x-job-application.page-2 />
+                        <x-job-application.page-3 />
+                        <x-job-application.page-4 />
+                        <x-job-application.page-5 />
+                        <x-job-application.page-6 />
+                        <x-job-application.page-7 />
+                        <x-job-application.page-8 />
+                        <x-job-application.page-9 />
+                        <x-job-application.page-10 />
+                        <x-job-application.page-11 />
+                    </div>
 
                     <div class="flex justify-between pt-6 mt-6">
                         <button type="button" x-show="step > 1" @click="step--"
@@ -75,50 +97,47 @@
                         </button>
                     </div>
 
-                    <!-- Progress Bar -->
-                    <div class="w-full bg-gray-200 h-3 rounded-full overflow-hidden mb-6">
-                        <div class="h-3 bg-gradient-to-r from-primary-600 to-primary-500 rounded-full transition-all duration-500"
-                            :style="`width: ${(step / totalSteps) * 100}%`"></div>
-                    </div>
-
-                    <!-- Step container -->
-                    <div class="">
-                        <x-job-application.page-1 />
-                        <x-job-application.page-2 />
-                        <x-job-application.page-3 />
-                        <x-job-application.page-4 />
-                    </div>
-
                 </form>
                 <script>
                     function formStepper() {
                         return {
-                            step: 5,
-                            totalSteps: 5,
+                            step: 1,
+                            totalSteps: 11,
+
+                            // ✅ Helper function to check if any checkbox in a group is selected
+                            validateCheckboxGroup(name) {
+                                const checkboxes = document.querySelectorAll(`input[name="${name}[]"]`);
+                                return Array.from(checkboxes).some(cb => cb.checked);
+                            },
 
                             validateCurrentStep(event) {
                                 const form = event.target.closest('form');
-                                // Select all inputs that are currently visible (in the active step)
                                 const visibleInputs = form.querySelectorAll(`[x-show="step === ${this.step}"] [required]`);
 
                                 let allValid = true;
 
-                                // Temporarily disable other hidden fields so browser doesn’t validate them
+                                // Validate normal inputs
                                 visibleInputs.forEach(input => {
                                     if (!input.checkValidity()) {
                                         allValid = false;
                                     }
                                 });
 
+                                // ✅ Add checkbox group validation (only on relevant step)
+                                if (this.step === 11) { // replace 4 with the step where your checkbox is
+                                    if (!this.validateCheckboxGroup('info_dari')) {
+                                        allValid = false;
+                                        alert('Pilih minimal satu sumber informasi.');
+                                    }
+                                }
+
                                 if (allValid) {
                                     if (this.step < this.totalSteps) {
                                         this.step++;
                                     } else {
-                                        // Submit on last step
                                         form.submit();
                                     }
                                 } else {
-                                    // Trigger browser’s built-in validation pop-up
                                     form.reportValidity();
                                 }
                             }
@@ -127,60 +146,8 @@
                 </script>
 
 
+
             </section>
-
-
-            <!-- OPEN POSITIONS -->
-            <div class="space-y-8">
-                <h2 class="text-2xl font-semibold text-gray-800">Current Openings</h2>
-
-                <!-- JOB CARD EXAMPLE -->
-                <div class="border rounded-2xl shadow-sm p-6 hover:shadow-md transition bg-white/50 backdrop-blur">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-800">Graphic Designer</h3>
-                            <p class="text-gray-600 text-sm mt-1">Location: Tangerang • Department: Marketing</p>
-                        </div>
-                        <a href="#apply"
-                            class="px-5 py-2 bg-orange-500 text-white rounded-xl font-medium hover:bg-orange-600 transition">
-                            Apply Now
-                        </a>
-                    </div>
-                    <div class="mt-4 text-gray-600 leading-relaxed">
-                        We’re looking for a creative and detail-oriented Graphic Designer to produce engaging visuals
-                        for digital and print media. The ideal candidate has a passion for branding and experience in
-                        motion graphics or product marketing.
-                        <ul class="list-disc ml-6 mt-3 space-y-1 text-sm">
-                            <li>Proficient in Adobe Creative Suite (Photoshop, Illustrator, After Effects)</li>
-                            <li>Strong sense of layout and typography</li>
-                            <li>Minimum 2 years of experience in graphic design</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- JOB CARD -->
-                <div class="border rounded-2xl shadow-sm p-6 hover:shadow-md transition bg-white/50 backdrop-blur">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-800">Sales Executive</h3>
-                            <p class="text-gray-600 text-sm mt-1">Location: Jakarta • Department: Sales</p>
-                        </div>
-                        <a href="#apply"
-                            class="px-5 py-2 bg-orange-500 text-white rounded-xl font-medium hover:bg-orange-600 transition">
-                            Apply Now
-                        </a>
-                    </div>
-                    <div class="mt-4 text-gray-600 leading-relaxed">
-                        As a Sales Executive, you will be responsible for building and maintaining client relationships,
-                        achieving sales targets, and representing our product brands with professionalism.
-                        <ul class="list-disc ml-6 mt-3 space-y-1 text-sm">
-                            <li>Excellent communication and negotiation skills</li>
-                            <li>Experience in IT product sales is a plus</li>
-                            <li>Goal-oriented and proactive</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
             <!-- JOIN US SECTION -->
             <div class="bg-slate-50 shadow-sm rounded-2xl p-10 text-center">

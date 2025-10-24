@@ -90,6 +90,10 @@ Route::middleware(['auth'])->prefix('dashboard')->name('dashboard.')->group(func
 
     // Proper resource route for admin news
     Route::resource('news', DashboardArticleController::class)->names('news');
+
+    // Job applications management
+    Route::resource('job-applications', \App\Http\Controllers\Dashboard\JobApplicationController::class)
+        ->only(['index', 'show', 'destroy']);
 });
 
 

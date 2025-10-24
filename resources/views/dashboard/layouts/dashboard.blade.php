@@ -174,6 +174,22 @@
                         </ul>
                     </li>
 
+                    <li>
+                        <a href="{{ route('dashboard.job-applications.index') }}"
+                            class="flex items-center p-2 text-base text-gray-600 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M7 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 3a6.041 6.041 0 0 0-3-.75c-1.208 0-2.328.283-3.334.778a4.444 4.444 0 0 0-2.541 3.494 2.252 2.252 0 0 0 2.14 2.478H7a1 1 0 1 0 0-2H.536A.25.25 0 0 1 .265 14.45a2.444 2.444 0 0 1 1.397-1.916A6.853 6.853 0 0 1 4 12.25a4.237 4.237 0 0 1 3 1.25A1 1 0 0 0 7 11Z" />
+                                <path
+                                    d="M17 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm2 1h-4a5.001 5.001 0 0 0-5 5 2 2 0 0 0 2 2h10a2 2 0 0 0 2-2 5.001 5.001 0 0 0-5-5Z" />
+                            </svg>
+
+                            <span class="ml-3">Job Applications</span>
+                        </a>
+                    </li>
+
                 </ul>
 
             </div>
