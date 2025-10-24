@@ -59,25 +59,25 @@
                 </div>
                 <div class=" mb-2 text-end">
                     <h1 class="text-2xl font-normal text-gray-800">Data Lamaran Kerja</h1>
-                    <p class="text-sm text-gray-600">{{ $jobApplication->created_at->format('l, d F Y') }}
+                    <p class="text-sm text-gray-600">Submitted at {{ $jobApplication->created_at->format('l, d F Y') }}
                     </p>
                 </div>
             </div>
 
             {{-- Applicant's Photo --}}
-            <div class="flex justify-start gap-4 mb-6">
+            <div class="flex justify-start items-center gap-4 mb-2">
 
                 <div class="">
                     @if ($jobApplication->pas_foto)
                         <img src="{{ Storage::url($jobApplication->pas_foto) }}" alt="Applicant Photo"
-                            class="w-36 h-auto object-cover rounded-lg">
+                            class="max-w-36 h-auto border object-cover rounded-lg">
                     @endif
                 </div>
-                <div class="p-4 w-3/4">
+                <div class="p-4 w-3/4 ">
                     <div class="">
-                        <h2 class="text-3xl font-semibold pb-3 border-b mb-3">{{ $jobApplication->nama_lengkap }}</h2>
-                        <div class="flex gap-2 items-center justify-between">
-                            <div>
+                        <h2 class="text-3xl font-semibold pb-3 mb-3">{{ $jobApplication->nama_lengkap }}</h2>
+                        <div class="flex gap-2 items-center justify-start">
+                            <div class="pr-6 border-r mr-4">
                                 <div class="mb-2">
                                     <p class="text-sm text-gray-600">Alamat Email</p>
                                     <p class="font-medium">{{ $jobApplication->email }}</p>
@@ -92,7 +92,7 @@
                                 </div>
                             </div>
 
-                            <div>
+                            <div class="">
                                 <div class="mb-2">
                                     <p class="text-sm text-gray-600">Jenis Kelamin</p>
                                     <p class="font-medium">{{ $jobApplication->jenis_kelamin }}</p>
@@ -111,39 +111,11 @@
                     </div>
                 </div>
             </div>
-
+            <hr>
             {{-- Personal Information Section --}}
-            <div class="mb-8">
-
+            <div class="my-8">
+                <h2 class="text-xl font-semibold text-gray-800 bg-slate-200 py-1 px-2 mb-4">Informasi Jasmani</h2>
                 <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <p class="text-sm text-gray-600">Nama Lengkap</p>
-                        <p class="font-medium">{{ $jobApplication->nama_lengkap }}</p>
-                    </div>
-                    <div>
-                        <p class="text-sm text-gray-600">Alamat Email</p>
-                        <p class="font-medium">{{ $jobApplication->email }}</p>
-                    </div>
-                    <div>
-                        <p class="text-sm text-gray-600">Nomor Telepon</p>
-                        <p class="font-medium">{{ $jobApplication->no_hp_whatsapp }}</p>
-                    </div>
-                    <div>
-                        <p class="text-sm text-gray-600">Jenis Kelamin</p>
-                        <p class="font-medium">{{ $jobApplication->jenis_kelamin }}</p>
-                    </div>
-                    <div>
-                        <p class="text-sm text-gray-600">Status Perkawinan</p>
-                        <p class="font-medium">{{ $jobApplication->status_kawin }}</p>
-                    </div>
-                    <div>
-                        <p class="text-sm text-gray-600">Agama</p>
-                        <p class="font-medium">{{ $jobApplication->agama }}</p>
-                    </div>
-                    <div>
-                        <p class="text-sm text-gray-600">Tanggal Lahir</p>
-                        <p class="font-medium">{{ $jobApplication->tanggal_lahir }}</p>
-                    </div>
                     @if ($jobApplication->golongan_darah)
                         <div>
                             <p class="text-sm text-gray-600">Golongan Darah</p>
@@ -173,7 +145,8 @@
 
             {{-- Family Information Section --}}
             <div class="mb-8">
-                <h2 class="text-xl font-semibold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4">Family Information</h2>
+                <h2 class="text-xl font-semibold text-gray-800 bg-slate-200 py-1 px-2 mb-4">Informasi Keluarga - Orang Tua
+                </h2>
                 <div class="grid grid-cols-2 gap-6">
                     <div>
                         <h3 class="font-medium mb-2">Father's Information</h3>
@@ -216,7 +189,7 @@
 
             {{-- Education History --}}
             <div class="mb-8">
-                <h2 class="text-xl font-semibold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4">Education History</h2>
+                <h2 class="text-xl font-semibold text-gray-800 bg-slate-200 py-1 px-2 mb-4">Riwayat Pendidikan</h2>
 
                 {{-- SMA/SMK --}}
                 <div class="mb-6">
@@ -269,11 +242,11 @@
 
             {{-- Work Experience --}}
             <div class="mb-8">
-                <h2 class="text-xl font-semibold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4">Work Experience</h2>
+                <h2 class="text-xl font-semibold text-gray-800 bg-slate-200 py-1 px-2 mb-4">Riwayat Pekerjaan</h2>
 
                 {{-- Latest Work Experience --}}
                 <div class="mb-6">
-                    <h3 class="font-medium mb-2">Latest Position</h3>
+                    <h3 class="font-medium mb-2">Posisi Terakhir</h3>
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <p class="text-sm text-gray-600">Company</p>
@@ -329,25 +302,24 @@
 
             {{-- Skills & Capabilities --}}
             <div class="mb-8">
-                <h2 class="text-xl font-semibold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4">Skills & Capabilities
-                </h2>
+                <h2 class="text-xl font-semibold text-gray-800 bg-slate-200 py-1 px-2 mb-4">Skill & Kemampuan</h2>
 
                 {{-- Language Skills --}}
                 <div class="mb-6">
-                    <h3 class="font-medium mb-2">Language Proficiency</h3>
+                    <h3 class="font-medium mb-2">Kemampuan Bahasa</h3>
                     <table class="w-full">
                         <thead>
-                            <tr class="text-left text-sm text-gray-600">
-                                <th class="pb-2">Language</th>
-                                <th class="pb-2">Speaking</th>
-                                <th class="pb-2">Listening</th>
-                                <th class="pb-2">Writing</th>
-                                <th class="pb-2">Reading</th>
+                            <tr class="text-left text-sm text-gray-600 border-b">
+                                <th class="pb-2 border-r mr-2">Bahasa</th>
+                                <th class="pb-2">Berbicara</th>
+                                <th class="pb-2">Mendengarkan</th>
+                                <th class="pb-2">Menulis</th>
+                                <th class="pb-2">Membaca</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="py-1">English</td>
+                                <td class="py-1 border-r mr-2">English</td>
                                 <td>{{ $jobApplication->inggris_bicara }}</td>
                                 <td>{{ $jobApplication->inggris_dengar }}</td>
                                 <td>{{ $jobApplication->inggris_tulis }}</td>
@@ -355,7 +327,7 @@
                             </tr>
                             @if ($jobApplication->mandarin_bicara)
                                 <tr>
-                                    <td class="py-1">Mandarin</td>
+                                    <td class="py-1 border-r mr-2">Mandarin</td>
                                     <td>{{ $jobApplication->mandarin_bicara }}</td>
                                     <td>{{ $jobApplication->mandarin_dengar }}</td>
                                     <td>{{ $jobApplication->mandarin_tulis }}</td>
