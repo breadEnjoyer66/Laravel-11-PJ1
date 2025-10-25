@@ -80,7 +80,11 @@
         </div>
 
 
+        <div class="mt-6 mb-2">
+            <h2 class="text-xl font-bold">Saudara Kandung (Termasuk Diri Sendiri)</h2>
+        </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-1">
+
             <div class="">
                 <label for="nama_saudara_kandung_1"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nama

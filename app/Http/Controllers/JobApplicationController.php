@@ -64,6 +64,7 @@ class JobApplicationController extends Controller
             'diploma_nama_univ' => 'nullable|string|max:255',
             'diploma_jurusan' => 'nullable|string|max:255',
             'diploma_ipk' => 'nullable|numeric|min:0|max:4',
+            'diploma_status_lulus' => 'nullable|string|max:20',
 
             // 🎓 S1
             's1_dari' => 'nullable|string|max:20',
@@ -71,6 +72,7 @@ class JobApplicationController extends Controller
             's1_nama_univ' => 'nullable|string|max:255',
             's1_jurusan' => 'nullable|string|max:255',
             's1_ipk' => 'nullable|numeric|min:0|max:4',
+            's1_status_lulus' => 'nullable|string|max:20',
 
             // 🎓 S2
             's2_dari' => 'nullable|string|max:20',
@@ -78,6 +80,7 @@ class JobApplicationController extends Controller
             's2_nama_univ' => 'nullable|string|max:255',
             's2_jurusan' => 'nullable|string|max:255',
             's2_ipk' => 'nullable|numeric|min:0|max:4',
+            's2_status_lulus' => 'nullable|string|max:20',
 
             // 💼 JOB EXPERIENCE 1 (required)
             'nama_perusahaan_1' => 'required|string|max:255',

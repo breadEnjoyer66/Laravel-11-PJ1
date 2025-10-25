@@ -110,7 +110,7 @@
                 <div class="mb-4">
                     <label for="pernah_psikotes" class="block mb-2 font-medium text-gray-900 dark:text-gray-300">5.
                         Apakah saudara pernah menjalani pemeriksaan psikologis/psikotes? Bila pernah, kapan,
-                        di mana dan untuk apa? <span class="text-red-600 text-sm">*</span>
+                        dan di mana? <span class="text-red-600 text-sm">*</span>
                     </label>
                     <input type="text" id="pernah_psikotes" name="pernah_psikotes"
                         class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('pernah_psikotes') ? 'border border-red-500' : 'border border-gray-300' }}"
@@ -140,12 +140,14 @@
 
                 <div class="mb-4">
                     <label for="rekam_jejak_kriminal"
-                        class="block mb-2 font-medium text-gray-900 dark:text-gray-300">7. Apakah saudara memiliki
-                        rekam jejak kriminal? <span class="text-red-600 text-sm">*</span>
+                        class="block mb-2 font-medium text-gray-900 dark:text-gray-300">7. Apakah saudara pernah
+                        berurusan dengan polisi karena tindak kriminal? Bila pernah kapan dan apa kasusnya? <span
+                            class="text-red-600 text-sm">*</span>
                     </label>
                     <input type="text" id="rekam_jejak_kriminal" name="rekam_jejak_kriminal"
                         class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('rekam_jejak_kriminal') ? 'border border-red-500' : 'border border-gray-300' }}"
-                        placeholder="Isi dengan Ya atau Tidak" value="{{ old('rekam_jejak_kriminal') }}" required>
+                        placeholder="jika pernah, sebutkan waktu dan kasusnya"
+                        value="{{ old('rekam_jejak_kriminal') }}" required>
                     @error('rekam_jejak_kriminal')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
@@ -182,7 +184,7 @@
                 <div class="mb-4">
                     <label for="dapat_mulai_bekerja"
                         class="block mb-2 font-medium text-gray-900 dark:text-gray-300">10.
-                        Bila diterima kapan saudara bisa mulai bekerja?<span class="text-red-600 text-sm">*</span>
+                        Bila diterima, kapan saudara dapat mulai bekerja?<span class="text-red-600 text-sm">*</span>
                     </label>
                     <input type="text" id="dapat_mulai_bekerja" name="dapat_mulai_bekerja"
                         class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('dapat_mulai_bekerja') ? 'border border-red-500' : 'border border-gray-300' }}"

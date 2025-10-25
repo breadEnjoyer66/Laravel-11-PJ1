@@ -22,10 +22,10 @@ return new class extends Migration
             $table->string('agama', 30);
             $table->string('tempat_lahir', 30);
             $table->string('tanggal_lahir', 20);
-            $table->string('golongan_darah', 3)->nullable();
-            $table->string('kondisi_kesehatan', 100)->nullable();
-            $table->decimal('berat_badan', 5, 2)->nullable();
-            $table->decimal('tinggi_badan', 5, 2)->nullable();
+            $table->string('golongan_darah', 3);
+            $table->string('kondisi_kesehatan', 100);
+            $table->decimal('berat_badan', 5, 2);
+            $table->decimal('tinggi_badan', 5, 2);
 
             // Family Information
             $table->string('nama_ayah');
@@ -65,6 +65,7 @@ return new class extends Migration
             $table->string('diploma_nama_univ')->nullable();
             $table->string('diploma_jurusan')->nullable();
             $table->decimal('diploma_ipk', 3, 2)->nullable();
+            $table->string('diploma_status_lulus')->nullable();
 
             // Education - S1
             $table->string('s1_dari', 20)->nullable();
@@ -72,6 +73,7 @@ return new class extends Migration
             $table->string('s1_nama_univ')->nullable();
             $table->string('s1_jurusan')->nullable();
             $table->decimal('s1_ipk', 3, 2)->nullable();
+            $table->string('s1_status_lulus')->nullable();
 
             // Education - S2
             $table->string('s2_dari', 20)->nullable();
@@ -79,6 +81,7 @@ return new class extends Migration
             $table->string('s2_nama_univ')->nullable();
             $table->string('s2_jurusan')->nullable();
             $table->decimal('s2_ipk', 3, 2)->nullable();
+            $table->string('s2_status_lulus')->nullable();
 
             // Work Experience 1 (Required)
             $table->string('nama_perusahaan_1');
