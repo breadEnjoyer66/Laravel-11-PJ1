@@ -222,7 +222,7 @@
                 <div class="bg-slate-200 pt-[0px] pb-[18px] px-[8px] mb-[16px]" style="margin-top: 40px;">
                     <h2 class="text-[20px] leading-none font-semibold text-gray-800 ">
                         Data
-                        Keluarga - Saudara Kandung (Termasuk Pelamar Sendiri)
+                        Keluarga - Saudara Kandung
                     </h2>
                 </div>
 
@@ -373,7 +373,7 @@
                                         </span>
                                     </p>
                                     <p style="padding-top:0px; padding-bottom:14px; margin-top-10px;"
-                                        class="bg-green-500 text-white rounded-lg pl-3 font-semibold text-sm tracking-wide max-w-40">
+                                        class="{{ $jobApplication->diploma_status_lulus == 'Lulus' ? 'bg-green-500' : 'bg-red-500' }} text-white rounded-lg pl-3 font-semibold text-sm tracking-wide max-w-40">
                                         {{ $jobApplication->diploma_status_lulus }}
                                         -
                                         IPK {{ $jobApplication->diploma_ipk }}</p>
@@ -411,7 +411,7 @@
                                 </p>
 
                                 <p style="padding-top:0px; padding-bottom:14px; margin-top-10px;"
-                                    class="bg-green-500 text-white rounded-lg pl-3 font-semibold text-sm tracking-wide max-w-40">
+                                    class="{{ $jobApplication->s1_status_lulus == 'Lulus' ? 'bg-green-500' : 'bg-red-500' }} text-white rounded-lg pl-3 font-semibold text-sm tracking-wide max-w-40">
                                     {{ $jobApplication->s1_status_lulus }}
                                     -
                                     IPK {{ $jobApplication->s1_ipk }}</p>
@@ -443,7 +443,7 @@
                                     </span>
                                 </p>
                                 <p style="padding-top:0px; padding-bottom:14px; margin-top-10px;"
-                                    class="bg-green-500 text-white rounded-lg pl-3 font-semibold text-sm tracking-wide max-w-40">
+                                    class="{{ $jobApplication->s2_status_lulus == 'Lulus' ? 'bg-green-500' : 'bg-red-500' }} text-white rounded-lg pl-3 font-semibold text-sm tracking-wide max-w-40">
                                     {{ $jobApplication->s2_status_lulus }}
                                     -
                                     IPK {{ $jobApplication->s2_ipk }}</p>
@@ -497,7 +497,10 @@
                     <hr class="mt-4">
                     <div class="mt-2">
                         <p class="text-sm text-gray-600">Deskripsi Pekerjaan</p>
-                        <p class="whitespace-pre-line h-[150px]">{{ $jobApplication->jobdesk_pekerjaan_1 }}</p>
+                        <p class="whitespace-pre-line h-[140px]">{{ $jobApplication->jobdesk_pekerjaan_1 }}</p>
+                    </div>
+                    <div>
+                        <p class="text-sm">Alasan berhenti: {{ $jobApplication->alasan_berhenti_1 }}</p>
                     </div>
                 </div>
 
@@ -531,7 +534,10 @@
                     <hr class="mt-4">
                     <div class="mt-2">
                         <p class="text-sm text-gray-600">Deskripsi Pekerjaan</p>
-                        <p class="whitespace-pre-line min-h-[150px]">{{ $jobApplication->jobdesk_pekerjaan_2 }}</p>
+                        <p class="whitespace-pre-line min-h-[140px]">{{ $jobApplication->jobdesk_pekerjaan_2 }}</p>
+                    </div>
+                    <div>
+                        <p class="text-sm">Alasan berhenti: {{ $jobApplication->alasan_berhenti_2 }}</p>
                     </div>
                 </div>
 
@@ -564,7 +570,10 @@
                     <hr class="mt-4">
                     <div class="mt-2">
                         <p class="text-sm text-gray-600">Deskripsi Pekerjaan</p>
-                        <p class="whitespace-pre-line min-h-[150px]">{{ $jobApplication->jobdesk_pekerjaan_3 }}</p>
+                        <p class="whitespace-pre-line min-h-[140px]">{{ $jobApplication->jobdesk_pekerjaan_3 }}</p>
+                    </div>
+                    <div>
+                        <p class="text-sm">Alasan berhenti: {{ $jobApplication->alasan_berhenti_3 }}</p>
                     </div>
                 </div>
 
@@ -841,6 +850,74 @@
                     </div>
                 </div>
             </div>
+
+            <hr style="margin-bottom: 16px; margin-top: 20px;">
+
+            {{-- catatan hasil interview --}}
+            <div style="margin-bottom: 20px;">
+                <p class="text-gray-700">Catatan hasil interview (Diisi oleh interviewer)</p>
+            </div>
+            <div class="">
+
+                <table class="w-full">
+                    <thead class="border bg-primary-700 text-white font-semibold">
+                        <tr class="">
+                            <td class="pl-2 pb-3 pt-0">Catatan</td>
+                        </tr>
+                    </thead>
+                    <tbody class="border">
+                        <tr>
+                            <td>
+                                <p class="pl-2 h-[140px]"></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="bg-primary-200 pl-2 pt-0 pb-3 my-3">
+                    Penilaian keseluruhan:
+                </div>
+                <div class="flex gap-4">
+
+                    <div class="w-1/2">
+                        <table class="text-sm">
+                            <thead class="">
+                                <tr>
+                                    <td class="border pt-0 pb-3 px-2 font-semibold">Lolos</td>
+                                    <td class="border pt-0 pb-3 px-2 w-full"></td>
+                                </tr>
+                                <tr>
+                                    <td class="border pt-0 pb-3 px-2 font-semibold">Tidak Lolos
+                                    </td>
+                                    <td class="border pt-0 pb-3 px-2 w-full"></td>
+                                </tr>
+                                <tr>
+                                    <td class="border pt-0 pb-3 px-2 font-semibold">
+                                        Dipertimbangkan</td>
+                                    <td class="border pt-0 pb-3 px-2 w-full"></td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="w-1/2">
+                        <table class="text-sm">
+                            <thead class="">
+                                <tr>
+                                    <td class="border pt-0 pb-3 px-2 font-semibold">Interviewer</td>
+                                    <td class="border pt-0 pb-3 px-2 w-full"></td>
+                                </tr>
+                                <tr>
+                                    <td class="border pt-0 pb-3 px-2 font-semibold">Tanggal Interview
+                                    </td>
+                                    <td class="border pt-0 pb-3 px-2 w-full"></td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
         </div>
     </section>

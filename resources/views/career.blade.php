@@ -29,7 +29,7 @@
             </div>
 
             <!-- JOB APPLICATION FORM -->
-            <section id="job-application"
+            <section id="job-application" id="job-form"
                 class="max-w-7xl mx-auto mt-20 px-6 py-10 bg-white border border-slate-100 rounded-2xl">
                 <h2
                     class="text-3xl font-bold text-gray-800 mb-6 text-center bg-gradient-to-r from-orange-600 to-orange-500 text-transparent bg-clip-text">
