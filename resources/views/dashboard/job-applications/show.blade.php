@@ -40,7 +40,7 @@
         </div>
 
         {{-- A4 Paper Style Container --}}
-        <div class="bg-white shadow-md max-w-[210mm] mx-auto px-[20mm] pb-[16mm] pt-[10mm] min-h-[297mm] relative"
+        <div class="bg-white shadow-md max-w-[210mm] mx-auto px-[16mm] pb-[16mm] pt-[10mm] min-h-[297mm] relative"
             id="printable-content">
 
             {{-- Header with Company Logo --}}
@@ -55,46 +55,68 @@
                     </p>
                 </div>
             </div>
-            <hr class="-mt-[14px] mb-[10px] border-slate-800">
+
+            <hr class="-mt-[14px] mb-[14px] border-slate-800">
+
+
+            <div class="bg-slate-200 pt-[0px] pb-[18px] px-[8px] mb-[16px]">
+                <h2 class="text-[20px] leading-none font-semibold text-gray-800 ">
+                    Data Pribadi
+                </h2>
+            </div>
 
             {{-- Applicant's Photo --}}
             <div class="flex justify-start items-center gap-4">
 
-                <div class="p-4 w-3/4 ">
+                <div class=" w-3/4 ">
                     <div class="">
-                        <h2 class="text-3xl font-semibold pb-3 mb-3">{{ $jobApplication->nama_lengkap }}</h2>
-                        <div class="flex gap-2 items-center justify-start">
-                            <div class="pr-6 border-r mr-4">
-                                <div class="mb-2">
-                                    <p class="text-sm text-gray-600">Alamat Email</p>
-                                    <p class="font-medium">{{ $jobApplication->email }}</p>
-                                </div>
-                                <div class="mb-2">
-                                    <p class="text-sm text-gray-600">No.HP/Whatsapp</p>
-                                    <p class="font-medium">{{ $jobApplication->no_hp_whatsapp }}</p>
-                                </div>
-                                <div>
-                                    <p class="text-sm text-gray-600">Agama</p>
-                                    <p class="font-medium">{{ $jobApplication->agama }}</p>
-                                </div>
+                        <h2 class="text-3xl font-semibold pb-3">{{ $jobApplication->nama_lengkap }}</h2>
+                        <div class="grid grid-cols-2 gap-4 items-center justify-start">
+
+                            <div class="">
+                                <p class="text-sm text-gray-600">Alamat Email</p>
+                                <p class="font-medium">{{ $jobApplication->email }}</p>
+                            </div>
+                            <div class="">
+                                <p class="text-sm text-gray-600">No.HP/Whatsapp</p>
+                                <p class="font-medium">{{ $jobApplication->no_hp_whatsapp }}</p>
+                            </div>
+                            <div class="">
+                                <p class="text-sm text-gray-600">Tempat & Tanggal Lahir</p>
+                                <p class="font-medium">{{ $jobApplication->tempat_lahir }},
+                                    {{ \Carbon\Carbon::parse(trim($jobApplication->tanggal_lahir))->format('d M Y') }}
+                                </p>
+                            </div>
+                            <div class="">
+                                <p class="text-sm text-gray-600">Agama</p>
+                                <p class="font-medium">{{ $jobApplication->agama }}</p>
+                            </div>
+                            <div class="">
+                                <p class="text-sm text-gray-600">Jenis Kelamin</p>
+                                <p class="font-medium">{{ $jobApplication->jenis_kelamin }}</p>
+                            </div>
+                            <div class="">
+                                <p class="text-sm text-gray-600">Status Perkawinan</p>
+                                <p class="font-medium">{{ $jobApplication->status_kawin }}</p>
                             </div>
 
                             <div class="">
-                                <div class="mb-2">
-                                    <p class="text-sm text-gray-600">Jenis Kelamin</p>
-                                    <p class="font-medium">{{ $jobApplication->jenis_kelamin }}</p>
-                                </div>
-                                <div class="mb-2">
-                                    <p class="text-sm text-gray-600">Status Perkawinan</p>
-                                    <p class="font-medium">{{ $jobApplication->status_kawin }}</p>
-                                </div>
-                                <div>
-                                    <p class="text-sm text-gray-600">Tempat & Tanggal Lahir</p>
-                                    <p class="font-medium">{{ $jobApplication->tempat_lahir }},
-                                        {{ \Carbon\Carbon::parse(trim($jobApplication->tanggal_lahir))->format('d F Y') }}
-                                    </p>
-                                </div>
+                                <p class="text-sm text-gray-600">Golongan Darah</p>
+                                <p class="font-medium">{{ $jobApplication->golongan_darah }}</p>
                             </div>
+                            <div class="">
+                                <p class="text-sm text-gray-600">Kondisi Kesehatan</p>
+                                <p class="font-medium">{{ $jobApplication->kondisi_kesehatan }}</p>
+                            </div>
+                            <div class="">
+                                <p class="text-sm text-gray-600">Berat Badan</p>
+                                <p class="font-medium">{{ $jobApplication->berat_badan }} kg</p>
+                            </div>
+                            <div class="">
+                                <p class="text-sm text-gray-600">Tinggi Badan</p>
+                                <p class="font-medium">{{ $jobApplication->tinggi_badan }} cm</p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -103,69 +125,58 @@
                 <div class="">
                     @if ($jobApplication->pas_foto)
                         <img src="{{ Storage::url($jobApplication->pas_foto) }}" alt="Applicant Photo"
-                            class="max-w-60 h-auto border object-cover rounded-lg">
+                            class="max-w-60 h-auto shadow-md object-cover rounded-lg">
                     @endif
                 </div>
 
             </div>
 
-            {{-- Personal Information Section --}}
-            <div class="mb-[32px] mt-[8px]">
-                <div class="bg-slate-200 pt-[0px] pb-[18px] px-[8px] mb-[16px]">
-                    <h2 class="text-[20px] leading-none font-semibold text-gray-800 ">
-                        Data Pribadi
-                    </h2>
+            {{-- Address Section --}}
+            <div class="border" style="margin: 30px 0px; padding: 16px; border-radius: 12px;">
+                <div style="margin-top: -10px; margin-bottom:20px;">
+                    <p class="text-sm text-gray-600">Alamat Domisili</p>
+                    <p class="font-medium">{{ $jobApplication->alamat_domisili }}</p>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
+                <hr style="margin: 10px 0;">
+                <div class="grid grid-cols-3 gap-4">
                     <div>
-                        <p class="text-sm text-gray-600">Golongan Darah</p>
-                        <p class="font-medium">{{ $jobApplication->golongan_darah }}</p>
-                    </div>
-                    <div>
-                        <p class="text-sm text-gray-600">Kondisi Kesehatan</p>
-                        <p class="font-medium">{{ $jobApplication->kondisi_kesehatan }}</p>
-                    </div>
-                    <div>
-                        <p class="text-sm text-gray-600">Berat Badan</p>
-                        <p class="font-medium">{{ $jobApplication->berat_badan }} kg</p>
-                    </div>
-                    <div>
-                        <p class="text-sm text-gray-600">Tinggi Badan</p>
-                        <p class="font-medium">{{ $jobApplication->tinggi_badan }} cm</p>
+                        <p class="text-sm text-gray-600">Kota/Kabupaten</p>
+                        <p class="font-medium">{{ $jobApplication->kota_kabupaten }}</p>
                     </div>
 
-                </div>
-
-                <div class="border" style="margin-top: 20px; padding: 16px; border-radius: 12px;">
                     <div>
-                        <p class="text-sm text-gray-600">Alamat Domisili</p>
-                        <p class="font-medium">{{ $jobApplication->alamat_domisili }}</p>
+                        <p class="text-sm text-gray-600">Telepon Rumah</p>
+                        <p class="font-medium">{{ $jobApplication->tel_rumah }}</p>
                     </div>
-                    <hr style="margin: 10px 0;">
-                    <div class="grid grid-cols-3 gap-4">
-                        <div>
-                            <p class="text-sm text-gray-600">Kota/Kabupaten</p>
-                            <p class="font-medium">{{ $jobApplication->kota_kabupaten }}</p>
-                        </div>
 
-                        <div>
-                            <p class="text-sm text-gray-600">Telepon Rumah</p>
-                            <p class="font-medium">{{ $jobApplication->tel_rumah }}</p>
-                        </div>
-
-                        <div>
-                            <p class="text-sm text-gray-600">Kode Pos</p>
-                            <p class="font-medium">{{ $jobApplication->kode_pos }}</p>
-                        </div>
+                    <div>
+                        <p class="text-sm text-gray-600">Kode Pos</p>
+                        <p class="font-medium">{{ $jobApplication->kode_pos }}</p>
                     </div>
                 </div>
             </div>
 
+            <div style="margin-bottom: 24px;">
+                <h3 class="text-xl font-semibold" style="margin-bottom:20px;">Posisi Yang Dilamar</h3>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="border rounded-lg px-4 pb-5">Prioritas <br><span
+                            class="text-lg font-semibold">{{ $jobApplication->posisi_prioritas }}</span>
+                    </div>
+                    <div class="border rounded-lg px-4 pb-5">Alternatif <br><span
+                            class="text-lg font-semibold">{{ $jobApplication->posisi_alternatif }}</span>
+                    </div>
+                    <div class="border rounded-lg px-4 pb-5">Keahlian Pelamar<br><span
+                            class="text-lg font-semibold">{{ $jobApplication->keahlian }}</span></div>
+                </div>
+            </div>
+
+            <div class="page-break" style="margin-bottom: 60px"></div>
+
             {{-- Family Information Section --}}
-            <div class="mb-8">
+            <div class="my-8">
                 <div class="bg-slate-200 pt-[0px] pb-[18px] px-[8px] mb-[16px]">
                     <h2 class="text-[20px] leading-none font-semibold text-gray-800 ">
-                        Informasi
+                        Data
                         Keluarga - Orang Tua
                     </h2>
                 </div>
@@ -178,8 +189,8 @@
                                 <p>{{ $jobApplication->nama_ayah }}</p>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600">Tempat Lahir</p>
-                                <p>{{ $jobApplication->tempat_lahir_ayah }}</p>
+                                <p class="text-sm text-gray-600">Usia Ibu</p>
+                                <p>{{ $jobApplication->usia_ayah }} Tahun</p>
                             </div>
                             <div>
                                 <p class="text-sm text-gray-600">Pekerjaan</p>
@@ -195,8 +206,8 @@
                                 <p>{{ $jobApplication->nama_ibu }}</p>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600">Tempat Lahir</p>
-                                <p>{{ $jobApplication->tempat_lahir_ibu }}</p>
+                                <p class="text-sm text-gray-600">Usia Ibu</p>
+                                <p>{{ $jobApplication->usia_ibu }} Tahun</p>
                             </div>
                             <div>
                                 <p class="text-sm text-gray-600">Pekerjaan</p>
@@ -206,55 +217,108 @@
                     </div>
                 </div>
 
-                <div class="page-break" style="margin-bottom: 60px"></div>
+
 
                 <div class="bg-slate-200 pt-[0px] pb-[18px] px-[8px] mb-[16px]" style="margin-top: 40px;">
                     <h2 class="text-[20px] leading-none font-semibold text-gray-800 ">
-                        Informasi
-                        Keluarga - Saudara Kandung
+                        Data
+                        Keluarga - Saudara Kandung (Termasuk Pelamar Sendiri)
                     </h2>
                 </div>
 
-                <div class="grid grid-cols-2 gap-6" style="margin-top: 30px">
-                    <div>
-                        <h3 class="font-medium mb-2">Saudara Kandung 1</h3>
+                <div class="grid grid-cols-4 gap-6" style="margin-top: 20px; margin-bottom: 30px;">
+                    <div class="min-h-[170px]">
+                        <h3 class="text-sm font-medium text-gray-500 mb-2">Sdr Kandung 1</h3>
                         <div class="space-y-2">
                             <div>
-                                <p class="text-sm text-gray-600">Nama</p>
-                                <p>{{ $jobApplication->nama_saudara_kandung_1 ? $jobApplication->nama_saudara_kandung_1 : '-' }}
+
+                                <p class="font-semibold">{{ $jobApplication->nama_saudara_kandung_1 }}
                                 </p>
                             </div>
                             <div>
-                                <p class="text-sm text-gray-600">Tempat Lahir</p>
-                                <p>{{ $jobApplication->tempat_lahir_saudara_kandung_1 ? $jobApplication->tempat_lahir_saudara_kandung_1 : '-' }}
+                                <p class="text-sm text-gray-600">Usia</p>
+                                <p>{{ $jobApplication->usia_saudara_kandung_1 }} Tahun
                                 </p>
                             </div>
                             <div>
                                 <p class="text-sm text-gray-600">Pekerjaan</p>
-                                <p>{{ $jobApplication->pekerjaan_saudara_kandung_1 ? $jobApplication->pekerjaan_saudara_kandung_1 : '-' }}
+                                <p>{{ $jobApplication->pekerjaan_saudara_kandung_1 }}
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <h3 class="font-medium mb-2">Saudara Kandung 2</h3>
-                        <div class="space-y-2">
-                            <div>
-                                <p class="text-sm text-gray-600">Nama</p>
-                                <p>{{ $jobApplication->nama_saudara_kandung_2 ? $jobApplication->nama_saudara_kandung_2 : '-' }}
-                                </p>
+                    <div class="min-h-[170px]">
+                        <h3 class="text-sm font-medium text-gray-500 mb-2">Sdr Kandung 2</h3>
+                        @if ($jobApplication->nama_saudara_kandung_2)
+                            <div class="space-y-2">
+                                <div>
+
+                                    <p class="font-semibold">{{ $jobApplication->nama_saudara_kandung_2 }}
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Usia</p>
+                                    <p>{{ $jobApplication->usia_saudara_kandung_2 }} Tahun
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Pekerjaan</p>
+                                    <p>{{ $jobApplication->pekerjaan_saudara_kandung_2 }}
+                                    </p>
+                                </div>
                             </div>
-                            <div>
-                                <p class="text-sm text-gray-600">Tempat Lahir</p>
-                                <p>{{ $jobApplication->tempat_lahir_saudara_kandung_2 ? $jobApplication->tempat_lahir_saudara_kandung_2 : '-' }}
-                                </p>
+                        @else
+                            <p class="text-sm text-gray-600">Saudara kandung 2 tidak diisi</p>
+                        @endif
+                    </div>
+                    <div class="min-h-[170px]">
+                        <h3 class="text-sm font-medium text-gray-500 mb-2">Sdr Kandung 3</h3>
+                        @if ($jobApplication->nama_saudara_kandung_3)
+                            <div class="space-y-2">
+                                <div>
+
+                                    <p class="font-semibold">{{ $jobApplication->nama_saudara_kandung_3 }}
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Usia</p>
+                                    <p>{{ $jobApplication->usia_saudara_kandung_3 }} Tahun
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Pekerjaan</p>
+                                    <p>{{ $jobApplication->pekerjaan_saudara_kandung_3 }}
+                                    </p>
+                                </div>
                             </div>
-                            <div>
-                                <p class="text-sm text-gray-600">Pekerjaan</p>
-                                <p>{{ $jobApplication->pekerjaan_saudara_kandung_2 ? $jobApplication->pekerjaan_saudara_kandung_2 : '-' }}
-                                </p>
+                        @else
+                            <p class="text-sm text-gray-600">Saudara kandung 3 tidak diisi</p>
+                        @endif
+                    </div>
+                    <div class="min-h-[170px]">
+                        <h3 class="text-sm font-medium text-gray-500 mb-2">Saudara Kandung 4</h3>
+                        @if ($jobApplication->nama_saudara_kandung_4)
+                            <div class="space-y-2">
+                                <div>
+
+                                    <p class="font-semibold">{{ $jobApplication->nama_saudara_kandung_4 }}
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Usia</p>
+                                    <p>{{ $jobApplication->usia_saudara_kandung_4 }} Tahun
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Pekerjaan</p>
+                                    <p>{{ $jobApplication->pekerjaan_saudara_kandung_4 }}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        @else
+                            <p class="text-sm text-gray-600">Saudara kandung 4 tidak diisi</p>
+                        @endif
+
                     </div>
                 </div>
             </div>
@@ -271,124 +335,131 @@
 
                 {{-- SMA/SMK --}}
                 <div class="">
-                    <h3 class="font-medium mb-2">SLTA/SMK/SMA</h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
+
+                    <div class="flex justify-between gap-4 items-start">
+                        <div class="w-1/2">
+                            <h3 class="font-medium mb-2">SLTA/SMK/SMA</h3>
                             <p class="text-gray-700"><span class="font-semibold">{{ $jobApplication->sma_nama }}</span> -
                                 {{ $jobApplication->sma_jurusan }}</p>
-                            <p class="text-sm">Periode:
-                                {{ $jobApplication->sma_dari ? \Carbon\Carbon::parse(trim($jobApplication->sma_dari))->format('F Y') : '-' }}
-                                -
-                                {{ $jobApplication->sma_sampai ? \Carbon\Carbon::parse(trim($jobApplication->sma_sampai))->format('F Y') : '-' }}
+                            <p class="text-sm" style="margin: 10px 0;">Periode:
+                                <span class="font-medium text-primary-800">
+                                    {{ $jobApplication->sma_dari ? \Carbon\Carbon::parse(trim($jobApplication->sma_dari))->format('d M Y') : '-' }}
+                                    -
+                                    {{ $jobApplication->sma_sampai ? \Carbon\Carbon::parse(trim($jobApplication->sma_sampai))->format('d M Y') : '-' }}
+                                </span>
+                            </p>
+
+                            <p style="padding-top:0px; padding-bottom:14px; margin-top-10px;"
+                                class="{{ $jobApplication->sma_status_lulus == 'Lulus' ? 'bg-green-500' : 'bg-red-500' }} text-white rounded-lg pl-3 font-semibold text-sm tracking-wide max-w-40">
+                                {{ $jobApplication->sma_status_lulus }}
                             </p>
                         </div>
-                        <div>
-                            <p class="text-sm text-gray-600">Status Kelulusan</p>
-                            <p>{{ $jobApplication->sma_status_lulus }}</p>
+
+                        <div class="w-1/2">
+                            <h3 class="font-medium mb-2">Diploma</h3>
+
+                            @if ($jobApplication->diploma_nama_univ)
+                                <div>
+                                    <p class="text-gray-700"><span
+                                            class="font-semibold">{{ $jobApplication->diploma_nama_univ }}</span>
+                                        -
+                                        {{ $jobApplication->diploma_jurusan }}
+                                    </p>
+                                    <p class="text-sm" style="margin: 10px 0;">Periode:
+                                        <span class="font-medium text-primary-800">
+                                            {{ \Carbon\Carbon::parse(trim($jobApplication->diploma_dari))->format('d M Y') }}
+                                            -
+                                            {{ \Carbon\Carbon::parse(trim($jobApplication->diploma_sampai))->format('d M Y') }}
+                                        </span>
+                                    </p>
+                                    <p style="padding-top:0px; padding-bottom:14px; margin-top-10px;"
+                                        class="bg-green-500 text-white rounded-lg pl-3 font-semibold text-sm tracking-wide max-w-40">
+                                        {{ $jobApplication->diploma_status_lulus }}
+                                        -
+                                        IPK {{ $jobApplication->diploma_ipk }}</p>
+                                </div>
+                            @else
+                                <p class="text-sm text-gray-600">Tidak ada data Diploma 3 yang diisi.</p>
+                            @endif
+
                         </div>
+
                     </div>
                 </div>
 
-                <hr style="margin-top: 20px; margin-bottom:20px;">
 
-                {{-- Diploma --}}
-                <div class="">
-                    <h3 class="font-medium mb-2">Diploma</h3>
+                <hr style="margin: 20px 0;">
 
-                    @if ($jobApplication->diploma_nama_univ)
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <p class="text-gray-700"><span
-                                        class="font-semibold">{{ $jobApplication->diploma_nama_univ }}</span>
-                                    -
-                                    {{ $jobApplication->diploma_jurusan }}
-                                </p>
-                                <p class="text-sm">Periode:
-                                    {{ \Carbon\Carbon::parse(trim($jobApplication->diploma_dari))->format('F Y') }}
-                                    -
-                                    {{ \Carbon\Carbon::parse(trim($jobApplication->diploma_sampai))->format('F Y') }}
-                                </p>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-600">Status Kelulusan</p>
-                                <p>{{ $jobApplication->diploma_status_lulus }}
-                                    -
-                                    IPK {{ $jobApplication->diploma_ipk }}</p>
-                            </div>
-                        </div>
-                    @else
-                        <p class="text-sm text-gray-600">Tidak ada data Diploma 3 yang diisi.</p>
-                    @endif
+                <div class="flex items-start gap-4">
+                    {{-- Strata 1 --}}
+                    <div class="w-1/2">
+                        <h3 class="font-medium mb-2">Strata 1</h3>
 
-                </div>
-
-                <hr style="margin-top: 20px; margin-bottom:20px;">
-
-                {{-- Strata 1 --}}
-                <div class="">
-                    <h3 class="font-medium mb-2">Strata 1</h3>
-
-                    @if ($jobApplication->s1_nama_univ)
-                        <div class="grid grid-cols-2 gap-4">
+                        @if ($jobApplication->s1_nama_univ)
                             <div>
                                 <p class="text-gray-700"><span
                                         class="font-semibold">{{ $jobApplication->s1_nama_univ }}</span>
                                     -
                                     {{ $jobApplication->s1_jurusan }}
                                 </p>
-                                <p class="text-sm">Periode:
-                                    {{ \Carbon\Carbon::parse(trim($jobApplication->s1_dari))->format('F Y') }}
-                                    -
-                                    {{ \Carbon\Carbon::parse(trim($jobApplication->s1_sampai))->format('F Y') }}
+                                <p class="text-sm" style="margin: 10px 0;">Periode:
+                                    <span class="font-medium text-primary-800">
+                                        {{ \Carbon\Carbon::parse(trim($jobApplication->s1_dari))->format('d M Y') }}
+                                        -
+                                        {{ \Carbon\Carbon::parse(trim($jobApplication->s1_sampai))->format('d M Y') }}
+                                    </span>
                                 </p>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-600">Status Kelulusan</p>
-                                <p>{{ $jobApplication->s1_status_lulus }}
+
+                                <p style="padding-top:0px; padding-bottom:14px; margin-top-10px;"
+                                    class="bg-green-500 text-white rounded-lg pl-3 font-semibold text-sm tracking-wide max-w-40">
+                                    {{ $jobApplication->s1_status_lulus }}
                                     -
                                     IPK {{ $jobApplication->s1_ipk }}</p>
                             </div>
-                        </div>
-                    @else
-                        <p class="text-sm text-gray-600">Tidak ada data S1 yang diisi.</p>
-                    @endif
+                        @else
+                            <p class="text-sm text-gray-600">Tidak ada data S1 yang diisi.</p>
+                        @endif
+                    </div>
 
-                </div>
 
-                <hr style="margin-top: 20px; margin-bottom:20px;">
 
-                {{-- Strata 2 --}}
-                <div class="">
-                    <h3 class="font-medium mb-2">Strata 2</h3>
 
-                    @if ($jobApplication->s2_nama_univ)
-                        <div class="grid grid-cols-2 gap-4">
+
+                    <div class="w-1/2">
+                        <h3 class="font-medium mb-2">Strata 2</h3>
+
+                        @if ($jobApplication->s2_nama_univ)
                             <div>
                                 <p class="text-gray-700"><span
                                         class="font-semibold">{{ $jobApplication->s2_nama_univ }}</span>
                                     -
                                     {{ $jobApplication->s2_jurusan }}
                                 </p>
-                                <p class="text-sm">Periode:
-                                    {{ \Carbon\Carbon::parse(trim($jobApplication->s2_dari))->format('F Y') }}
-                                    -
-                                    {{ \Carbon\Carbon::parse(trim($jobApplication->s2_sampai))->format('F Y') }}
+                                <p class="text-sm" style="margin: 10px 0;">Periode:
+                                    <span class="font-medium text-primary-800">
+                                        {{ \Carbon\Carbon::parse(trim($jobApplication->s2_dari))->format('d M Y') }}
+                                        -
+                                        {{ \Carbon\Carbon::parse(trim($jobApplication->s2_sampai))->format('d M Y') }}
+                                    </span>
                                 </p>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-600">Status Kelulusan</p>
-                                <p>{{ $jobApplication->s2_status_lulus }}
+                                <p style="padding-top:0px; padding-bottom:14px; margin-top-10px;"
+                                    class="bg-green-500 text-white rounded-lg pl-3 font-semibold text-sm tracking-wide max-w-40">
+                                    {{ $jobApplication->s2_status_lulus }}
                                     -
                                     IPK {{ $jobApplication->s2_ipk }}</p>
                             </div>
-                        </div>
-                    @else
-                        <p class="text-sm text-gray-600">Tidak ada data S2 yang diisi.</p>
-                    @endif
+                        @else
+                            <p class="text-sm text-gray-600">Tidak ada data S2 yang diisi.</p>
+                        @endif
 
+                    </div>
                 </div>
 
+                {{-- Strata 2 --}}
+
             </div>
+
+
 
 
             <div class="page-break" style="margin-bottom: 60px"></div>
@@ -411,9 +482,11 @@
                                 {{ $jobApplication->nama_perusahaan_1 }}
                             </p>
                             <p class="text-sm">Periode :
-                                {{ $jobApplication->job_1_dari ? \Carbon\Carbon::parse(trim($jobApplication->job_1_dari))->format('F Y') : '-' }}
-                                -
-                                {{ $jobApplication->job_1_sampai ? \Carbon\Carbon::parse(trim($jobApplication->job_1_sampai))->format('F Y') : '-' }}
+                                <span class="font-medium text-primary-800">
+                                    {{ $jobApplication->job_1_dari ? \Carbon\Carbon::parse(trim($jobApplication->job_1_dari))->format('d M Y') : '-' }}
+                                    -
+                                    {{ $jobApplication->job_1_sampai ? \Carbon\Carbon::parse(trim($jobApplication->job_1_sampai))->format('d M Y') : '-' }}
+                                </span>
                             </p>
                         </div>
                         <div>
@@ -424,7 +497,7 @@
                     <hr class="mt-4">
                     <div class="mt-2">
                         <p class="text-sm text-gray-600">Deskripsi Pekerjaan</p>
-                        <p class="whitespace-pre-line min-h-[220px]">{{ $jobApplication->jobdesk_pekerjaan_1 }}</p>
+                        <p class="whitespace-pre-line h-[150px]">{{ $jobApplication->jobdesk_pekerjaan_1 }}</p>
                     </div>
                 </div>
 
@@ -440,9 +513,11 @@
                                     {{ $jobApplication->nama_perusahaan_2 }}
                                 </p>
                                 <p class="text-sm">Periode :
-                                    {{ \Carbon\Carbon::parse(trim($jobApplication->job_2_dari))->format('F Y') }}
-                                    -
-                                    {{ \Carbon\Carbon::parse(trim($jobApplication->job_2_sampai))->format('F Y') }}
+                                    <span class="font-medium text-primary-800">
+                                        {{ \Carbon\Carbon::parse(trim($jobApplication->job_2_dari))->format('d M Y') }}
+                                        -
+                                        {{ \Carbon\Carbon::parse(trim($jobApplication->job_2_sampai))->format('d M Y') }}
+                                    </span>
                                 </p>
                             </div>
                             <div>
@@ -456,7 +531,40 @@
                     <hr class="mt-4">
                     <div class="mt-2">
                         <p class="text-sm text-gray-600">Deskripsi Pekerjaan</p>
-                        <p class="whitespace-pre-line min-h-[220px]">{{ $jobApplication->jobdesk_pekerjaan_2 }}</p>
+                        <p class="whitespace-pre-line min-h-[150px]">{{ $jobApplication->jobdesk_pekerjaan_2 }}</p>
+                    </div>
+                </div>
+
+                {{-- Latest Work Experience 2 --}}
+                <div class="mb-6 border p-4 rounded-xl">
+                    <h3 class="mb-2 text-gray-600">Riwayat Pekerjaan 3</h3>
+                    @if ($jobApplication->nama_perusahaan_3)
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="font-semibold tracking-wide">{{ $jobApplication->jabatan_3 }} <span
+                                        class="italic">di</span>
+                                    {{ $jobApplication->nama_perusahaan_3 }}
+                                </p>
+                                <p class="text-sm">Periode :
+                                    <span class="font-medium text-primary-800">
+                                        {{ \Carbon\Carbon::parse(trim($jobApplication->job_3_dari))->format('d M Y') }}
+                                        -
+                                        {{ \Carbon\Carbon::parse(trim($jobApplication->job_3_sampai))->format('d M Y') }}
+                                    </span>
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">Gaji Terakhir</p>
+                                <p>Rp {{ number_format($jobApplication->gaji_terakhir_3, 0, ',', '.') }}</p>
+                            </div>
+                        </div>
+                    @else
+                        <p class="text-sm text-gray-600">Riwayat pekerjaan 3 tidak tersedia.</p>
+                    @endif
+                    <hr class="mt-4">
+                    <div class="mt-2">
+                        <p class="text-sm text-gray-600">Deskripsi Pekerjaan</p>
+                        <p class="whitespace-pre-line min-h-[150px]">{{ $jobApplication->jobdesk_pekerjaan_3 }}</p>
                     </div>
                 </div>
 
@@ -497,7 +605,7 @@
                             </tr>
 
                             <tr class="">
-                                <td class="border-r border-b pt-0 pb-4 pl-2 font-semibold">Mandarin</td>
+                                <td class="border-r border-b pt-0 pb-4 pl-2 font-semibold">Hokkien</td>
                                 <td class="border-r border-b pt-0 pb-4 pl-2">{{ $jobApplication->mandarin_bicara }}</td>
                                 <td class="border-r border-b pt-0 pb-4 pl-2">{{ $jobApplication->mandarin_dengar }}</td>
                                 <td class="border-r border-b pt-0 pb-4 pl-2">{{ $jobApplication->mandarin_tulis }}</td>
@@ -505,8 +613,10 @@
                             </tr>
 
                             <tr>
-                                <td class="border-r pt-0 pb-4 pl-2 font-semibold">Bahasa Asing Lain</td>
-                                <td class="border-r pt-0 pb-4 pl-2">{{ $jobApplication->bahasa_asing_lain }}</td>
+                                <td class="border-r pt-0 pb-4 pl-2 font-semibold"><span
+                                        class="text-xs font-normal text-gray-500">
+                                        Lainnya</span><br>{{ $jobApplication->bahasa_asing_lain }}</td>
+                                <td class="border-r pt-0 pb-4 pl-2">{{ $jobApplication->bahasa_asing_lain_bicara }}</td>
                                 <td class="border-r pt-0 pb-4 pl-2">{{ $jobApplication->bahasa_asing_lain_dengar }}</td>
                                 <td class="border-r pt-0 pb-4 pl-2">{{ $jobApplication->bahasa_asing_lain_tulis }}</td>
                                 <td class="border-r pt-0 pb-4 pl-2">{{ $jobApplication->bahasa_asing_lain_baca }}</td>
@@ -518,28 +628,39 @@
 
                 {{-- Computer Skills --}}
                 <div class="mb-6">
-                    <h3 class="font-medium mb-2">Skill Komputer</h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <p class="text-sm text-gray-600">Microsoft Word</p>
-                            <p>{{ $jobApplication->office_word }}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-600">Microsoft Excel</p>
-                            <p>{{ $jobApplication->office_excel }}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-600">Microsoft PowerPoint</p>
-                            <p>{{ $jobApplication->office_power_point }}</p>
-                        </div>
+                    <h3 class="font-medium mb-4">Skill Komputer</h3>
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border bg-primary-700 text-white">
+                                <td class="pt-0 pb-4 border-r text-sm font-semibold pl-2">MS. Word</td>
+                                <td class="pt-0 pb-4 border-r text-sm font-semibold pl-2">MS. Excel</td>
+                                <td class="pt-0 pb-4 border-r text-sm font-semibold pl-2">MS. Power Point</td>
+                                <td class="pt-0 pb-4 border-r text-sm font-semibold pl-2"><span
+                                        class="text-xs text-primary-100">Skill
+                                        Komputer
+                                        Lain</span><br>
+                                    {{ $jobApplication->skill_com_lain_1 }}</td>
+                                <td class="pt-0 pb-4 border-r text-sm font-semibold pl-2"><span
+                                        class="text-xs text-primary-100">Skill
+                                        Komputer
+                                        Lain</span><br>
+                                    {{ $jobApplication->skill_com_lain_2 }}</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border">
+                                <td class="pt-0 pb-4 border-r pl-2 text-sm">{{ $jobApplication->office_word }}</td>
+                                <td class="pt-0 pb-4 border-r pl-2 text-sm">{{ $jobApplication->office_excel }}</td>
+                                <td class="pt-0 pb-4 border-r pl-2 text-sm">{{ $jobApplication->office_power_point }}
+                                </td>
+                                <td class="pt-0 pb-4 border-r pl-2 text-sm">{{ $jobApplication->skill_com_1_level }}
+                                </td>
+                                <td class="pt-0 pb-4 border-r pl-2 text-sm">{{ $jobApplication->skill_com_2_level }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                        <div>
-                            <p class="text-sm text-gray-600">Skill Komputer Lainnya
-                                - {{ $jobApplication->skill_com_lain_1 ? $jobApplication->skill_com_lain_1 : '-' }}
-                            </p>
-                            <p>{{ $jobApplication->skill_com_1_level ? $jobApplication->skill_com_1_level : '-' }}</p>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -687,7 +808,7 @@
                         </p>
                     </div>
                     <div>
-                        <p class="text-sm text-gray-600">S</p>
+                        <p class="text-sm text-gray-600">Melamar di perusahaan lain?</p>
                         <p>{{ $jobApplication->apply_perusahaan_lain }}</p>
                     </div>
                     <div>
@@ -720,6 +841,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 

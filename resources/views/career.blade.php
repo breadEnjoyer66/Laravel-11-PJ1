@@ -101,7 +101,7 @@
                 <script>
                     function formStepper() {
                         return {
-                            step: 11,
+                            step: 1,
                             totalSteps: 11,
 
                             // ✅ Helper function to check if any checkbox in a group is selected

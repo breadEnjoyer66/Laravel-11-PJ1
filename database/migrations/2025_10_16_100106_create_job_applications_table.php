@@ -12,6 +12,11 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
+            $table->string('posisi_prioritas');
+            $table->string('posisi_alternatif');
+            $table->string('keahlian');
+
+
             // Personal Information
             $table->string('pas_foto');
             $table->string('nama_lengkap');
@@ -29,22 +34,25 @@ return new class extends Migration
 
             // Family Information
             $table->string('nama_ayah');
-            $table->string('tempat_lahir_ayah');
+            $table->string('usia_ayah');
             $table->string('pekerjaan_ayah');
             $table->string('nama_ibu');
-            $table->string('tempat_lahir_ibu');
+            $table->string('usia_ibu');
             $table->string('pekerjaan_ibu');
 
             // Siblings Information
             $table->string('nama_saudara_kandung_1')->nullable();
-            $table->string('tempat_lahir_saudara_kandung_1')->nullable();
+            $table->string('usia_saudara_kandung_1')->nullable();
             $table->string('pekerjaan_saudara_kandung_1')->nullable();
             $table->string('nama_saudara_kandung_2')->nullable();
-            $table->string('tempat_lahir_saudara_kandung_2')->nullable();
+            $table->string('usia_saudara_kandung_2')->nullable();
             $table->string('pekerjaan_saudara_kandung_2')->nullable();
             $table->string('nama_saudara_kandung_3')->nullable();
-            $table->string('tempat_lahir_saudara_kandung_3')->nullable();
+            $table->string('usia_saudara_kandung_3')->nullable();
             $table->string('pekerjaan_saudara_kandung_3')->nullable();
+            $table->string('nama_saudara_kandung_4')->nullable();
+            $table->string('usia_saudara_kandung_4')->nullable();
+            $table->string('pekerjaan_saudara_kandung_4')->nullable();
 
             // Address Information
             $table->text('alamat_domisili');
@@ -83,14 +91,14 @@ return new class extends Migration
             $table->decimal('s2_ipk', 3, 2)->nullable();
             $table->string('s2_status_lulus')->nullable();
 
-            // Work Experience 1 (Required)
-            $table->string('nama_perusahaan_1');
-            $table->string('jabatan_1');
-            $table->decimal('gaji_terakhir_1', 12, 2);
-            $table->string('job_1_dari', 20);
-            $table->string('job_1_sampai', 20);
-            $table->text('alasan_berhenti_1');
-            $table->text('jobdesk_pekerjaan_1');
+            // Work Experience 1 (Optional)
+            $table->string('nama_perusahaan_1')->nullable();
+            $table->string('jabatan_1')->nullable();
+            $table->decimal('gaji_terakhir_1', 12, 2)->nullable();
+            $table->string('job_1_dari', 20)->nullable();
+            $table->string('job_1_sampai', 20)->nullable();
+            $table->text('alasan_berhenti_1')->nullable();
+            $table->text('jobdesk_pekerjaan_1')->nullable();
 
             // Work Experience 2 (Optional)
             $table->string('nama_perusahaan_2')->nullable();
@@ -100,6 +108,15 @@ return new class extends Migration
             $table->string('job_2_sampai', 20)->nullable();
             $table->text('alasan_berhenti_2')->nullable();
             $table->text('jobdesk_pekerjaan_2')->nullable();
+
+            // Work Experience 3 (Optional)
+            $table->string('nama_perusahaan_3')->nullable();
+            $table->string('jabatan_3')->nullable();
+            $table->decimal('gaji_terakhir_3', 12, 2)->nullable();
+            $table->string('job_3_dari', 20)->nullable();
+            $table->string('job_3_sampai', 20)->nullable();
+            $table->text('alasan_berhenti_3')->nullable();
+            $table->text('jobdesk_pekerjaan_3')->nullable();
 
             // Language Skills - English
             $table->string('inggris_bicara', 50);
@@ -153,14 +170,14 @@ return new class extends Migration
             $table->string('hubungan_kondar', 100);
 
             // Additional Info
-            $table->json('info_dari')->nullable();
-            $table->string('kenalan_yg_bekerja')->nullable();
-            $table->string('apply_perusahaan_lain')->nullable();
-            $table->string('pekerjaan_sampingan')->nullable();
-            $table->string('pernah_psikotes')->nullable();
-            $table->string('riwayat_penyakit_kronis')->nullable();
-            $table->string('rekam_jejak_kriminal')->nullable();
-            $table->string('sedia_ditempatkan_luar_kota')->nullable();
+            $table->json('info_dari');
+            $table->string('kenalan_yg_bekerja');
+            $table->string('apply_perusahaan_lain');
+            $table->string('pekerjaan_sampingan');
+            $table->string('pernah_psikotes');
+            $table->string('riwayat_penyakit_kronis');
+            $table->string('rekam_jejak_kriminal');
+            $table->string('sedia_ditempatkan_luar_kota');
             $table->decimal('ekspektasi_gaji', 12, 2);
             $table->string('dapat_mulai_bekerja', 50);
         });

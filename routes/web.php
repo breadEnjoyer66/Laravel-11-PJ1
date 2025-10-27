@@ -4,7 +4,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\JobApplicationController;
+use App\Http\Controllers\Dashboard\JobApplicationController as DashboardJobApplicationController;
 use App\Http\Controllers\Dashboard\ArticleController as DashboardArticleController;
+
 
 
 use App\Models\User;
@@ -94,6 +96,9 @@ Route::middleware(['auth'])->prefix('dashboard')->name('dashboard.')->group(func
     // Job applications management
     Route::resource('job-applications', \App\Http\Controllers\Dashboard\JobApplicationController::class)
         ->only(['index', 'show', 'destroy']);
+
+    Route::get('/job-applications/{id}/download-pdf', [DashboardJobApplicationController::class, 'downloadPdf'])
+        ->name('job-applications.download-pdf');
 });
 
 

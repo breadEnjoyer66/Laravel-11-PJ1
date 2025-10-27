@@ -198,7 +198,7 @@
 
 
                 <div class="">
-                    <label for="alasan_berhenti_2"
+                    <label for="alasan_berhenti_3"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Alasan
                         Berhenti
                     </label>
@@ -221,6 +221,120 @@
                     class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full {{ $errors->has('jobdesk_pekerjaan_2') ? 'border border-red-500' : 'border border-gray-300' }}"
                     placeholder="Jelaskan secara singkat mengenai pekerjaan anda">{{ old('jobdesk_pekerjaan_2') }}</textarea>
                 @error('jobdesk_pekerjaan_2')
+                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                @enderror
+            </div>
+
+        </div>
+
+        {{-- riwayat pekerjaan 3 --}}
+        <div>
+            <h3 class="pl-1 text-xl font-bold">Riwayat Pekerjaan 3</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-1">
+
+                <div class="">
+                    <label for="nama_perusahaan_3"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nama
+                        Perusahaan
+                    </label>
+                    <input type="text" id="nama_perusahaan_3" name="nama_perusahaan_3"
+                        class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('nama_perusahaan_3') ? 'border border-red-500' : 'border border-gray-300' }}"
+                        placeholder="Nama PT/ Perusahaan" value="{{ old('nama_perusahaan_3') }}">
+                    @error('nama_perusahaan_3')
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="">
+                    <label for="jabatan_3"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Jabatan/Posisi
+                    </label>
+                    <input type="text" id="jabatan_3" name="jabatan_3"
+                        class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('jabatan_3') ? 'border border-red-500' : 'border border-gray-300' }}"
+                        placeholder="Jabatan/Posisi" value="{{ old('jabatan_3') }}">
+                    @error('jabatan_3')
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="">
+                    <label for="gaji_terakhir_3"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nominal Gaji
+                        Terakhir (Rp)
+                    </label>
+                    <input type="number" id="gaji_terakhir_3" name="gaji_terakhir_3"
+                        class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('gaji_terakhir_3') ? 'border border-red-500' : 'border border-gray-300' }}"
+                        placeholder="Nominal gaji terakhir" value="{{ old('gaji_terakhir_3') }}">
+                    @error('gaji_terakhir_3')
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="">
+                    <label for="job_3_dari" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                        Dari Tahun</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                            </svg>
+                        </div>
+                        <input datepicker id="job_3_dari" name="job_3_dari" type="text"
+                            class="bg-gray-50 text-gray-900 text-sm rounded-lg block w-full ps-10 p-2.5 {{ $errors->has('job_3_dari') ? 'border border-red-500' : 'border border-gray-300' }}"
+                            placeholder="dari tahun" value="{{ old('job_3_dari') }}">
+                        @error('job_3_dari')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="">
+                    <label for="job_3_sampai" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                        Sampai Tahun</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                            </svg>
+                        </div>
+                        <input datepicker id="job_3_sampai" name="job_3_sampai" type="text"
+                            class="bg-gray-50 text-gray-900 text-sm rounded-lg block w-full ps-10 p-2.5 {{ $errors->has('job_3_sampai') ? 'border border-red-500' : 'border border-gray-300' }}"
+                            placeholder="sampai tahun" value="{{ old('job_3_sampai') }}">
+                        @error('job_3_sampai')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
+                </div>
+
+
+                <div class="">
+                    <label for="alasan_berhenti_3"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Alasan
+                        Berhenti
+                    </label>
+                    <input type="text" id="alasan_berhenti_3" name="alasan_berhenti_3"
+                        class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('alasan_berhenti_3') ? 'border border-red-500' : 'border border-gray-300' }}"
+                        placeholder="Alasan berhenti" value="{{ old('alasan_berhenti_3') }}">
+                    @error('alasan_berhenti_3')
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+
+            </div>
+            <div class="p-1 mt-3">
+                <label for="jobdesk_pekerjaan_3"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Deskripsi Jobdesk Pada
+                    Posisi Terakhir
+                </label>
+                <textarea name="jobdesk_pekerjaan_3" id="jobdesk_pekerjaan_3" cols="30" rows="4"
+                    class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full {{ $errors->has('jobdesk_pekerjaan_3') ? 'border border-red-500' : 'border border-gray-300' }}"
+                    placeholder="Jelaskan secara singkat mengenai pekerjaan anda">{{ old('jobdesk_pekerjaan_3') }}</textarea>
+                @error('jobdesk_pekerjaan_3')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                 @enderror
             </div>

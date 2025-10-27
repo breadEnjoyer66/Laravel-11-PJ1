@@ -19,8 +19,172 @@
             PT.
             Primajaya Multi Technology.</p>
     </div>
+
+
+
     <h2 class="text-xl font-semibold mb-4">Page 1 - Personal Information</h2>
     <div class="space-y-8">
+        <div>
+            <h2 class="text-lg text-gray-700 font-semibold">Posisi Yang Dilamar</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-1">
+                <div>
+                    <label for="posisi_prioritas"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Prioritas <span
+                            class="text-red-600 text-sm">*</span></label>
+
+                    <select name="posisi_prioritas" id="posisi_prioritas"
+                        class="shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('posisi_prioritas') ? 'border border-red-500' : 'border border-gray-300' }}"
+                        required>
+                        <option value="">Pilih posisi prioritas</option>
+                        <option value="Teknisi" {{ old('posisi_prioritas') == 'Teknisi' ? 'selected' : '' }}>Teknisi
+                        </option>
+                        <option value="Presales" {{ old('posisi_prioritas') == 'Presales' ? 'selected' : '' }}>Presales
+                        </option>
+                        <option value="Accounting" {{ old('posisi_prioritas') == 'Accounting' ? 'selected' : '' }}>
+                            Accounting</option>
+                        <option value="Finance" {{ old('posisi_prioritas') == 'Finance' ? 'selected' : '' }}>Finance
+                        </option>
+                        <option value="Administration"
+                            {{ old('posisi_prioritas') == 'Administration' ? 'selected' : '' }}>Administration
+                        </option>
+                        <option value="Warehouse" {{ old('posisi_prioritas') == 'Warehouse' ? 'selected' : '' }}>
+                            Warehouse
+                        </option>
+                        <option value="Purchasing" {{ old('posisi_prioritas') == 'Purchasing' ? 'selected' : '' }}>
+                            Purchasing
+                        </option>
+                        <option value="Pajak (Tax)" {{ old('posisi_prioritas') == 'Pajak (Tax)' ? 'selected' : '' }}>
+                            Pajak (Tax)
+                        </option>
+                        <option value="Desain Grafis"
+                            {{ old('posisi_prioritas') == 'Desain Grafis' ? 'selected' : '' }}>Desain Grafis
+                        </option>
+                        <option value="Delivery" {{ old('posisi_prioritas') == 'Delivery' ? 'selected' : '' }}>Delivery
+                        </option>
+                        <option value="Driver/Supir" {{ old('posisi_prioritas') == 'Driver/Supir' ? 'selected' : '' }}>
+                            Driver/Supir
+                        </option>
+                        <option value="HRD" {{ old('posisi_prioritas') == 'HRD' ? 'selected' : '' }}>HRD
+                        </option>
+                        <option value="Telemarketing"
+                            {{ old('posisi_prioritas') == 'Telemarketing' ? 'selected' : '' }}>Telemarketing
+                        </option>
+                        <option value="Admin Online" {{ old('posisi_prioritas') == 'Admin Online' ? 'selected' : '' }}>
+                            Admin Online
+                        </option>
+
+                    </select>
+                    @error('posisi_prioritas')
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div>
+                    <label for="posisi_alternatif"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Alternatif <span
+                            class="text-red-600 text-sm">*</span></label>
+                    <select name="posisi_alternatif" id="posisi_alternatif"
+                        class="shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('posisi_alternatif') ? 'border border-red-500' : 'border border-gray-300' }}"
+                        required>
+                        <option value="">Pilih posisi alternatif</option>
+                        <option value="Teknisi" {{ old('posisi_alternatif') == 'Teknisi' ? 'selected' : '' }}>Teknisi
+                        </option>
+                        <option value="Presales" {{ old('posisi_alternatif') == 'Presales' ? 'selected' : '' }}>
+                            Presales
+                        </option>
+                        <option value="Accounting" {{ old('posisi_alternatif') == 'Accounting' ? 'selected' : '' }}>
+                            Accounting</option>
+                        <option value="Finance" {{ old('posisi_alternatif') == 'Finance' ? 'selected' : '' }}>Finance
+                        </option>
+                        <option value="Administration"
+                            {{ old('posisi_alternatif') == 'Administration' ? 'selected' : '' }}>Administration
+                        </option>
+                        <option value="Warehouse" {{ old('posisi_alternatif') == 'Warehouse' ? 'selected' : '' }}>
+                            Warehouse
+                        </option>
+                        <option value="Purchasing" {{ old('posisi_alternatif') == 'Purchasing' ? 'selected' : '' }}>
+                            Purchasing
+                        </option>
+                        <option value="Pajak (Tax)" {{ old('posisi_alternatif') == 'Pajak (Tax)' ? 'selected' : '' }}>
+                            Pajak (Tax)
+                        </option>
+                        <option value="Desain Grafis"
+                            {{ old('posisi_alternatif') == 'Desain Grafis' ? 'selected' : '' }}>Desain Grafis
+                        </option>
+                        <option value="Delivery" {{ old('posisi_alternatif') == 'Delivery' ? 'selected' : '' }}>
+                            Delivery
+                        </option>
+                        <option value="Driver/Supir"
+                            {{ old('posisi_alternatif') == 'Driver/Supir' ? 'selected' : '' }}>
+                            Driver/Supir
+                        </option>
+                        <option value="HRD" {{ old('posisi_alternatif') == 'HRD' ? 'selected' : '' }}>HRD
+                        </option>
+                        <option value="Telemarketing"
+                            {{ old('posisi_alternatif') == 'Telemarketing' ? 'selected' : '' }}>Telemarketing
+                        </option>
+                        <option value="Admin Online"
+                            {{ old('posisi_alternatif') == 'Admin Online' ? 'selected' : '' }}>
+                            Admin Online
+                        </option>
+
+                    </select>
+                    @error('posisi_alternatif')
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div>
+                    <label for="keahlian" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Bidang
+                        Keahlian Anda <span class="text-red-600 text-sm">*</span></label>
+                    <select name="keahlian" id="keahlian"
+                        class="shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('keahlian') ? 'border border-red-500' : 'border border-gray-300' }}"
+                        required>
+                        <option value="">Pilih Bidang Keahlian Anda</option>
+                        <option value="Teknisi" {{ old('keahlian') == 'Teknisi' ? 'selected' : '' }}>Teknisi
+                        </option>
+                        <option value="Presales" {{ old('keahlian') == 'Presales' ? 'selected' : '' }}>Presales
+                        </option>
+                        <option value="Accounting" {{ old('keahlian') == 'Accounting' ? 'selected' : '' }}>
+                            Accounting</option>
+                        <option value="Finance" {{ old('keahlian') == 'Finance' ? 'selected' : '' }}>Finance
+                        </option>
+                        <option value="Administration" {{ old('keahlian') == 'Administration' ? 'selected' : '' }}>
+                            Administration
+                        </option>
+                        <option value="Warehouse" {{ old('keahlian') == 'Warehouse' ? 'selected' : '' }}>
+                            Warehouse
+                        </option>
+                        <option value="Purchasing" {{ old('keahlian') == 'Purchasing' ? 'selected' : '' }}>
+                            Purchasing
+                        </option>
+                        <option value="Pajak (Tax)" {{ old('keahlian') == 'Pajak (Tax)' ? 'selected' : '' }}>
+                            Pajak (Tax)
+                        </option>
+                        <option value="Desain Grafis" {{ old('keahlian') == 'Desain Grafis' ? 'selected' : '' }}>Desain
+                            Grafis
+                        </option>
+                        <option value="Delivery" {{ old('keahlian') == 'Delivery' ? 'selected' : '' }}>Delivery
+                        </option>
+                        <option value="Driver/Supir" {{ old('keahlian') == 'Driver/Supir' ? 'selected' : '' }}>
+                            Driver/Supir
+                        </option>
+                        <option value="HRD" {{ old('keahlian') == 'HRD' ? 'selected' : '' }}>HRD
+                        </option>
+                        <option value="Telemarketing" {{ old('keahlian') == 'Telemarketing' ? 'selected' : '' }}>
+                            Telemarketing
+                        </option>
+                        <option value="Admin Online" {{ old('keahlian') == 'Admin Online' ? 'selected' : '' }}>
+                            Admin Online
+                        </option>
+
+                    </select>
+                    @error('keahlian')
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+            </div>
+        </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-1">
             <div class="">
                 <label for="pas_foto" class="block text-sm font-medium text-gray-900 dark:text-gray-300">Pas Foto <span
@@ -30,6 +194,7 @@
                     <input type="file" name="pas_foto" id="pas_foto"
                         class="@error('pas_foto') border-red-500 @enderror" required>
                 </label>
+                <p class="text-xs mt-2 text-gray-400">File gambar pas foto 4x6 (JPG, JPEG, PNG maks. 2MB)</p>
                 @error('pas_foto')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                 @enderror
@@ -62,7 +227,8 @@
         {{-- line2 --}}
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-1">
             <div class="">
-                <label for="no_hp_whatsapp" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">No.
+                <label for="no_hp_whatsapp"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">No.
                     HP/
                     Whatsapp <span class="text-red-600 text-sm">*</span></label>
                 <input type="tel" id="no_hp_whatsapp" name="no_hp_whatsapp"
@@ -74,7 +240,8 @@
             </div>
 
             <div class="">
-                <label for="jenis_kelamin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Jenis
+                <label for="jenis_kelamin"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Jenis
                     Kelamin <span class="text-red-600 text-sm">*</span></label>
                 <select name="jenis_kelamin" id="jenis_kelamin"
                     class="shadow-sm bg-gray-50 border text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('jenis_kelamin') ? 'border border-red-500' : 'border border-gray-300' }}"
@@ -91,7 +258,8 @@
             </div>
 
             <div class="">
-                <label for="status_kawin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Status
+                <label for="status_kawin"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Status
                     Kawin <span class="text-red-600 text-sm">*</span></label>
                 <select name="status_kawin" id="status_kawin"
                     class="shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('status_kawin') ? 'border border-red-500' : 'border border-gray-300' }}"
@@ -129,7 +297,8 @@
                 @enderror
             </div>
             <div class="">
-                <label for="tempat_lahir" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tempat
+                <label for="tempat_lahir"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tempat
                     Lahir <span class="text-red-600 text-sm">*</span></label>
                 <input type="text" name="tempat_lahir" id="tempat_lahir"
                     class="shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('tempat_lahir') ? 'border border-red-500' : 'border border-gray-300' }}"

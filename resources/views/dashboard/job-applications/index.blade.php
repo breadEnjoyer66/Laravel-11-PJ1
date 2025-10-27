@@ -38,10 +38,10 @@
                 <table class="w-full text-sm text-left text-gray-500 table-auto">
                     <thead class="text-sm text-gray-700 bg-gray-50">
                         <tr>
-                            <th scope="col" class="px-4 py-3 font-normal">Applicant Info</th>
+                            <th scope="col" class="px-4 py-3 font-normal">Info Pelamar</th>
                             <th scope="col" class="px-4 py-3 font-normal">Contact</th>
-                            <th scope="col" class="px-4 py-3 font-normal">Education</th>
-                            <th scope="col" class="px-4 py-3 font-normal">Submission Date</th>
+                            <th scope="col" class="px-4 py-3 font-normal">Riwayat Pendidikan</th>
+                            <th scope="col" class="px-4 py-3 font-normal">Tanggal Form Dikirim</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -52,16 +52,27 @@
                                     {{ $application->nama_lengkap }}<br>
                                     <span class="text-sm font-normal text-gray-500">{{ $application->jenis_kelamin }} •
                                         {{ $application->status_kawin }}</span>
+                                    <br>
                                     <div class="inline-flex space-x-2 items-center text-xs font-normal mt-2">
+
+                                        {{-- view button --}}
                                         <a href="{{ route('dashboard.job-applications.show', $application->id) }}"
-                                            class="text-primary-400 hover:text-primary-600">View Details</a>
+                                            class="text-primary-400 hover:text-primary-600" target="_blank">Lihat</a>
+
+                                        {{-- delete button --}}
                                         <form action="{{ route('dashboard.job-applications.destroy', $application->id) }}"
                                             method="POST" onsubmit="return confirm('Delete this application?')">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit"
-                                                class="text-primary-400 hover:text-red-600">Delete</button>
+                                                class="text-primary-400 hover:text-red-600">Hapus</button>
                                         </form>
+
+                                        {{-- download pdf button --}}
+                                        {{-- <a href="{{ route('dashboard.job-applications.download-pdf', $application->id) }}"
+                                            class="btn btn-success">Simpan PDF</a> --}}
+
+
                                     </div>
                                 </th>
 

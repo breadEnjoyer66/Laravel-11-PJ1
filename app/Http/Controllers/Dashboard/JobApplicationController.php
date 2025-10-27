@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\JobApplication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class JobApplicationController extends Controller
 {
@@ -40,5 +41,19 @@ class JobApplicationController extends Controller
         return redirect()
             ->route('dashboard.job-applications.index')
             ->with('success', 'Job application deleted successfully.');
+    }
+
+
+
+    public function downloadPdf($id)
+    {
+        $jobApplication = JobApplication::findOrFail($id);
+
+        $pdf = \PDF::loadView('dashboard.job-applications.show', [
+            'jobApplication' => $jobApplication,
+            'title' => 'Job Application Detail',
+        ]);
+
+        return $pdf->download('Form Lamaran - ' . $jobApplication->nama_lengkap . '.pdf');
     }
 }

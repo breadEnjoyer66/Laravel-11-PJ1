@@ -10,11 +10,15 @@ class JobApplicationController extends Controller
 {
     public function store(Request $request)
     {
+
         // ✅ Validate and store in $validated
         $validated = $request->validate([
             // 🧍 PERSONAL INFORMATION
             'pas_foto' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'nama_lengkap' => 'required|string|max:255',
+            'posisi_prioritas' => 'required|string|max:100',
+            'posisi_alternatif' => 'required|string|max:100',
+            'keahlian' => 'required|string|max:100',
             'email' => 'required|email:rfc,dns|max:255',
             'no_hp_whatsapp' => ['required', 'regex:/^(\+?\d{8,15})$/'],
             'jenis_kelamin' => 'required|string|max:20',
@@ -29,21 +33,24 @@ class JobApplicationController extends Controller
 
             // 👨‍👩‍👧 FAMILY INFORMATION
             'nama_ayah' => 'required|string|max:255',
-            'tempat_lahir_ayah' => 'required|string|max:255',
+            'usia_ayah' => 'required|string|max:255',
             'pekerjaan_ayah' => 'required|string|max:255',
             'nama_ibu' => 'required|string|max:255',
-            'tempat_lahir_ibu' => 'required|string|max:255',
+            'usia_ibu' => 'required|string|max:255',
             'pekerjaan_ibu' => 'required|string|max:255',
 
             'nama_saudara_kandung_1' => 'nullable|string|max:255',
-            'tempat_lahir_saudara_kandung_1' => 'nullable|string|max:255',
+            'usia_saudara_kandung_1' => 'nullable|string|max:255',
             'pekerjaan_saudara_kandung_1' => 'nullable|string|max:255',
             'nama_saudara_kandung_2' => 'nullable|string|max:255',
-            'tempat_lahir_saudara_kandung_2' => 'nullable|string|max:255',
+            'usia_saudara_kandung_2' => 'nullable|string|max:255',
             'pekerjaan_saudara_kandung_2' => 'nullable|string|max:255',
             'nama_saudara_kandung_3' => 'nullable|string|max:255',
-            'tempat_lahir_saudara_kandung_3' => 'nullable|string|max:255',
+            'usia_saudara_kandung_3' => 'nullable|string|max:255',
             'pekerjaan_saudara_kandung_3' => 'nullable|string|max:255',
+            'nama_saudara_kandung_4' => 'nullable|string|max:255',
+            'usia_saudara_kandung_4' => 'nullable|string|max:255',
+            'pekerjaan_saudara_kandung_4' => 'nullable|string|max:255',
 
             // 🏠 ADDRESS
             'alamat_domisili' => 'required|string|max:500',
@@ -83,13 +90,13 @@ class JobApplicationController extends Controller
             's2_status_lulus' => 'nullable|string|max:20',
 
             // 💼 JOB EXPERIENCE 1 (required)
-            'nama_perusahaan_1' => 'required|string|max:255',
-            'jabatan_1' => 'required|string|max:255',
-            'gaji_terakhir_1' => 'required|numeric|min:0',
-            'job_1_dari' => 'required|string|max:20',
-            'job_1_sampai' => 'required|string|max:20',
-            'alasan_berhenti_1' => 'required|string|max:500',
-            'jobdesk_pekerjaan_1' => 'required|string|max:1000',
+            'nama_perusahaan_1' => 'nullable|string|max:255',
+            'jabatan_1' => 'nullable|string|max:255',
+            'gaji_terakhir_1' => 'nullable|numeric|min:0',
+            'job_1_dari' => 'nullable|string|max:20',
+            'job_1_sampai' => 'nullable|string|max:20',
+            'alasan_berhenti_1' => 'nullable|string|max:300',
+            'jobdesk_pekerjaan_1' => 'nullable|string|max:500',
 
             // 💼 JOB EXPERIENCE 2 (optional)
             'nama_perusahaan_2' => 'nullable|string|max:255',
@@ -97,8 +104,17 @@ class JobApplicationController extends Controller
             'gaji_terakhir_2' => 'nullable|numeric|min:0',
             'job_2_dari' => 'nullable|string|max:20',
             'job_2_sampai' => 'nullable|string|max:20',
-            'alasan_berhenti_2' => 'nullable|string|max:500',
-            'jobdesk_pekerjaan_2' => 'nullable|string|max:1000',
+            'alasan_berhenti_2' => 'nullable|string|max:300',
+            'jobdesk_pekerjaan_2' => 'nullable|string|max:500',
+
+            // 💼 JOB EXPERIENCE 3 (optional)
+            'nama_perusahaan_3' => 'nullable|string|max:255',
+            'jabatan_3' => 'nullable|string|max:255',
+            'gaji_terakhir_3' => 'nullable|numeric|min:0',
+            'job_3_dari' => 'nullable|string|max:20',
+            'job_3_sampai' => 'nullable|string|max:20',
+            'alasan_berhenti_3' => 'nullable|string|max:300',
+            'jobdesk_pekerjaan_3' => 'nullable|string|max:500',
 
             // 🌐 LANGUAGE SKILLS
             'inggris_bicara' => 'required|string|max:50',
@@ -150,13 +166,13 @@ class JobApplicationController extends Controller
             // 🧾 ADDITIONAL INFO
             'info_dari' => 'nullable|array',
             'info_dari.*' => 'string|max:100',
-            'kenalan_yg_bekerja' => 'nullable|string|max:255',
-            'apply_perusahaan_lain' => 'nullable|string|max:255',
-            'pekerjaan_sampingan' => 'nullable|string|max:255',
-            'pernah_psikotes' => 'nullable|string|max:255',
-            'riwayat_penyakit_kronis' => 'nullable|string|max:255',
-            'rekam_jejak_kriminal' => 'nullable|string|max:255',
-            'sedia_ditempatkan_luar_kota' => 'nullable|string|max:255',
+            'kenalan_yg_bekerja' => 'required|string|max:255',
+            'apply_perusahaan_lain' => 'required|string|max:255',
+            'pekerjaan_sampingan' => 'required|string|max:255',
+            'pernah_psikotes' => 'required|string|max:255',
+            'riwayat_penyakit_kronis' => 'required|string|max:255',
+            'rekam_jejak_kriminal' => 'required|string|max:255',
+            'sedia_ditempatkan_luar_kota' => 'required|string|max:255',
             'ekspektasi_gaji' => 'required|numeric|min:0',
             'dapat_mulai_bekerja' => 'required|string|max:50',
         ]);
