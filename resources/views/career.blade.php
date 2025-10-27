@@ -14,16 +14,15 @@
                         team and help shape the future of technology distribution in Indonesia.
                     </p>
                     <p class="text-gray-600 leading-relaxed text-justify mt-4">
-                        If you’re driven, eager to learn, and ready to grow with us, explore our open positions below or
-                        send your resume to
-                        <a href="mailto:hr@primajaya.co.id" class="text-blue-600 font-medium hover:underline">
-                            hr@primajaya.co.id
-                        </a>.
+                        If you’re driven, eager to learn, and ready to grow with us, fill out the application form
+                        below.
+                        We look forward to hearing from you!
+
                     </p>
                 </div>
                 <div class="relative">
-                    <img src="{{ asset('img/career-hero.jpg') }}" alt="Career Illustration"
-                        class="rounded-2xl shadow-lg w-full h-80 object-cover">
+                    <img src="{{ asset('img/man-in-suit.jpg') }}" alt="Career Illustration"
+                        class="rounded-2xl shadow-lg w-full h-80 object-cover bg-top-center">
                     <div class="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
             </div>
