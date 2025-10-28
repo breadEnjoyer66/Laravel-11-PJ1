@@ -104,7 +104,7 @@
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Deskripsi Jobdesk Pada
                     Posisi Terakhir <span class="text-red-600 text-sm">*</span>
                 </label>
-                <textarea name="jobdesk_pekerjaan_1" id="jobdesk_pekerjaan_1" cols="30" rows="4"
+                <textarea name="jobdesk_pekerjaan_1" id="jobdesk_pekerjaan_1" cols="30" rows="4" maxlength="400"
                     class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full {{ $errors->has('jobdesk_pekerjaan_1') ? 'border border-red-500' : 'border border-gray-300' }}"
                     placeholder="Jelaskan secara singkat mengenai pekerjaan anda" required>{{ old('jobdesk_pekerjaan_1') }}</textarea>
                 @error('jobdesk_pekerjaan_1')
@@ -217,7 +217,7 @@
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Deskripsi Jobdesk Pada
                     Posisi Terakhir
                 </label>
-                <textarea name="jobdesk_pekerjaan_2" id="jobdesk_pekerjaan_2" cols="30" rows="4"
+                <textarea name="jobdesk_pekerjaan_2" id="jobdesk_pekerjaan_2" cols="30" rows="4" maxlength="400"
                     class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full {{ $errors->has('jobdesk_pekerjaan_2') ? 'border border-red-500' : 'border border-gray-300' }}"
                     placeholder="Jelaskan secara singkat mengenai pekerjaan anda">{{ old('jobdesk_pekerjaan_2') }}</textarea>
                 @error('jobdesk_pekerjaan_2')
@@ -331,7 +331,7 @@
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Deskripsi Jobdesk Pada
                     Posisi Terakhir
                 </label>
-                <textarea name="jobdesk_pekerjaan_3" id="jobdesk_pekerjaan_3" cols="30" rows="4"
+                <textarea name="jobdesk_pekerjaan_3" id="jobdesk_pekerjaan_3" cols="30" rows="4" maxlength="400"
                     class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full {{ $errors->has('jobdesk_pekerjaan_3') ? 'border border-red-500' : 'border border-gray-300' }}"
                     placeholder="Jelaskan secara singkat mengenai pekerjaan anda">{{ old('jobdesk_pekerjaan_3') }}</textarea>
                 @error('jobdesk_pekerjaan_3')

@@ -66,7 +66,7 @@
 
                     <!-- Step container -->
                     <div class="">
-                        <x-job-application.page-1 />
+                        <x-job-application.page-1 :open-positions="$open_positions" />
                         <x-job-application.page-2 />
                         <x-job-application.page-3 />
                         <x-job-application.page-4 />
@@ -148,19 +148,6 @@
 
             </section>
 
-            <!-- JOIN US SECTION -->
-            <div class="bg-slate-50 shadow-sm rounded-2xl p-10 text-center">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-3">Didn’t Find the Right Role?</h2>
-                <p class="text-gray-600 mb-6">
-                    We’re always open to meeting talented individuals. If you think you can make an impact at PT.
-                    Primajaya
-                    Multi Technology, send us your resume and tell us how you can contribute.
-                </p>
-                <a href="mailto:hr@primajaya.co.id"
-                    class="inline-block px-6 py-3 bg-orange-500 text-white rounded-xl font-medium hover:bg-orange-600 transition">
-                    Send Your Resume
-                </a>
-            </div>
         </section>
     </div>
 

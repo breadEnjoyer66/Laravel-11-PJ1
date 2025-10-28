@@ -148,7 +148,7 @@
                                     clip-rule="evenodd" />
                             </svg>
 
-                            <span class="flex-1 ml-3 text-left whitespace-nowrap">News</span>
+                            <span class="flex-1 ml-3 text-left whitespace-nowrap">Berita</span>
                             <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -159,13 +159,13 @@
                         <ul id="dropdown-news" class="hidden">
                             <li>
                                 <a href="/dashboard/news"
-                                    class="flex items-center p-2 pl-11 w-full text-sm text-gray-500 rounded-lg transition duration-75 group hover:bg-gray-100">All
-                                    News</a>
+                                    class="flex items-center p-2 pl-11 w-full text-sm text-gray-500 rounded-lg transition duration-75 group hover:bg-gray-100">Semua
+                                    Artikel</a>
                             </li>
                             <li>
                                 <a href="/dashboard/news/create"
-                                    class="flex items-center p-2 pl-11 w-full text-sm text-gray-500 rounded-lg transition duration-75 group hover:bg-gray-100">Write
-                                    Article</a>
+                                    class="flex items-center p-2 pl-11 w-full text-sm text-gray-500 rounded-lg transition duration-75 group hover:bg-gray-100">Buat
+                                    Artikel</a>
                             </li>
                             <li>
                                 <a href="#"
@@ -175,8 +175,9 @@
                     </li>
 
                     <li>
-                        <a href="{{ route('dashboard.job-applications.index') }}"
-                            class="flex items-center p-2 text-base text-gray-600 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <button type="button"
+                            class="flex items-center p-2 w-full text-base text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                            aria-controls="dropdown-lamaran" data-collapse-toggle="dropdown-lamaran">
                             <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                                 aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 fill="currentColor" viewBox="0 0 24 24">
@@ -186,8 +187,26 @@
                                     d="M17 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm2 1h-4a5.001 5.001 0 0 0-5 5 2 2 0 0 0 2 2h10a2 2 0 0 0 2-2 5.001 5.001 0 0 0-5-5Z" />
                             </svg>
 
-                            <span class="ml-3">Job Applications</span>
-                        </a>
+                            <span class="flex-1 ml-3 text-left whitespace-nowrap">Lamaran Kerja</span>
+                            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <ul id="dropdown-lamaran" class="hidden">
+                            <li>
+                                <a href="{{ route('dashboard.job-applications.index') }}"
+                                    class="flex items-center p-2 pl-11 w-full text-sm text-gray-500 rounded-lg transition duration-75 group hover:bg-gray-100">Form
+                                    Masuk</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('dashboard.open-positions.index') }}"
+                                    class="flex items-center p-2 pl-11 w-full text-sm text-gray-500 rounded-lg transition duration-75 group hover:bg-gray-100">Posisi
+                                    Tersedia</a>
+                            </li>
+                        </ul>
                     </li>
 
                 </ul>

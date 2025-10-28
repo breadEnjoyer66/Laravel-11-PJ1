@@ -71,16 +71,17 @@
                 <div class=" w-3/4 ">
                     <div class="">
                         <h2 class="text-3xl font-semibold pb-3">{{ $jobApplication->nama_lengkap }}</h2>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-600">Alamat Email</p>
+                            <p class="font-medium">{{ $jobApplication->email }}</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-600">No.HP/Whatsapp</p>
+                            <p class="font-medium">{{ $jobApplication->no_hp_whatsapp }}</p>
+                        </div>
                         <div class="grid grid-cols-2 gap-4 items-center justify-start">
 
-                            <div class="">
-                                <p class="text-sm text-gray-600">Alamat Email</p>
-                                <p class="font-medium">{{ $jobApplication->email }}</p>
-                            </div>
-                            <div class="">
-                                <p class="text-sm text-gray-600">No.HP/Whatsapp</p>
-                                <p class="font-medium">{{ $jobApplication->no_hp_whatsapp }}</p>
-                            </div>
+
                             <div class="">
                                 <p class="text-sm text-gray-600">Tempat & Tanggal Lahir</p>
                                 <p class="font-medium">{{ $jobApplication->tempat_lahir }},
@@ -473,7 +474,7 @@
                 </div>
 
                 {{-- Latest Work Experience --}}
-                <div class="mb-6 border p-4 rounded-xl">
+                <div class="border p-4">
                     <h3 class="mb-2 text-gray-600">Riwayat Pekerjaan 1</h3>
                     <div class="grid grid-cols-2 gap-4">
                         <div>
@@ -481,23 +482,25 @@
                                     class="italic">di</span>
                                 {{ $jobApplication->nama_perusahaan_1 }}
                             </p>
-                            <p class="text-sm">Periode :
+
+                        </div>
+                        <div>
+                            <p class="text-sm">Periode:
                                 <span class="font-medium text-primary-800">
                                     {{ $jobApplication->job_1_dari ? \Carbon\Carbon::parse(trim($jobApplication->job_1_dari))->format('d M Y') : '-' }}
                                     -
                                     {{ $jobApplication->job_1_sampai ? \Carbon\Carbon::parse(trim($jobApplication->job_1_sampai))->format('d M Y') : '-' }}
                                 </span>
                             </p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-600">Gaji Terakhir</p>
-                            <p>Rp {{ number_format($jobApplication->gaji_terakhir_1, 0, ',', '.') }}</p>
+                            <p class="text-sm text-gray-600">Gaji Terakhir: <span class="font-medium text-primary-800">Rp
+                                    {{ number_format($jobApplication->gaji_terakhir_1, 0, ',', '.') }}</span></p>
+
                         </div>
                     </div>
                     <hr class="mt-4">
                     <div class="mt-2">
                         <p class="text-sm text-gray-600">Deskripsi Pekerjaan</p>
-                        <p class="whitespace-pre-line h-[140px]">{{ $jobApplication->jobdesk_pekerjaan_1 }}</p>
+                        <p class="whitespace-pre-line h-[140px] text-sm">{{ $jobApplication->jobdesk_pekerjaan_1 }}</p>
                     </div>
                     <div>
                         <p class="text-sm">Alasan berhenti: {{ $jobApplication->alasan_berhenti_1 }}</p>
@@ -506,7 +509,7 @@
 
 
                 {{-- Latest Work Experience 2 --}}
-                <div class="mb-6 border p-4 rounded-xl">
+                <div class="border p-4">
                     <h3 class="mb-2 text-gray-600">Riwayat Pekerjaan 2</h3>
                     @if ($jobApplication->nama_perusahaan_2)
                         <div class="grid grid-cols-2 gap-4">
@@ -515,6 +518,9 @@
                                         class="italic">di</span>
                                     {{ $jobApplication->nama_perusahaan_2 }}
                                 </p>
+
+                            </div>
+                            <div>
                                 <p class="text-sm">Periode :
                                     <span class="font-medium text-primary-800">
                                         {{ \Carbon\Carbon::parse(trim($jobApplication->job_2_dari))->format('d M Y') }}
@@ -522,10 +528,10 @@
                                         {{ \Carbon\Carbon::parse(trim($jobApplication->job_2_sampai))->format('d M Y') }}
                                     </span>
                                 </p>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-600">Gaji Terakhir</p>
-                                <p>Rp {{ number_format($jobApplication->gaji_terakhir_2, 0, ',', '.') }}</p>
+                                <p class="text-sm text-gray-600">Gaji Terakhir: <span
+                                        class="font-medium text-primary-800">Rp
+                                        {{ number_format($jobApplication->gaji_terakhir_2, 0, ',', '.') }}</span></p>
+                                <p class="font-medium text-primary-800"></p>
                             </div>
                         </div>
                     @else
@@ -534,7 +540,8 @@
                     <hr class="mt-4">
                     <div class="mt-2">
                         <p class="text-sm text-gray-600">Deskripsi Pekerjaan</p>
-                        <p class="whitespace-pre-line min-h-[140px]">{{ $jobApplication->jobdesk_pekerjaan_2 }}</p>
+                        <p class="whitespace-pre-line min-h-[140px] text-sm">{{ $jobApplication->jobdesk_pekerjaan_2 }}
+                        </p>
                     </div>
                     <div>
                         <p class="text-sm">Alasan berhenti: {{ $jobApplication->alasan_berhenti_2 }}</p>
@@ -542,7 +549,7 @@
                 </div>
 
                 {{-- Latest Work Experience 2 --}}
-                <div class="mb-6 border p-4 rounded-xl">
+                <div class="border p-4">
                     <h3 class="mb-2 text-gray-600">Riwayat Pekerjaan 3</h3>
                     @if ($jobApplication->nama_perusahaan_3)
                         <div class="grid grid-cols-2 gap-4">
@@ -551,6 +558,9 @@
                                         class="italic">di</span>
                                     {{ $jobApplication->nama_perusahaan_3 }}
                                 </p>
+
+                            </div>
+                            <div>
                                 <p class="text-sm">Periode :
                                     <span class="font-medium text-primary-800">
                                         {{ \Carbon\Carbon::parse(trim($jobApplication->job_3_dari))->format('d M Y') }}
@@ -558,10 +568,9 @@
                                         {{ \Carbon\Carbon::parse(trim($jobApplication->job_3_sampai))->format('d M Y') }}
                                     </span>
                                 </p>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-600">Gaji Terakhir</p>
-                                <p>Rp {{ number_format($jobApplication->gaji_terakhir_3, 0, ',', '.') }}</p>
+                                <p class="text-sm text-gray-600">Gaji Terakhir: <span
+                                        class="font-medium text-primary-800">Rp
+                                        {{ number_format($jobApplication->gaji_terakhir_3, 0, ',', '.') }}</span></p>
                             </div>
                         </div>
                     @else
@@ -570,7 +579,8 @@
                     <hr class="mt-4">
                     <div class="mt-2">
                         <p class="text-sm text-gray-600">Deskripsi Pekerjaan</p>
-                        <p class="whitespace-pre-line min-h-[140px]">{{ $jobApplication->jobdesk_pekerjaan_3 }}</p>
+                        <p class="whitespace-pre-line min-h-[140px] text-sm">{{ $jobApplication->jobdesk_pekerjaan_3 }}
+                        </p>
                     </div>
                     <div>
                         <p class="text-sm">Alasan berhenti: {{ $jobApplication->alasan_berhenti_3 }}</p>
@@ -868,7 +878,7 @@
                     <tbody class="border">
                         <tr>
                             <td>
-                                <p class="pl-2 h-[140px]"></p>
+                                <p class="pl-2 h-[120px]"></p>
                             </td>
                         </tr>
                     </tbody>

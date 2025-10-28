@@ -14,7 +14,7 @@
         <div class="bg-white dark:bg-gray-800 relative sm:rounded-lg overflow-hidden border">
             <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
                 <div class="w-full md:w-1/2">
-                    <form class="flex items-center">
+                    <div class="flex items-center">
                         <label for="simple-search" class="sr-only">Search</label>
                         <div class="relative w-full">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -25,88 +25,105 @@
                                         clip-rule="evenodd" />
                                 </svg>
                             </div>
-                            <input type="text" id="simple-search"
+                            <input type="text" id="searchInput"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-                                placeholder="Search by name or email">
+                                placeholder="Search by name or email" value="{{ request('search') }}">
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
 
-            {{-- Applications Table --}}
-            <div class="overflow-x-auto">
-                <table class="w-full text-sm text-left text-gray-500 table-auto">
-                    <thead class="text-sm text-gray-700 bg-gray-50">
-                        <tr>
-                            <th scope="col" class="px-4 py-3 font-normal">Info Pelamar</th>
-                            <th scope="col" class="px-4 py-3 font-normal">Contact</th>
-                            <th scope="col" class="px-4 py-3 font-normal">Riwayat Pendidikan</th>
-                            <th scope="col" class="px-4 py-3 font-normal">Tanggal Form Dikirim</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($applications as $application)
-                            <tr class="border-b dark:border-gray-700">
-                                <th scope="row"
-                                    class="px-4 py-3 font-medium text-slate-800 whitespace-nowrap dark:text-white">
-                                    {{ $application->nama_lengkap }}<br>
-                                    <span class="text-sm font-normal text-gray-500">{{ $application->jenis_kelamin }} •
-                                        {{ $application->status_kawin }}</span>
-                                    <br>
-                                    <div class="inline-flex space-x-2 items-center text-xs font-normal mt-2">
-
-                                        {{-- view button --}}
-                                        <a href="{{ route('dashboard.job-applications.show', $application->id) }}"
-                                            class="text-primary-400 hover:text-primary-600" target="_blank">Lihat</a>
-
-                                        {{-- delete button --}}
-                                        <form action="{{ route('dashboard.job-applications.destroy', $application->id) }}"
-                                            method="POST" onsubmit="return confirm('Delete this application?')">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit"
-                                                class="text-primary-400 hover:text-red-600">Hapus</button>
-                                        </form>
-
-                                        {{-- download pdf button --}}
-                                        {{-- <a href="{{ route('dashboard.job-applications.download-pdf', $application->id) }}"
-                                            class="btn btn-success">Simpan PDF</a> --}}
-
-
-                                    </div>
-                                </th>
-
-                                <td class="px-4 py-3">
-                                    Email: {{ $application->email }}<br>
-                                    Phone: {{ $application->no_hp_whatsapp }}
-                                </td>
-                                <td class="px-4 py-3">
-                                    SMA: {{ $application->sma_nama }}<br>
-                                    @if ($application->s1_nama_univ)
-                                        S1: {{ $application->s1_nama_univ }}
-                                    @endif
-                                </td>
-                                <td class="px-4 py-3">
-                                    {{ $application->created_at->format('d M Y') }}<br>
-                                    <span
-                                        class="text-sm text-gray-500">{{ $application->created_at->format('H:i') }}</span>
-                                </td>
-                            </tr>
-                        @empty
-                            <tr>
-                                <td colspan="4" class="text-center py-6 text-gray-400">No job applications found.</td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
+            <div id="tableContainer">
+                @include('dashboard.job-applications.partials.table')
             </div>
 
-            {{-- Pagination --}}
-            @if ($applications instanceof \Illuminate\Pagination\LengthAwarePaginator)
-                <div class="p-4">
-                    {{ $applications->links() }}
-                </div>
-            @endif
+            @push('scripts')
+                <script>
+                    let currentPage = {{ request('page', 1) }};
+                    let searchTimer;
+
+                    // Function to update the URL with current parameters
+                    function updateURL() {
+                        const params = new URLSearchParams();
+                        const searchValue = document.getElementById('searchInput').value;
+
+                        if (searchValue) params.set('search', searchValue);
+                        if (currentPage !== 1) params.set('page', currentPage);
+
+                        const newUrl = `${window.location.pathname}${params.toString() ? '?' + params.toString() : ''}`;
+                        window.history.pushState({}, '', newUrl);
+                    }
+
+                    // Function to update table data
+                    function updateTable() {
+                        const searchValue = document.getElementById('searchInput').value;
+                        const params = new URLSearchParams();
+
+                        if (searchValue) params.set('search', searchValue);
+                        params.set('page', currentPage);
+
+                        fetch(`${window.location.pathname}?${params.toString()}`, {
+                                headers: {
+                                    'X-Requested-With': 'XMLHttpRequest'
+                                }
+                            })
+                            .then(response => response.text())
+                            .then(html => {
+                                document.getElementById('tableContainer').innerHTML = html;
+                                updateURL();
+                            });
+                    }
+
+                    // Handle search input
+                    document.getElementById('searchInput').addEventListener('input', function() {
+                        clearTimeout(searchTimer);
+                        searchTimer = setTimeout(() => {
+                            currentPage = 1;
+                            updateTable();
+                        }, 300);
+                    });
+
+                    // Handle pagination
+                    document.addEventListener('click', function(e) {
+                        const element = e.target.closest('[data-page]');
+                        if (element) {
+                            e.preventDefault();
+                            currentPage = element.dataset.page;
+                            updateTable();
+                        }
+                    });
+
+                    // Delete handling
+                    function confirmDelete(deleteUrl) {
+                        if (confirm('Delete this application?')) {
+                            const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+                            const formData = new FormData();
+                            formData.append('_method', 'DELETE');
+
+                            fetch(deleteUrl, {
+                                    method: 'POST',
+                                    headers: {
+                                        'X-CSRF-TOKEN': csrfToken,
+                                        'X-Requested-With': 'XMLHttpRequest'
+                                    },
+                                    body: formData
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    if (data.success) {
+                                        updateTable();
+                                    } else {
+                                        alert('Error deleting application');
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                    alert('Error deleting application');
+                                });
+                        }
+                    }
+                </script>
+            @endpush
         </div>
     </section>
 @endsection

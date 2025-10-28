@@ -46,7 +46,7 @@ class AuthController extends Controller
     // Show register form (only for logged-in admin)
     public function showRegisterForm()
     {
-        return view('auth.register');
+        return view('auth.register', ['title' => 'Register New User']);
     }
 
     // Handle register

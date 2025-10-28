@@ -8,19 +8,24 @@
 @endsection
 
 @section('content')
-    <div class="bg-white p-6 rounded-lg shadow">
+    <div class="bg-white p-6 rounded-lg shadow max-w-5xl mx-auto mt-10">
         <form method="POST" action="{{ route('register.post') }}">
             @csrf
             <div class="grid grid-cols-1 gap-4">
                 <input name="name" placeholder="Full name" value="{{ old('name') }}"
                     class="w-full rounded border-gray-200 p-2">
+
                 <input name="username" placeholder="Username" value="{{ old('username') }}"
                     class="w-full rounded border-gray-200 p-2">
+
                 <input name="email" placeholder="Email" value="{{ old('email') }}"
                     class="w-full rounded border-gray-200 p-2">
+
                 <input type="password" name="password" placeholder="Password" class="w-full rounded border-gray-200 p-2">
+
                 <input type="password" name="password_confirmation" placeholder="Confirm Password"
                     class="w-full rounded border-gray-200 p-2">
+
             </div>
 
             <div class="mt-4">

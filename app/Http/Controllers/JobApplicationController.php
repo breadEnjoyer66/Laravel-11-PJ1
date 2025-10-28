@@ -2,12 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\JobApplication;
+use App\Models\OpenPosition;
 use Illuminate\Http\Request;
+use App\Models\JobApplication;
 use Illuminate\Support\Facades\Storage;
 
 class JobApplicationController extends Controller
 {
+
+    public function careerPage()
+    {
+        $title = 'Career';
+        $open_positions = OpenPosition::all();
+        return view('career', compact('title', 'open_positions'));
+    }
+
     public function store(Request $request)
     {
 
