@@ -175,8 +175,9 @@
                         <option value="">Status Kelulusan</option>
                         <option value="Lulus" {{ old('diploma_status_lulus') == 'Lulus' ? 'selected' : '' }}>Lulus
                         </option>
-                        <option value="Tidak Lulus"
-                            {{ old('diploma_status_lulus') == 'Tidak Lulus' ? 'selected' : '' }}>Tidak Lulus</option>
+                        <option value="Tidak/Belum Lulus"
+                            {{ old('diploma_status_lulus') == 'Tidak/Belum Lulus' ? 'selected' : '' }}>Tidak/Belum
+                            Lulus</option>
                     </select>
                     @error('diploma_status_lulus')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -272,8 +273,9 @@
                         <option value="">Status Kelulusan</option>
                         <option value="Lulus" {{ old('s1_status_lulus') == 'Lulus' ? 'selected' : '' }}>Lulus
                         </option>
-                        <option value="Tidak Lulus" {{ old('s1_status_lulus') == 'Tidak Lulus' ? 'selected' : '' }}>
-                            Tidak Lulus</option>
+                        <option value="Tidak/Belum Lulus"
+                            {{ old('s1_status_lulus') == 'Tidak/Belum Lulus' ? 'selected' : '' }}>
+                            Tidak/Belum Lulus</option>
                     </select>
                     @error('s1_status_lulus')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -369,8 +371,9 @@
                         <option value="">Status Kelulusan</option>
                         <option value="Lulus" {{ old('s2_status_lulus') == 'Lulus' ? 'selected' : '' }}>Lulus
                         </option>
-                        <option value="Tidak Lulus" {{ old('s2_status_lulus') == 'Tidak Lulus' ? 'selected' : '' }}>
-                            Tidak Lulus</option>
+                        <option value="Tidak/Belum Lulus"
+                            {{ old('s2_status_lulus') == 'Tidak/Belum Lulus' ? 'selected' : '' }}>
+                            Tidak/Belum Lulus</option>
                     </select>
                     @error('s2_status_lulus')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
