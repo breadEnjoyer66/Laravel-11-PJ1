@@ -7,6 +7,8 @@ use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\Dashboard\JobApplicationController as DashboardJobApplicationController;
 use App\Http\Controllers\Dashboard\ArticleController as DashboardArticleController;
 use App\Http\Controllers\Dashboard\OpenPositionController as DashboardOpenPositionController;
+use App\Http\Controllers\Dashboard\ProfileController;
+use App\Http\Controllers\Dashboard\UserController;
 
 
 
@@ -18,6 +20,7 @@ use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -87,9 +90,12 @@ Route::middleware(['auth'])->prefix('dashboard')->name('dashboard.')->group(func
     // Real-time slug generator
     Route::get('/news/checkSlug', [DashboardArticleController::class, 'checkSlug'])->name('news.checkSlug');
 
-
     Route::post('/news/upload-image', [DashboardArticleController::class, 'uploadImage'])->name('news.upload-image');
 
+    // Profile Routes
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::put('/profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password');
 
 
 

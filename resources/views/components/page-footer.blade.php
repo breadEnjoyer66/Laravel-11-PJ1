@@ -86,8 +86,8 @@
         {{-- copyright section --}}
         <hr class="my-6 border-gray-400 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="/"
-                    class="hover:underline">Primajaya Multi Technology</a>. All Rights Reserved.
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">&copy; {{ date('Y') }} <a
+                    href="/" class="hover:underline">Primajaya Multi Technology</a>. All Rights Reserved.
             </span>
             <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                 <a href="https://www.facebook.com/LaptopMedan"

@@ -63,9 +63,7 @@
                         class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                         id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown">
                         <span class="sr-only">Open user menu</span>
-                        <img class="w-8 h-8 rounded-full"
-                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png"
-                            alt="user photo" />
+                        <img class="w-8 h-8 rounded-full" src="{{ asset('img/user-icon.png') }}" alt="user photo" />
                     </button>
                     <!-- Dropdown menu -->
                     <div class="hidden z-50 my-4 w-56 text-base list-none bg-white divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl"
@@ -78,14 +76,9 @@
                         </div>
                         <ul class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">
                             <li>
-                                <a href="#"
+                                <a href="{{ route('dashboard.profile.index') }}"
                                     class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">My
                                     profile</a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Account
-                                    settings</a>
                             </li>
                         </ul>
                         <ul class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">
@@ -123,16 +116,17 @@
                     <li>
                         <a href="/dashboard"
                             class="flex items-center p-2 text-base text-gray-600 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                            <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                fill="currentColor" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd"
-                                    d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z"
-                                    clip-rule="evenodd" />
+                            <svg class="w-5 h-5 text-gray-500 dark:text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="m7 10 1.99994 1.9999-1.99994 2M12 5v14M5 4h14c.5523 0 1 .44772 1 1v14c0 .5523-.4477 1-1 1H5c-.55228 0-1-.4477-1-1V5c0-.55228.44772-1 1-1Z" />
                             </svg>
 
 
-                            <span class="ml-3">Home</span>
+
+                            <span class="ml-3">Dashboard</span>
                         </a>
                     </li>
 
@@ -140,13 +134,14 @@
                         <button type="button"
                             class="flex items-center p-2 w-full text-base text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                             aria-controls="dropdown-news" data-collapse-toggle="dropdown-news">
-                            <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                fill="currentColor" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd"
-                                    d="M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11.5c.07 0 .14-.007.207-.021.095.014.193.021.293.021h2a2 2 0 0 0 2-2V7a1 1 0 0 0-1-1h-1a1 1 0 1 0 0 2v11h-2V5a2 2 0 0 0-2-2H5Zm7 4a1 1 0 0 1 1-1h.5a1 1 0 1 1 0 2H13a1 1 0 0 1-1-1Zm0 3a1 1 0 0 1 1-1h.5a1 1 0 1 1 0 2H13a1 1 0 0 1-1-1Zm-6 4a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1Zm0 3a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1ZM7 6a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H7Zm1 3V8h1v1H8Z"
-                                    clip-rule="evenodd" />
+                            <svg class="w-5 h-5 text-gray-500 dark:text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4 13h3.439a.991.991 0 0 1 .908.6 3.978 3.978 0 0 0 7.306 0 .99.99 0 0 1 .908-.6H20M4 13v6a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-6M4 13l2-9h12l2 9M9 7h6m-7 3h8" />
                             </svg>
+
 
                             <span class="flex-1 ml-3 text-left whitespace-nowrap">Berita</span>
                             <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
@@ -178,14 +173,14 @@
                         <button type="button"
                             class="flex items-center p-2 w-full text-base text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                             aria-controls="dropdown-lamaran" data-collapse-toggle="dropdown-lamaran">
-                            <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M7 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 3a6.041 6.041 0 0 0-3-.75c-1.208 0-2.328.283-3.334.778a4.444 4.444 0 0 0-2.541 3.494 2.252 2.252 0 0 0 2.14 2.478H7a1 1 0 1 0 0-2H.536A.25.25 0 0 1 .265 14.45a2.444 2.444 0 0 1 1.397-1.916A6.853 6.853 0 0 1 4 12.25a4.237 4.237 0 0 1 3 1.25A1 1 0 0 0 7 11Z" />
-                                <path
-                                    d="M17 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm2 1h-4a5.001 5.001 0 0 0-5 5 2 2 0 0 0 2 2h10a2 2 0 0 0 2-2 5.001 5.001 0 0 0-5-5Z" />
+                            <svg class="w-5 h-5 text-gray-500 dark:text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M14.7141 15h4.268c.4043 0 .732-.3838.732-.8571V3.85714c0-.47338-.3277-.85714-.732-.85714H6.71411c-.55228 0-1 .44772-1 1v4m10.99999 7v-3h3v3h-3Zm-3 6H6.71411c-.55228 0-1-.4477-1-1 0-1.6569 1.34315-3 3-3h2.99999c1.6569 0 3 1.3431 3 3 0 .5523-.4477 1-1 1Zm-1-9.5c0 1.3807-1.1193 2.5-2.5 2.5s-2.49999-1.1193-2.49999-2.5S8.8334 9 10.2141 9s2.5 1.1193 2.5 2.5Z" />
                             </svg>
+
 
                             <span class="flex-1 ml-3 text-left whitespace-nowrap">Lamaran Kerja</span>
                             <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
@@ -207,6 +202,26 @@
                                     Tersedia</a>
                             </li>
                         </ul>
+                    </li>
+
+
+
+                    <li>
+                        <a href="{{ route('register') }}"
+                            class="flex items-center p-2 w-full text-base text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                            <svg class="w-5 h-5 text-gray-500 dark:text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M16 12h4m-2 2v-4M4 18v-1a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Zm8-10a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            </svg>
+
+
+
+                            <span class="flex-1 ml-3 text-left whitespace-nowrap">Tambah Admin</span></a>
+
+
                     </li>
 
                 </ul>

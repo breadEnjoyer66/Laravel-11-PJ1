@@ -7,11 +7,11 @@
 
         <div class="flex items-center mb-4">
             <div class="mr-2">
-                <h2 class="font-semibold text-2xl">Job Applications</h2>
+                <h2 class="font-semibold text-2xl">Lamaran Kerja</h2>
             </div>
         </div>
 
-        <div class="bg-white dark:bg-gray-800 relative sm:rounded-lg overflow-hidden border">
+        <div class="bg-white dark:bg-gray-800 relative sm:rounded-lg overflow-hidden shadow-md">
             <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
                 <div class="w-full md:w-1/2">
                     <div class="flex items-center">
