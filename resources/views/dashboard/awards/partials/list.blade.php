@@ -3,7 +3,7 @@
         <div class="bg-white rounded-lg border overflow-hidden group relative">
             <div class="invisible group-hover:visible absolute top-2 right-2 flex space-x-2 z-10">
                 <button type="button"
-                    onclick="openEditModal('{{ $award->id }}', '{{ $award->name }}', '{{ $award->award_from }}', '{{ $award->received_at->format('Y-m-d') }}', '{{ $award->image_url }}')"
+                    onclick="openEditModal('{{ $award->id }}', '{{ $award->name }}', '{{ $award->award_from }}', '{{ $award->received_at ? $award->received_at->format('Y-m-d') : '-' }}', '{{ $award->image_url }}')"
                     class="text-white hover:text-blue-200 bg-blue-500 rounded-full p-1.5">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path
