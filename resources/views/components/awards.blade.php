@@ -13,8 +13,8 @@
             <div class="grid gap-4 lg:grid-cols-6 md:grid-cols-4 grid-cols-2">
                 @foreach ($awards as $award)
                     <button type="button" class="group rounded-xl overflow-hidden text-left"
-                        data-full="{{ asset('img/awards/' . $award->file_name) }}">
-                        <img src="{{ asset('img/awards/' . $award->file_name) }}" alt="Award" loading="lazy"
+                        data-full="{{ $award->image_url }}">
+                        <img src="{{ $award->image_url }}" alt="Award" loading="lazy"
                             class="rounded-xl w-full object-contain transition duration-200 group-hover:scale-[0.98] group-hover:shadow-lg cursor-zoom-in">
                     </button>
                 @endforeach

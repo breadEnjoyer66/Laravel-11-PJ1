@@ -9,61 +9,70 @@
                 government and institutions.</p>
         </div>
         <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 md:gap-8 md:space-y-0">
-            <div class="rounded-xl px-6 pt-10 pb-5 hover:shadow-md border">
+            <div
+                class="rounded-xl px-6 pt-10 pb-5 hover:shadow-md border bg-primary-800 hover:bg-primary-600 transition-all duration-400">
                 <div class="flex justify-center items-center mb-8 h-10 rounded-full w-16">
-                    <img src="{{ asset('img/icons/service-icon.png') }}" alt="client-1" class="opacity-90">
+                    <img src="{{ asset('img/icons/service-icon.png') }}" alt="client-1" class="invert">
                 </div>
-                <h3 class="mb-2 text-xl font-bold dark:text-white text-slate-700">Service & hospitality</h3>
-                <p class="text-gray-500 dark:text-gray-400">Supporting businesses in tourism, hotels, restaurants, and
+                <h3 class="mb-2 text-xl font-bold text-white">Service & hospitality</h3>
+                <p class="text-blue-100">Supporting businesses in tourism, hotels, restaurants, and
                     customer service industries.</p>
             </div>
-            <div class="rounded-xl px-6 pt-10 pb-5 hover:shadow-md border">
+            <div
+                class="rounded-xl px-6 pt-10 pb-5 hover:shadow-md border bg-primary-800 hover:bg-primary-600 transition-all duration-400">
                 <div class="flex justify-center items-center mb-8 h-10 rounded-full w-16">
-                    <img src="{{ asset('img/icons/retail-icon.png') }}" alt="client-1" class="opacity-90">
+                    <img src="{{ asset('img/icons/retail-icon.png') }}" alt="client-1" class="invert">
                 </div>
-                <h3 class="mb-2 text-xl font-bold dark:text-white text-slate-700">End user retailing</h3>
-                <p class="text-gray-500 dark:text-gray-400">Serving retail stores and outlets that sell products
+                <h3 class="mb-2 text-xl font-bold text-white">End user retailing</h3>
+                <p class="text-blue-100">Serving retail stores and outlets that sell products
                     directly to consumers.</p>
             </div>
-            <div class="rounded-xl px-6 pt-10 pb-5 hover:shadow-md border">
+            <div
+                class="rounded-xl px-6 pt-10 pb-5 hover:shadow-md border bg-primary-800 hover:bg-primary-600 transition-all duration-400">
                 <div class="flex justify-center items-center mb-8 h-10 rounded-full w-16">
-                    <img src="{{ asset('img/icons/manufacture-icon.png') }}" alt="client-1" class="opacity-90">
+                    <img src="{{ asset('img/icons/manufacture-icon.png') }}" alt="client-1" class="invert">
                 </div>
-                <h3 class="mb-2 text-xl font-bold dark:text-white text-slate-700">Manufacture</h3>
-                <p class="text-gray-500 dark:text-gray-400">Partnering with factories and producers to enhance
+                <h3 class="mb-2 text-xl font-bold text-white">Manufacture</h3>
+                <p class="text-blue-100">Partnering with factories and producers to enhance
                     operational efficiency.</p>
             </div>
-            <div class="rounded-xl px-6 pt-10 pb-5 hover:shadow-md border">
+
+            <div
+                class="rounded-xl px-6 pt-10 pb-5 hover:shadow-md border bg-primary-800 hover:bg-primary-600 transition-all duration-400">
                 <div class="flex justify-center items-center mb-8 h-10 rounded-full w-16">
-                    <img src="{{ asset('img/icons/education-icon.png') }}" alt="client-1" class="opacity-90">
+                    <img src="{{ asset('img/icons/education-icon.png') }}" alt="client-1" class="invert">
                 </div>
-                <h3 class="mb-2 text-xl font-bold dark:text-white text-slate-700">Education</h3>
-                <p class="text-gray-500 dark:text-gray-400">Assisting schools, universities, and training institutions
+                <h3 class="mb-2 text-xl font-bold text-white">Education</h3>
+                <p class="text-blue-100">Assisting schools, universities, and training institutions
                     with their needs.</p>
             </div>
-            <div class="rounded-xl px-6 pt-10 pb-5 hover:shadow-md border">
+
+            <div
+                class="rounded-xl px-6 pt-10 pb-5 hover:shadow-md border bg-primary-800 hover:bg-primary-600 transition-all duration-400">
                 <div class="flex justify-center items-center mb-8 h-10 rounded-full w-16">
-                    <img src="{{ asset('img/icons/consumer-good-icon.png') }}" alt="client-1" class="opacity-90">
+                    <img src="{{ asset('img/icons/consumer-good-icon.png') }}" alt="client-1" class="invert">
                 </div>
-                <h3 class="mb-2 text-xl font-bold dark:text-white text-slate-700">Consumer goods</h3>
-                <p class="text-gray-500 dark:text-gray-400">Supplying goods and solutions for everyday household and
+                <h3 class="mb-2 text-xl font-bold text-white">Consumer goods</h3>
+                <p class="text-blue-100">Supplying goods and solutions for everyday household and
                     personal tech-related products.</p>
             </div>
-            <div class="rounded-xl px-6 pt-10 pb-5 hover:shadow-md border">
+            <div
+                class="rounded-xl px-6 pt-10 pb-5 hover:shadow-md border bg-primary-800 hover:bg-primary-600 transition-all duration-400">
                 <div class="flex justify-center items-center mb-8 h-10 rounded-full w-16">
-                    <img src="{{ asset('img/icons/e-procurement-icon.png') }}" alt="client-1" class="opacity-90">
+                    <img src="{{ asset('img/icons/e-procurement-icon.png') }}" alt="client-1" class="invert">
                 </div>
-                <h3 class="mb-2 text-xl font-bold dark:text-white text-slate-700">E-procurement</h3>
-                <p class="text-gray-500 dark:text-gray-400">Enabling streamlined online purchasing and supply chain
+                <h3 class="mb-2 text-xl font-bold text-white">E-procurement</h3>
+                <p class="text-blue-100">Enabling streamlined online purchasing and supply chain
                     management for organizations.</p>
             </div>
 
-            <div class="rounded-xl px-6 pt-10 pb-5 hover:shadow-md border">
+            <div
+                class="rounded-xl px-6 pt-10 pb-5 hover:shadow-md border bg-primary-800 hover:bg-primary-600 transition-all duration-400">
                 <div class="flex justify-center items-center mb-8 h-10 rounded-full w-16">
-                    <img src="{{ asset('img/icons/agribusiness-icon.png') }}" alt="client-1" class="opacity-90">
+                    <img src="{{ asset('img/icons/agribusiness-icon.png') }}" alt="client-1" class="invert">
                 </div>
-                <h3 class="mb-2 text-xl font-bold dark:text-white text-slate-700">Agribusiness</h3>
-                <p class="text-gray-500 dark:text-gray-400">Providing IT solutions for agricultural industries.</p>
+                <h3 class="mb-2 text-xl font-bold text-white">Agribusiness</h3>
+                <p class="text-blue-100">Providing IT solutions for agricultural industries.</p>
             </div>
         </div>
     </div>

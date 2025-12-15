@@ -65,7 +65,8 @@
                         <span class="sr-only">Open user menu</span>
                         <img class="w-8 h-8 rounded-full" src="{{ asset('img/user-icon.png') }}" alt="user photo" />
                     </button>
-                    <!-- Dropdown menu -->
+
+                    <!-- Dropdown menu user -->
                     <div class="hidden z-50 my-4 w-56 text-base list-none bg-white divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl"
                         id="dropdown">
                         <div class="py-3 px-4">
@@ -101,6 +102,7 @@
                             </li>
                         </ul>
                     </div>
+
                 </div>
             </div>
         </nav>
@@ -113,6 +115,7 @@
             <div class="overflow-y-auto py-5 px-3 h-full bg-white dark:bg-gray-800">
 
                 <ul class="space-y-2">
+                    {{-- dashboard --}}
                     <li>
                         <a href="/dashboard"
                             class="flex items-center p-2 text-base text-gray-600 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
@@ -130,6 +133,7 @@
                         </a>
                     </li>
 
+                    {{-- berita --}}
                     <li>
                         <button type="button"
                             class="flex items-center p-2 w-full text-base text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
@@ -169,6 +173,7 @@
                         </ul>
                     </li>
 
+                    {{-- lamaran kerja --}}
                     <li>
                         <button type="button"
                             class="flex items-center p-2 w-full text-base text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
@@ -205,7 +210,7 @@
                     </li>
 
 
-
+                    {{-- tambah admin --}}
                     <li>
                         <a href="{{ route('register') }}"
                             class="flex items-center p-2 w-full text-base text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
@@ -217,12 +222,56 @@
                                     d="M16 12h4m-2 2v-4M4 18v-1a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Zm8-10a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                             </svg>
 
-
-
                             <span class="flex-1 ml-3 text-left whitespace-nowrap">Tambah Admin</span></a>
-
-
                     </li>
+
+                    {{-- Web Content --}}
+                    <li>
+                        <button type="button"
+                            class="flex items-center p-2 w-full text-base text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                            aria-controls="dropdown-web-content" data-collapse-toggle="dropdown-web-content">
+                            <svg class="w-5 h-5 text-gray-500 dark:text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 15v3c0 .5523.44772 1 1 1h8v-8m-9 4v-4m0 4h9m-9-4V6c0-.55228.44772-1 1-1h16c.5523 0 1 .44772 1 1v4M3 11h11m6.25 5c0 1.2426-1.0073 2.25-2.25 2.25M20.25 16c0-1.2426-1.0073-2.25-2.25-2.25M20.25 16H21m-3 2.25c-1.2426 0-2.25-1.0074-2.25-2.25M18 18.25V19m-2.25-3c0-1.2426 1.0074-2.25 2.25-2.25M15.75 16H15m3-2.25V13m-1.591 1.409-.5303-.5303m4.2426 4.2426-.5303-.5303m-3.182 0-.5303.5303m4.2426-4.2426-.5303.5303" />
+                            </svg>
+
+
+
+                            <span class="flex-1 ml-3 text-left whitespace-nowrap">Web Content</span>
+                            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <ul id="dropdown-web-content" class="hidden">
+                            <li>
+                                <a href="{{ route('dashboard.awards.index') }}"
+                                    class="flex items-center p-2 pl-11 w-full text-sm text-gray-500 rounded-lg transition duration-75 group hover:bg-gray-100">Awards
+                                    & Certifications</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 pl-11 w-full text-sm text-gray-500 rounded-lg transition duration-75 group hover:bg-gray-100">Brand
+                                    Partner</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 pl-11 w-full text-sm text-gray-500 rounded-lg transition duration-75 group hover:bg-gray-100">Team
+                                    Member</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 pl-11 w-full text-sm text-gray-500 rounded-lg transition duration-75 group hover:bg-gray-100">Testimonies</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
 
                 </ul>
 

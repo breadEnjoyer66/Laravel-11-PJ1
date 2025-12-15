@@ -23,6 +23,5 @@ class AppServiceProvider extends ServiceProvider
     {
         // prevent lazy loading (currently:disabled)
         // Model::preventLazyLoading();
-
     }
 }

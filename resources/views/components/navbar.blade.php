@@ -1,7 +1,7 @@
-<div class="hidden lg:block border-b border-slate-100 bg-white">
+<div class="hidden lg:block bg-primary-600">
     <div class="mx-auto max-w-7xl flex justify-between py-2 items-center px-4 sm:px-6 lg:px-8">
         <a href="https://wa.me/6281380009898"
-            class="text-sm text-gray-500 hover:text-blue-500 hover:underline duration-100 flex" target="_blank">
+            class="text-sm text-white hover:text-sky-200 hover:underline duration-100 flex" target="_blank">
             <svg class="mr-1 w-[20px] h-[20px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
                 height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -11,7 +11,7 @@
         </a>
 
         <a href="mailto:corporate:pj-tech.com"
-            class="text-sm text-gray-500 hover:text-blue-500 hover:underline duration-100 flex">
+            class="text-sm text-white hover:text-sky-200 hover:underline duration-100 flex">
             <svg class="mr-1 w-[19px] h-[19px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
                 height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
@@ -22,15 +22,15 @@
         </a>
     </div>
 </div>
-<nav class="bg-white border-b sticky top-0 z-50" x-data="{ isOpen: false }">
+<nav class="bg-gradient-to-r from-orange-200 to-orange-300 sticky top-0 z-50" x-data="{ isOpen: false }">
 
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-24 items-center justify-between">
             <!-- Logo left -->
-            <div class="flex items-center h-full">
+            <div class="flex items-center -mt-2 h-full">
                 <div class="shrink-0">
                     <a href="/"><img src="{{ asset('img/pmt-logo-blue.png') }}" alt="Primajaya Multi Technology"
-                            class="size-24 md:size-28" /></a>
+                            class="size-24 md:size-28 lg:size-32" /></a>
                 </div>
             </div>
             <!-- Nav menu right -->

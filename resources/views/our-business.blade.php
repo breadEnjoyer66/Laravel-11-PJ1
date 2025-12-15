@@ -222,74 +222,85 @@
             {{-- Content Grid --}}
             <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
 
-                <div class="p-6 bg-slate-50 rounded-xl shadow-sm hover:shadow-md transition flex flex-col items-start">
-                    <h3 class="text-xl font-semibold text-[#0F2748]">HP (Hewlett Packard)</h3>
-                    <p class="mt-2 text-gray-600 text-sm">
+                <div
+                    class="p-6 bg-primary-800 hover:bg-primary-600 hover:scale-95 transition-all duration-400 rounded-xl shadow-sm hover:shadow-md flex flex-col items-start">
+                    <h3 class="text-xl font-semibold text-white">HP (Hewlett Packard)</h3>
+                    <p class="mt-2 text-gray-200 text-sm">
                         Laptop, PC, Workstation, Server, Printer, Scanner, Plotter, Ink, Toner, Accessories (Mouse,
                         Keyboard, Headset, Speaker, etc.)
                     </p>
                 </div>
 
-                <div class="p-6 bg-slate-50 rounded-xl shadow-sm hover:shadow-md transition flex flex-col items-start">
-                    <h3 class="text-xl font-semibold text-[#0F2748]">Lenovo</h3>
-                    <p class="mt-2 text-gray-600 text-sm">Laptop, PC, Workstation, Server</p>
+                <div
+                    class="p-6 bg-primary-800 hover:bg-primary-600 hover:scale-95 transition-all duration-400 rounded-xl shadow-sm hover:shadow-md flex flex-col items-start">
+                    <h3 class="text-xl font-semibold text-white">Lenovo</h3>
+                    <p class="mt-2 text-gray-200 text-sm">Laptop, PC, Workstation, Server</p>
                 </div>
 
-                <div class="p-6 bg-slate-50 rounded-xl shadow-sm hover:shadow-md transition flex flex-col items-start">
-                    <h3 class="text-xl font-semibold text-[#0F2748]">Asus</h3>
-                    <p class="mt-2 text-gray-600 text-sm">Laptop, PC, Workstation, Server</p>
+                <div
+                    class="p-6 bg-primary-800 hover:bg-primary-600 hover:scale-95 transition-all duration-400 rounded-xl shadow-sm hover:shadow-md flex flex-col items-start">
+                    <h3 class="text-xl font-semibold text-white">Asus</h3>
+                    <p class="mt-2 text-gray-200 text-sm">Laptop, PC, Workstation, Server</p>
                 </div>
 
-                <div class="p-6 bg-slate-50 rounded-xl shadow-sm hover:shadow-md transition flex flex-col items-start">
-                    <h3 class="text-xl font-semibold text-[#0F2748]">Brother</h3>
-                    <p class="mt-2 text-gray-600 text-sm">
+                <div
+                    class="p-6 bg-primary-800 hover:bg-primary-600 hover:scale-95 transition-all duration-400 rounded-xl shadow-sm hover:shadow-md flex flex-col items-start">
+                    <h3 class="text-xl font-semibold text-white">Brother</h3>
+                    <p class="mt-2 text-gray-200 text-sm">
                         Inkjet Printer, LaserJet Printer, Label Printer, Scanner, Ink and Toner
                     </p>
                 </div>
 
-                <div class="p-6 bg-slate-50 rounded-xl shadow-sm hover:shadow-md transition flex flex-col items-start">
-                    <h3 class="text-xl font-semibold text-[#0F2748]">APC UPS</h3>
-                    <p class="mt-2 text-gray-600 text-sm">Power Backup, Server Rack</p>
+                <div
+                    class="p-6 bg-primary-800 hover:bg-primary-600 hover:scale-95 transition-all duration-400 rounded-xl shadow-sm hover:shadow-md flex flex-col items-start">
+                    <h3 class="text-xl font-semibold text-white">APC UPS</h3>
+                    <p class="mt-2 text-gray-200 text-sm">Power Backup, Server Rack</p>
                 </div>
 
-                <div class="p-6 bg-slate-50 rounded-xl shadow-sm hover:shadow-md transition flex flex-col items-start">
-                    <h3 class="text-xl font-semibold text-[#0F2748]">Synology</h3>
-                    <p class="mt-2 text-gray-600 text-sm">
+                <div
+                    class="p-6 bg-primary-800 hover:bg-primary-600 hover:scale-95 transition-all duration-400 rounded-xl shadow-sm hover:shadow-md flex flex-col items-start">
+                    <h3 class="text-xl font-semibold text-white">Synology</h3>
+                    <p class="mt-2 text-gray-200 text-sm">
                         Hybrid Storage Server, NAS (Network Attached Storage), Storage Manager
                     </p>
                 </div>
 
-                <div class="p-6 bg-slate-50 rounded-xl shadow-sm hover:shadow-md transition flex flex-col items-start">
-                    <h3 class="text-xl font-semibold text-[#0F2748]">Samsung</h3>
-                    <p class="mt-2 text-gray-600 text-sm">
+                <div
+                    class="p-6 bg-primary-800 hover:bg-primary-600 hover:scale-95 transition-all duration-400 rounded-xl shadow-sm hover:shadow-md flex flex-col items-start">
+                    <h3 class="text-xl font-semibold text-white">Samsung</h3>
+                    <p class="mt-2 text-gray-200 text-sm">
                         Mobile, Display Solutions, IoT, Home Appliances
                     </p>
                 </div>
 
-                <div class="p-6 bg-slate-50 rounded-xl shadow-sm hover:shadow-md transition flex flex-col items-start">
-                    <h3 class="text-xl font-semibold text-[#0F2748]">Networking & Security</h3>
-                    <p class="mt-2 text-gray-600 text-sm">
+                <div
+                    class="p-6 bg-primary-800 hover:bg-primary-600 hover:scale-95 transition-all duration-400 rounded-xl shadow-sm hover:shadow-md flex flex-col items-start">
+                    <h3 class="text-xl font-semibold text-white">Networking & Security</h3>
+                    <p class="mt-2 text-gray-200 text-sm">
                         Cisco, Aruba, Ruijie, H3C, Mikrotik, Zebra, Ubiquiti, Cambium
                     </p>
                 </div>
 
-                <div class="p-6 bg-slate-50 rounded-xl shadow-sm hover:shadow-md transition flex flex-col items-start">
-                    <h3 class="text-xl font-semibold text-[#0F2748]">Server & Storage</h3>
-                    <p class="mt-2 text-gray-600 text-sm">
+                <div
+                    class="p-6 bg-primary-800 hover:bg-primary-600 hover:scale-95 transition-all duration-400 rounded-xl shadow-sm hover:shadow-md flex flex-col items-start">
+                    <h3 class="text-xl font-semibold text-white">Server & Storage</h3>
+                    <p class="mt-2 text-gray-200 text-sm">
                         HP Enterprise, Lenovo, Dell, Cisco, Hikvision, Fortinet
                     </p>
                 </div>
 
-                <div class="p-6 bg-slate-50 rounded-xl shadow-sm hover:shadow-md transition flex flex-col items-start">
-                    <h3 class="text-xl font-semibold text-[#0F2748]">Videotron</h3>
-                    <p class="mt-2 text-gray-600 text-sm">
+                <div
+                    class="p-6 bg-primary-800 hover:bg-primary-600 hover:scale-95 transition-all duration-400 rounded-xl shadow-sm hover:shadow-md flex flex-col items-start">
+                    <h3 class="text-xl font-semibold text-white">Videotron</h3>
+                    <p class="mt-2 text-gray-200 text-sm">
                         Unilumin, Qiangli, Novastar, Huidu, ColorLight
                     </p>
                 </div>
 
-                <div class="p-6 bg-slate-50 rounded-xl shadow-sm hover:shadow-md transition flex flex-col items-start">
-                    <h3 class="text-xl font-semibold text-[#0F2748]">Mobile</h3>
-                    <p class="mt-2 text-gray-600 text-sm">
+                <div
+                    class="p-6 bg-primary-800 hover:bg-primary-600 hover:scale-95 transition-all duration-400 rounded-xl shadow-sm hover:shadow-md flex flex-col items-start">
+                    <h3 class="text-xl font-semibold text-white">Mobile</h3>
+                    <p class="mt-2 text-gray-200 text-sm">
                         Apple, Xiaomi, Infinix, Realme
                     </p>
                 </div>

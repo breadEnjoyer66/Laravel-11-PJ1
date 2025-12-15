@@ -7,6 +7,7 @@ use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\Dashboard\JobApplicationController as DashboardJobApplicationController;
 use App\Http\Controllers\Dashboard\ArticleController as DashboardArticleController;
 use App\Http\Controllers\Dashboard\OpenPositionController as DashboardOpenPositionController;
+use App\Http\Controllers\Dashboard\AwardController as DashboardAwardController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\UserController;
 
@@ -111,6 +112,9 @@ Route::middleware(['auth'])->prefix('dashboard')->name('dashboard.')->group(func
 
     // Open positions management
     Route::resource('open-positions', DashboardOpenPositionController::class)->names('open-positions');
+
+    // Awards management
+    Route::resource('awards', DashboardAwardController::class)->names('awards');
 });
 
 

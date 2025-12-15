@@ -1,15 +1,14 @@
-<footer class="p-4 bg-gradient-to-t from-slate-200 to-slate-100 border-t sm:p-6 dark:bg-gray-800">
+<footer class="p-4 bg-gradient-to-t from-slate-950 to-cyan-950 border-t sm:p-6 dark:bg-gray-800">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10">
         <div class="md:flex md:justify-between pb-3">
             {{-- left side footer --}}
             <div class="mb-6 md:mb-0 max-w-sm">
                 <a href="/" class="flex items-center -mt-6">
-                    <img src="{{ asset('img/pmt-text-logo.png') }}"
-                        class="mr-3 lg:h-24 h-20 grayscale hover:grayscale-0 duration-300 object-contain"
+                    <img src="{{ asset('img/pmt-text-logo-light.png') }}" class="mr-3 lg:h-24 h-20 object-contain"
                         alt="Primajaya Multi Technology Logo" />
                 </a>
-                <p class="text-sm text-gray-500 -mt-3">Komplek Ruko Asia Mega Mas, Blok BB No 12A-15, Medan</p>
-                <p class="text-sm text-gray-500 mt-3">Primajaya Multi Technology is an information technology that
+                <p class="text-sm text-gray-300 -mt-3">Komplek Ruko Asia Mega Mas, Blok BB No 12A-15, Medan</p>
+                <p class="text-sm text-gray-300 mt-3">Primajaya Multi Technology is an information technology that
                     provides solutions and advancement
                     through technologies.
                 </p>
@@ -18,8 +17,8 @@
             {{-- right side footer --}}
             <div class="grid grid-cols-2 gap-8 lg:gap-12 sm:gap-6 sm:grid-cols-3">
                 <div>
-                    <h2 class="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white">Sales Team</h2>
-                    <ul class="text-gray-500 text-sm dark:text-gray-400">
+                    <h2 class="mb-4 text-sm font-semibold text-white uppercase">Sales Team</h2>
+                    <ul class="text-gray-100 text-sm">
                         <li class="mb-2">
                             <span class="font-bold">(B2B)</span><a href="mailto:corporate@pj-tech.com"
                                 class="ml-2 hover:underline text-blue-500">
@@ -48,8 +47,8 @@
                     </ul>
                 </div>
                 <div>
-                    <h2 class="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white">Connect With Us</h2>
-                    <ul class="text-gray-600 dark:text-gray-400">
+                    <h2 class="mb-4 text-sm font-semibold text-white uppercase">Connect With Us</h2>
+                    <ul class="text-gray-100">
                         <span class="font-bold text-sm">Email</span>
                         <li class="mb-4 text-sm">
                             <a href="mailto:contactus@pj-tech.com"
@@ -73,7 +72,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h2 class="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white">Scan me</h2>
+                    <h2 class="mb-4 text-sm font-semibold text-white uppercase">Scan me</h2>
                     <div>
                         <img src="{{ asset('img/qr-wa-plazait.png') }}" alt="QR Code Whatsapp"
                             class="h-32 w-32 object-cover" />
@@ -86,8 +85,8 @@
         {{-- copyright section --}}
         <hr class="my-6 border-gray-400 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">&copy; {{ date('Y') }} <a
-                    href="/" class="hover:underline">Primajaya Multi Technology</a>. All Rights Reserved.
+            <span class="text-sm text-gray-100 sm:text-center">&copy; {{ date('Y') }} <a href="/"
+                    class="hover:underline">Primajaya Multi Technology</a>. All Rights Reserved.
             </span>
             <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                 <a href="https://www.facebook.com/LaptopMedan"
