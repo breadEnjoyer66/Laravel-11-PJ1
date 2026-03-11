@@ -100,7 +100,7 @@
                 <script>
                     function formStepper() {
                         return {
-                            step: 1,
+                            step: 1, // Start at step 1 for testing, change to 1 in production
                             totalSteps: 11,
 
                             // ✅ Helper function to check if any checkbox in a group is selected

@@ -22,7 +22,7 @@
         </a>
     </div>
 </div>
-<nav class="bg-gradient-to-r from-orange-200 to-orange-300 sticky top-0 z-50" x-data="{ isOpen: false }">
+<nav class="bg-gradient-to-r from-blue-50 to-blue-400 sticky top-0 z-50" x-data="{ isOpen: false }">
 
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-24 items-center justify-between">

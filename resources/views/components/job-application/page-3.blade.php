@@ -42,7 +42,7 @@
             <div class="">
                 <label for="tel_rumah" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Telepon
                     Rumah</label>
-                <input type="tel" id="tel_rumah" name="tel_rumah"
+                <input type="text" id="tel_rumah" name="tel_rumah"
                     class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('tel_rumah') ? 'border border-red-500' : 'border border-gray-300' }}"
                     placeholder="Telepon rumah" value="{{ old('tel_rumah') }}">
                 @error('tel_rumah')

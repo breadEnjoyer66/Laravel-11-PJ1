@@ -23,13 +23,14 @@ class JobApplicationController extends Controller
         // ✅ Validate and store in $validated
         $validated = $request->validate([
             // 🧍 PERSONAL INFORMATION
-            'pas_foto' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'pas_foto' => 'required|image|mimes:jpeg,png,jpg|max:3072', // max 3MB
             'nama_lengkap' => 'required|string|max:255',
             'posisi_prioritas' => 'required|string|max:100',
             'posisi_alternatif' => 'required|string|max:100',
             'keahlian' => 'required|string|max:100',
             'email' => 'required|email:rfc,dns|max:255',
-            'no_hp_whatsapp' => ['required', 'regex:/^(\+?\d{8,15})$/'],
+            // 'no_hp_whatsapp' => ['required', 'regex:/^(\+?\d{8,15})$/'],
+            'no_hp_whatsapp' => 'required',
             'jenis_kelamin' => 'required|string|max:20',
             'status_kawin' => 'required|string|max:40',
             'agama' => 'required|string|max:50',
@@ -65,7 +66,8 @@ class JobApplicationController extends Controller
             'alamat_domisili' => 'required|string|max:500',
             'kota_kabupaten' => 'required|string|max:255',
             'kode_pos' => 'required|string|max:10',
-            'tel_rumah' => ['nullable', 'regex:/^(\+?\d{8,15})$/'],
+            // 'tel_rumah' => ['nullable', 'regex:/^(\+?\d{8,15})$/'],
+            'tel_rumah' => 'nullable',
 
             // 🎓 EDUCATION - SMA
             'sma_dari' => 'required|string|max:20',
@@ -79,7 +81,8 @@ class JobApplicationController extends Controller
             'diploma_sampai' => 'nullable|string|max:20',
             'diploma_nama_univ' => 'nullable|string|max:255',
             'diploma_jurusan' => 'nullable|string|max:255',
-            'diploma_ipk' => 'nullable|numeric|min:0|max:4',
+            // 'diploma_ipk' => 'nullable|numeric|min:0|max:4',
+            'diploma_ipk' => 'nullable',
             'diploma_status_lulus' => 'nullable|string|max:20',
 
             // 🎓 S1
@@ -87,7 +90,8 @@ class JobApplicationController extends Controller
             's1_sampai' => 'nullable|string|max:20',
             's1_nama_univ' => 'nullable|string|max:255',
             's1_jurusan' => 'nullable|string|max:255',
-            's1_ipk' => 'nullable|numeric|min:0|max:4',
+            's1_ipk' => 'nullable',
+            // 's1_ipk' => 'nullable|numeric|min:0|max:4',
             's1_status_lulus' => 'nullable|string|max:20',
 
             // 🎓 S2
@@ -95,13 +99,15 @@ class JobApplicationController extends Controller
             's2_sampai' => 'nullable|string|max:20',
             's2_nama_univ' => 'nullable|string|max:255',
             's2_jurusan' => 'nullable|string|max:255',
-            's2_ipk' => 'nullable|numeric|min:0|max:4',
+            // 's2_ipk' => 'nullable|numeric|min:0|max:4',
+            's2_ipk' => 'nullable',
             's2_status_lulus' => 'nullable|string|max:20',
 
             // 💼 JOB EXPERIENCE 1 (required)
             'nama_perusahaan_1' => 'nullable|string|max:255',
             'jabatan_1' => 'nullable|string|max:255',
-            'gaji_terakhir_1' => 'nullable|numeric|min:0',
+            'gaji_terakhir_1' => 'nullable',
+            // 'gaji_terakhir_1' => 'nullable|numeric|min:0',
             'job_1_dari' => 'nullable|string|max:20',
             'job_1_sampai' => 'nullable|string|max:20',
             'alasan_berhenti_1' => 'nullable|string|max:300',
@@ -109,7 +115,8 @@ class JobApplicationController extends Controller
 
             // 💼 JOB EXPERIENCE 2 (optional)
             'nama_perusahaan_2' => 'nullable|string|max:255',
-            'jabatan_2' => 'nullable|string|max:255',
+            // 'jabatan_2' => 'nullable|string|max:255',
+            'jabatan_2' => 'nullable',
             'gaji_terakhir_2' => 'nullable|numeric|min:0',
             'job_2_dari' => 'nullable|string|max:20',
             'job_2_sampai' => 'nullable|string|max:20',
@@ -118,7 +125,8 @@ class JobApplicationController extends Controller
 
             // 💼 JOB EXPERIENCE 3 (optional)
             'nama_perusahaan_3' => 'nullable|string|max:255',
-            'jabatan_3' => 'nullable|string|max:255',
+            // 'jabatan_3' => 'nullable|string|max:255',
+            'jabatan_3' => 'nullable',
             'gaji_terakhir_3' => 'nullable|numeric|min:0',
             'job_3_dari' => 'nullable|string|max:20',
             'job_3_sampai' => 'nullable|string|max:20',
@@ -158,17 +166,20 @@ class JobApplicationController extends Controller
 
             // 📞 REFERENCES
             'nama_referensi_1' => 'required|string|max:255',
-            'no_telp_referensi_1' => ['required', 'regex:/^(\+?\d{8,15})$/'],
+            // 'no_telp_referensi_1' => ['required', 'regex:/^(\+?\d{8,15})$/'],
+            'no_telp_referensi_1' => 'required',
             'perusahaan_referensi_1' => 'required|string|max:255',
             'posisi_referensi_1' => 'required|string|max:255',
             'nama_referensi_2' => 'nullable|string|max:255',
-            'no_telp_referensi_2' => ['nullable', 'regex:/^(\+?\d{8,15})$/'],
+            // 'no_telp_referensi_2' => ['nullable', 'regex:/^(\+?\d{8,15})$/'],
+            'no_telp_referensi_2' => 'nullable',
             'perusahaan_referensi_2' => 'nullable|string|max:255',
             'posisi_referensi_2' => 'nullable|string|max:255',
 
             // 🚨 EMERGENCY CONTACT
             'nama_kondar' => 'required|string|max:255',
-            'no_telp_kondar' => ['required', 'regex:/^(\+?\d{8,15})$/'],
+            // 'no_telp_kondar' => ['required', 'regex:/^(\+?\d{8,15})$/'],
+            'no_telp_kondar' => 'required',
             'alamat_kondar' => 'required|string|max:255',
             'hubungan_kondar' => 'required|string|max:100',
 
@@ -182,7 +193,8 @@ class JobApplicationController extends Controller
             'riwayat_penyakit_kronis' => 'required|string|max:255',
             'rekam_jejak_kriminal' => 'required|string|max:255',
             'sedia_ditempatkan_luar_kota' => 'required|string|max:255',
-            'ekspektasi_gaji' => 'required|numeric|min:0',
+            // 'ekspektasi_gaji' => 'required|numeric|min:0',
+            'ekspektasi_gaji' => 'required',
             'dapat_mulai_bekerja' => 'required|string|max:50',
         ]);
 

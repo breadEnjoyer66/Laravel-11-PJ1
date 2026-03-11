@@ -62,6 +62,11 @@ Route::get('/career', [JobApplicationController::class, 'careerPage'])->name('ca
 // simpan data lamaran kerja
 Route::post('/career', [JobApplicationController::class, 'store'])->name('career.store');
 
+// halaman formulir lamaran kerja dengan livewire
+Route::get('/fill-job-application', function () {
+    return view('fill-job-application', ['title' => 'Fill Job Application Form']);
+})->name('fill-job-application');
+
 
 
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');

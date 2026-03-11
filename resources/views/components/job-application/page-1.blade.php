@@ -133,7 +133,8 @@
                 <label for="no_hp_whatsapp" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">No.
                     HP/
                     Whatsapp <span class="text-red-600 text-sm">*</span></label>
-                <input type="tel" id="no_hp_whatsapp" name="no_hp_whatsapp"
+                {{-- <input type="tel" id="no_hp_whatsapp" name="no_hp_whatsapp" --}}
+                <input type="text" id="no_hp_whatsapp" name="no_hp_whatsapp"
                     class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('no_hp_whatsapp') ? 'border border-red-500' : 'border border-gray-300' }}"
                     placeholder="082246672617" value="{{ old('no_hp_whatsapp') }}" required>
                 @error('no_hp_whatsapp')

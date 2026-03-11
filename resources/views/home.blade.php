@@ -17,7 +17,7 @@
                 </p>
                 <div class="flex flex-col mb-4 lg:mb-8 space-y-4 sm:flex-row sm:justify-start sm:space-y-0 sm:space-x-4">
                     <a href="/contact"
-                        class="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-full bg-gradient-to-r from-orange-400 to-orange-500 hover:bg-gradient-to-b focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                        class="hover:ml-1 transition-all inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-full bg-gradient-to-r from-orange-400 to-orange-500 hover:bg-gradient-to-b focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
                         Chat with sales
                         <svg class="ml-1.5 w-6 h-6 text-white dark:text-white" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
