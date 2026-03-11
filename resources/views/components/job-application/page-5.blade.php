@@ -31,44 +31,44 @@
                     @enderror
                 </div>
 
-                <div class="">
+                <div class="" x-data="{
+                    rawValue: '{{ old('gaji_terakhir_1') }}',
+                    formatNumber(num) {
+                        if (!num) return '';
+                        return new Intl.NumberFormat('id-ID').format(num);
+                    },
+                    unformatNumber(str) {
+                        return str.replace(/\D/g, '');
+                    },
+                    onInput(e) {
+                        let val = e.target.value;
+                        let unformatted = this.unformatNumber(val);
+                        this.rawValue = unformatted || 0;
+                        e.target.value = this.formatNumber(unformatted);
+                    },
+                    onFocus(e) {
+                        e.target.value = this.rawValue || '';
+                    },
+                    onBlur(e) {
+                        let unformatted = this.unformatNumber(e.target.value);
+                        this.rawValue = unformatted || 0;
+                        e.target.value = this.formatNumber(unformatted);
+                    },
+                    init() {
+                        if (this.rawValue) {
+                            this.$el.querySelector('input[type=text]').value = this.formatNumber(this.rawValue);
+                        }
+                    }
+                }" x-init="init()">
                     <label for="gaji_terakhir_1"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nominal Gaji
                         Terakhir (Rp)
                         <span class="text-red-600 text-sm">*</span></label>
-                    <input type="text" id="gaji_terakhir_1" name="gaji_terakhir_1"
-                        placeholder="Nominal gaji terakhir" x-data="{
-                            rawValue: '{{ old('gaji_terakhir_1') }}',
-                            formatNumber(num) {
-                                if (!num) return '';
-                                return new Intl.NumberFormat('id-ID').format(num);
-                            },
-                            unformatNumber(str) {
-                                return str.replace(/\D/g, '');
-                            },
-                            onInput(e) {
-                                let val = e.target.value;
-                                let unformatted = this.unformatNumber(val);
-                                this.rawValue = unformatted || 0;
-                                e.target.value = this.formatNumber(unformatted);
-                            },
-                            onFocus(e) {
-                                e.target.value = this.rawValue || '';
-                            },
-                            onBlur(e) {
-                                let unformatted = this.unformatNumber(e.target.value);
-                                this.rawValue = unformatted || 0;
-                                e.target.value = this.formatNumber(unformatted);
-                            },
-                            init() {
-                                if (this.rawValue) {
-                                    this.$el.value = this.formatNumber(this.rawValue);
-                                }
-                            }
-                        }" @input="onInput($event)"
-                        @focus="onFocus($event)" @blur="onBlur($event)" x-init="init()"
+                    <input type="text" id="gaji_terakhir_1" placeholder="Nominal gaji terakhir"
+                        @input="onInput($event)" @focus="onFocus($event)" @blur="onBlur($event)"
                         class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('gaji_terakhir_1') ? 'border border-red-500' : 'border border-gray-300' }}"
                         required>
+                    <input type="hidden" name="gaji_terakhir_1" :value="rawValue">
                     @error('gaji_terakhir_1')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
@@ -173,43 +173,43 @@
                     @enderror
                 </div>
 
-                <div class="">
+                <div class="" x-data="{
+                    rawValue: '{{ old('gaji_terakhir_2') }}',
+                    formatNumber(num) {
+                        if (!num) return '';
+                        return new Intl.NumberFormat('id-ID').format(num);
+                    },
+                    unformatNumber(str) {
+                        return str.replace(/\D/g, '');
+                    },
+                    onInput(e) {
+                        let val = e.target.value;
+                        let unformatted = this.unformatNumber(val);
+                        this.rawValue = unformatted || 0;
+                        e.target.value = this.formatNumber(unformatted);
+                    },
+                    onFocus(e) {
+                        e.target.value = this.rawValue || '';
+                    },
+                    onBlur(e) {
+                        let unformatted = this.unformatNumber(e.target.value);
+                        this.rawValue = unformatted || 0;
+                        e.target.value = this.formatNumber(unformatted);
+                    },
+                    init() {
+                        if (this.rawValue) {
+                            this.$el.querySelector('input[type=text]').value = this.formatNumber(this.rawValue);
+                        }
+                    }
+                }" x-init="init()">
                     <label for="gaji_terakhir_2"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nominal Gaji
                         Terakhir (Rp)
                     </label>
-                    <input type="text" id="gaji_terakhir_2" name="gaji_terakhir_2"
-                        placeholder="Nominal gaji terakhir" x-data="{
-                            rawValue: '{{ old('gaji_terakhir_2') }}',
-                            formatNumber(num) {
-                                if (!num) return '';
-                                return new Intl.NumberFormat('id-ID').format(num);
-                            },
-                            unformatNumber(str) {
-                                return str.replace(/\D/g, '');
-                            },
-                            onInput(e) {
-                                let val = e.target.value;
-                                let unformatted = this.unformatNumber(val);
-                                this.rawValue = unformatted || 0;
-                                e.target.value = this.formatNumber(unformatted);
-                            },
-                            onFocus(e) {
-                                e.target.value = this.rawValue || '';
-                            },
-                            onBlur(e) {
-                                let unformatted = this.unformatNumber(e.target.value);
-                                this.rawValue = unformatted || 0;
-                                e.target.value = this.formatNumber(unformatted);
-                            },
-                            init() {
-                                if (this.rawValue) {
-                                    this.$el.value = this.formatNumber(this.rawValue);
-                                }
-                            }
-                        }" @input="onInput($event)"
-                        @focus="onFocus($event)" @blur="onBlur($event)" x-init="init()"
+                    <input type="text" id="gaji_terakhir_2" placeholder="Nominal gaji terakhir"
+                        @input="onInput($event)" @focus="onFocus($event)" @blur="onBlur($event)"
                         class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('gaji_terakhir_2') ? 'border border-red-500' : 'border border-gray-300' }}">
+                    <input type="hidden" name="gaji_terakhir_2" :value="rawValue">
                     @error('gaji_terakhir_2')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
@@ -316,43 +316,43 @@
                     @enderror
                 </div>
 
-                <div class="">
+                <div class="" x-data="{
+                    rawValue: '{{ old('gaji_terakhir_3') }}',
+                    formatNumber(num) {
+                        if (!num) return '';
+                        return new Intl.NumberFormat('id-ID').format(num);
+                    },
+                    unformatNumber(str) {
+                        return str.replace(/\D/g, '');
+                    },
+                    onInput(e) {
+                        let val = e.target.value;
+                        let unformatted = this.unformatNumber(val);
+                        this.rawValue = unformatted || 0;
+                        e.target.value = this.formatNumber(unformatted);
+                    },
+                    onFocus(e) {
+                        e.target.value = this.rawValue || '';
+                    },
+                    onBlur(e) {
+                        let unformatted = this.unformatNumber(e.target.value);
+                        this.rawValue = unformatted || 0;
+                        e.target.value = this.formatNumber(unformatted);
+                    },
+                    init() {
+                        if (this.rawValue) {
+                            this.$el.querySelector('input[type=text]').value = this.formatNumber(this.rawValue);
+                        }
+                    }
+                }" x-init="init()">
                     <label for="gaji_terakhir_3"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nominal Gaji
                         Terakhir (Rp)
                     </label>
-                    <input type="text" id="gaji_terakhir_3" name="gaji_terakhir_3"
-                        placeholder="Nominal gaji terakhir" x-data="{
-                            rawValue: '{{ old('gaji_terakhir_3') }}',
-                            formatNumber(num) {
-                                if (!num) return '';
-                                return new Intl.NumberFormat('id-ID').format(num);
-                            },
-                            unformatNumber(str) {
-                                return str.replace(/\D/g, '');
-                            },
-                            onInput(e) {
-                                let val = e.target.value;
-                                let unformatted = this.unformatNumber(val);
-                                this.rawValue = unformatted || 0;
-                                e.target.value = this.formatNumber(unformatted);
-                            },
-                            onFocus(e) {
-                                e.target.value = this.rawValue || '';
-                            },
-                            onBlur(e) {
-                                let unformatted = this.unformatNumber(e.target.value);
-                                this.rawValue = unformatted || 0;
-                                e.target.value = this.formatNumber(unformatted);
-                            },
-                            init() {
-                                if (this.rawValue) {
-                                    this.$el.value = this.formatNumber(this.rawValue);
-                                }
-                            }
-                        }" @input="onInput($event)"
-                        @focus="onFocus($event)" @blur="onBlur($event)" x-init="init()"
+                    <input type="text" id="gaji_terakhir_3" placeholder="Nominal gaji terakhir"
+                        @input="onInput($event)" @focus="onFocus($event)" @blur="onBlur($event)"
                         class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('gaji_terakhir_3') ? 'border border-red-500' : 'border border-gray-300' }}">
+                    <input type="hidden" name="gaji_terakhir_3" :value="rawValue">
                     @error('gaji_terakhir_3')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror

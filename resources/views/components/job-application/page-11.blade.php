@@ -169,43 +169,43 @@
                     @enderror
                 </div>
 
-                <div class="mb-4">
+                <div class="mb-4" x-data="{
+                    rawValue: '{{ old('ekspektasi_gaji') }}',
+                    formatNumber(num) {
+                        if (!num) return '';
+                        return new Intl.NumberFormat('id-ID').format(num);
+                    },
+                    unformatNumber(str) {
+                        return str.replace(/\D/g, '');
+                    },
+                    onInput(e) {
+                        let val = e.target.value;
+                        let unformatted = this.unformatNumber(val);
+                        this.rawValue = unformatted || 0;
+                        e.target.value = this.formatNumber(unformatted);
+                    },
+                    onFocus(e) {
+                        e.target.value = this.rawValue || '';
+                    },
+                    onBlur(e) {
+                        let unformatted = this.unformatNumber(e.target.value);
+                        this.rawValue = unformatted || 0;
+                        e.target.value = this.formatNumber(unformatted);
+                    },
+                    init() {
+                        if (this.rawValue) {
+                            this.$el.querySelector('input[type=text]').value = this.formatNumber(this.rawValue);
+                        }
+                    }
+                }" x-init="init()">
                     <label for="ekspektasi_gaji" class="block mb-2 font-medium text-gray-900 dark:text-gray-300">9.
                         Bila diterima berapa gaji yang saudara harapkan (Rp)<span class="text-red-600 text-sm">*</span>
                     </label>
-                    <input type="text" id="ekspektasi_gaji" name="ekspektasi_gaji" placeholder="Contoh: 5000000"
-                        x-data="{
-                            rawValue: '{{ old('ekspektasi_gaji') }}',
-                            formatNumber(num) {
-                                if (!num) return '';
-                                return new Intl.NumberFormat('id-ID').format(num);
-                            },
-                            unformatNumber(str) {
-                                return str.replace(/\D/g, '');
-                            },
-                            onInput(e) {
-                                let val = e.target.value;
-                                let unformatted = this.unformatNumber(val);
-                                this.rawValue = unformatted || 0;
-                                e.target.value = this.formatNumber(unformatted);
-                            },
-                            onFocus(e) {
-                                e.target.value = this.rawValue || '';
-                            },
-                            onBlur(e) {
-                                let unformatted = this.unformatNumber(e.target.value);
-                                this.rawValue = unformatted || 0;
-                                e.target.value = this.formatNumber(unformatted);
-                            },
-                            init() {
-                                if (this.rawValue) {
-                                    this.$el.value = this.formatNumber(this.rawValue);
-                                }
-                            }
-                        }" @input="onInput($event)" @focus="onFocus($event)"
-                        @blur="onBlur($event)" x-init="init()"
+                    <input type="text" id="ekspektasi_gaji" placeholder="Contoh: 5000000"
+                        @input="onInput($event)" @focus="onFocus($event)" @blur="onBlur($event)"
                         class="placeholder:text-gray-400 shadow-sm bg-gray-50 text-sm italic rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 {{ $errors->has('ekspektasi_gaji') ? 'border border-red-500' : 'border border-gray-300' }}"
                         required>
+                    <input type="hidden" name="ekspektasi_gaji" :value="rawValue">
                     @error('ekspektasi_gaji')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
